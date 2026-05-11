@@ -1,0 +1,504 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cap.image_reranker.v2_2_1.pair_feature_snapshot",
+  "title": "PairFeatureSnapshot schema",
+  "description": "Immutable pair feature snapshot schema for CAP Image Reranker v2.2.1, with backward-compatible v2.2.2 image-layout snapshot id extension.",
+  "type": "object",
+  "additionalProperties": false,
+  "x_metadata": {
+    "spec_version": "v2.2.1",
+    "freeze_date": "2026-05-10",
+    "decision_log": "docs/design_history/v2_2_1_freeze.md",
+    "status": "frozen",
+    "superseded_by": null
+  },
+  "required": [
+    "feature_snapshot_id",
+    "snapshot_version",
+    "batch_id",
+    "created_at",
+    "pair_id",
+    "campaign_id",
+    "image_id",
+    "feature_status",
+    "provenance",
+    "features"
+  ],
+  "properties": {
+    "feature_snapshot_id": {
+      "type": "string",
+      "description": "Immutable feature snapshot id referenced by ReviewEvent. v2.2.2 includes layout_spec_id.",
+      "pattern": "^feat_[A-Za-z0-9_\\-:.]+__.+__.+(?:__.+)?$"
+    },
+    "snapshot_version": {
+      "type": "string",
+      "description": "Feature schema version, e.g. v2_2_1."
+    },
+    "batch_id": {
+      "type": "string",
+      "description": "Review queue or scoring batch id that produced this snapshot."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pair_id": {
+      "type": "string"
+    },
+    "campaign_id": {
+      "type": "string"
+    },
+    "image_id": {
+      "type": "string"
+    },
+    "layout_spec_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "duplicate_group_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "feature_status": {
+      "type": "string",
+      "enum": [
+        "diagnostic_only",
+        "calibrated_validation",
+        "production_candidate"
+      ],
+      "description": "Whether feature values are diagnostic only or calibrated."
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_image_asset_version",
+        "campaign_version",
+        "layout_spec_version",
+        "clip_embedding_version",
+        "dinov2_embedding_version",
+        "region_safety_version",
+        "critic_version"
+      ],
+      "properties": {
+        "raw_image_asset_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "campaign_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "layout_spec_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "clip_embedding_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dinov2_embedding_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_safety_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "critic_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "prompt_template_bank_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cluster_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duplicate_group_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "preview_renderer_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dinov2_anchor_feature_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "description": "Numeric feature map used by the reranker. Missing values may be null but should be paired with explicit missing/count features when meaningful.",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "integer",
+          "null",
+          "string"
+        ]
+      },
+      "properties": {
+        "clip_positive_max_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clip_positive_mean_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clip_negative_max_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clip_negative_mean_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clip_margin": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clip_rank_percentile": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_campaign_pos_nn_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_campaign_neg_nn_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_campaign_margin": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_campaign_pos_count": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_campaign_neg_count": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_campaign_anchor_missing": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_family_pos_nn_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_family_neg_nn_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_family_margin": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_family_support_count": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_family_anchor_missing": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_cluster_id_coarse": {
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_cluster_id_mid": {
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_cluster_id_fine": {
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_cluster_positive_rate_coarse": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_cluster_positive_rate_mid": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_cluster_positive_rate_fine": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_cluster_review_count_coarse": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_cluster_review_count_mid": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_cluster_review_count_fine": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "dinov2_duplicate_group_seen": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "required_region_safe_mean": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "required_region_safe_min": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "title_region_safe_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "info_region_safe_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "edge_density": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "contrast": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "brightness": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "saturation": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "critic_text_region_conflict_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "critic_low_contrast_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "critic_too_busy_background_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "critic_visual_hierarchy_risk_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "critic_layout_fit_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "image_season_unknown": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "image_category_gallery": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "image_category_tree": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "image_category_flower": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "image_category_course": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "path_has_architecture": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "path_has_garden": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "campaign_is_summer": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "campaign_is_walking_program": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "campaign_is_garden": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

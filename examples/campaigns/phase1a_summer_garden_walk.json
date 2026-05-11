@@ -1,0 +1,12 @@
+{
+  "campaign_id": "phase1a_summer_garden_walk",
+  "campaign_version": "phase1a_v1",
+  "campaign_text": "사유원의 초록, 깊어지는 시간. 숲과 정원이 이어지는 계절의 산책.",
+  "purpose_type": "walking_program",
+  "space_type": "garden",
+  "season": "summer",
+  "mood_tags": ["calm_elegant"],
+  "place_name": null,
+  "target_channel": "poster",
+  "brand_tone": "calm_premium"
+}

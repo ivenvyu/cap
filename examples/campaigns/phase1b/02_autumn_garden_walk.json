@@ -1,0 +1,13 @@
+{
+  "campaign_id": "phase1b_autumn_garden_walk",
+  "campaign_version": "phase1b_v1",
+  "campaign_family": "garden_walking_family",
+  "campaign_text": "가을빛이 내려앉은 정원 길. 천천히 걷고 머무는 사유원의 산책.",
+  "purpose_type": "walking_program",
+  "space_type": "garden",
+  "season": "autumn",
+  "mood_tags": ["calm", "premium"],
+  "place_name": null,
+  "target_channel": "poster",
+  "brand_tone": "calm_premium"
+}

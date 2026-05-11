@@ -1,0 +1,13 @@
+{
+  "campaign_id": "phase1b_indoor_gallery_winter_art",
+  "campaign_version": "phase1b_v1",
+  "campaign_family": "indoor_gallery_or_winter_family",
+  "campaign_text": "겨울의 고요 속에서 만나는 실내 전시. 차분한 빛과 여백이 있는 사유원의 예술 경험.",
+  "purpose_type": "exhibition",
+  "space_type": "gallery",
+  "season": "winter",
+  "mood_tags": ["calm_elegant", "premium"],
+  "place_name": null,
+  "target_channel": "poster",
+  "brand_tone": "calm_premium"
+}

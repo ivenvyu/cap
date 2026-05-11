@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cap.image_reranker.v2_2_1.review_event",
+  "title": "ReviewEvent schema",
+  "description": "Frozen ReviewEvent schema for CAP Image Reranker v2.2.1.",
+  "type": "object",
+  "additionalProperties": false,
+  "x_metadata": {
+    "spec_version": "v2.2.1",
+    "freeze_date": "2026-05-10",
+    "decision_log": "docs/design_history/v2_2_1_freeze.md",
+    "status": "frozen",
+    "superseded_by": "v2.2.2_patch"
+  },
+  "required": [
+    "review_event_id",
+    "timestamp",
+    "annotator_id",
+    "pair_id",
+    "campaign_id",
+    "image_id",
+    "review_context",
+    "decision",
+    "feature_snapshot_id",
+    "model_score_at_review"
+  ],
+  "properties": {
+    "review_event_id": {
+      "type": "string",
+      "description": "Unique immutable review event id.",
+      "pattern": "^rev_[A-Za-z0-9_\\-:.]+$"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "UTC timestamp when the review was recorded.",
+      "format": "date-time"
+    },
+    "annotator_id": {
+      "type": "string",
+      "description": "Human or system annotator id."
+    },
+    "pair_id": {
+      "type": "string",
+      "description": "Campaign-image-layout pair id."
+    },
+    "campaign_id": {
+      "type": "string"
+    },
+    "image_id": {
+      "type": "string"
+    },
+    "duplicate_group_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "review_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queue_version",
+        "queue_stage",
+        "source_bucket",
+        "preview_renderer_version",
+        "layout_spec_id"
+      ],
+      "properties": {
+        "queue_version": {
+          "type": "string",
+          "description": "Review queue version or batch id, e.g. review_queue_v3."
+        },
+        "queue_stage": {
+          "type": "string",
+          "enum": [
+            "cold_start",
+            "trained",
+            "critic_training",
+            "smoke_test",
+            "manual_audit"
+          ]
+        },
+        "source_bucket": {
+          "type": "string",
+          "enum": [
+            "clip_high_model_low",
+            "dinov2_anchor_high_model_low",
+            "model_high_clip_negative_high",
+            "critic_high_risk_reranker_high",
+            "uncertainty",
+            "cluster_diversity",
+            "layout_safe_coverage",
+            "lightgbm_top",
+            "random_coverage",
+            "classifier_ranker_disagreement",
+            "manual",
+            "unknown"
+          ]
+        },
+        "preview_renderer_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Renderer version used during review. Null if no preview was used."
+        },
+        "layout_spec_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Layout spec id used for the reviewed pair."
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "issue_tags",
+        "preference_rank",
+        "notes"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": [
+            "reject",
+            "acceptable",
+            "accept",
+            "best",
+            "pending",
+            "skip"
+          ]
+        },
+        "issue_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "season_mismatch",
+              "semantic_mismatch",
+              "brand_tone_mismatch",
+              "mood_mismatch",
+              "text_region_conflict",
+              "low_contrast",
+              "too_busy_background",
+              "visual_hierarchy_weak",
+              "duplicate_or_too_similar",
+              "already_used_in_recent_campaign",
+              "low_resolution",
+              "poor_composition"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "preference_rank": {
+          "type": [
+            "integer",
+            "number",
+            "null"
+          ],
+          "description": "Optional rank within the same review context. Smaller is better."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-text audit note. Not used as primary training label."
+        }
+      }
+    },
+    "feature_snapshot_id": {
+      "type": "string",
+      "description": "Foreign key to immutable pair feature snapshot. Backward-compatible pattern; new v2.2.2 snapshots include layout_spec_id.",
+      "pattern": "^feat_[A-Za-z0-9_\\-:.]+__.+__.+(?:__.+)?$"
+    },
+    "model_score_at_review": {
+      "type": "object",
+      "description": "Model and feature scores visible or active at review time.",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "integer",
+          "null"
+        ]
+      },
+      "properties": {
+        "lightgbm_classifier_v0": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "lightgbm_ranker_v0": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "critic_v0": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clip_positive_max_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dinov2_campaign_pos_nn_sim": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

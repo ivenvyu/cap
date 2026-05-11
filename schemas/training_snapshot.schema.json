@@ -1,0 +1,309 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cap.image_reranker.v2_2_1.training_snapshot",
+  "title": "TrainingSnapshot schema",
+  "description": "Training snapshot schema for CAP Image Reranker v2.2.1. Supports classifier and ranker snapshots.",
+  "type": "object",
+  "additionalProperties": false,
+  "x_metadata": {
+    "spec_version": "v2.2.1",
+    "freeze_date": "2026-05-10",
+    "decision_log": "docs/design_history/v2_2_1_freeze.md",
+    "status": "frozen",
+    "superseded_by": "v2.2.2_patch"
+  },
+  "required": [
+    "training_snapshot_id",
+    "snapshot_version",
+    "created_at",
+    "snapshot_kind",
+    "label_policy",
+    "aggregation_policy",
+    "source_review_event_ids",
+    "pair_id",
+    "campaign_id",
+    "image_id",
+    "feature_snapshot_id",
+    "label",
+    "label_status",
+    "decision_label",
+    "issue_tags"
+  ],
+  "properties": {
+    "training_snapshot_id": {
+      "type": "string",
+      "description": "Unique id for this training snapshot row.",
+      "pattern": "^train_snap_[A-Za-z0-9_\\-:.]+$"
+    },
+    "snapshot_version": {
+      "type": "string",
+      "description": "Training snapshot version, e.g. train_labels_v2_2_1_classifier_v0."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "snapshot_kind": {
+      "type": "string",
+      "enum": [
+        "classifier",
+        "ranker",
+        "critic"
+      ],
+      "description": "Classifier uses binary labels. Ranker uses graded relevance. Critic uses layout issue labels."
+    },
+    "label_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_name",
+        "label_mapping"
+      ],
+      "properties": {
+        "policy_name": {
+          "type": "string",
+          "enum": [
+            "classifier_binary_v1",
+            "ranker_relevance_v1",
+            "critic_layout_binary_v1"
+          ]
+        },
+        "label_mapping": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "description": "Mapping from review decision or issue tag to training label."
+        }
+      }
+    },
+    "aggregation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_name",
+        "primary_key",
+        "same_annotator_overwrite",
+        "multi_annotator_aggregation"
+      ],
+      "properties": {
+        "policy_name": {
+          "type": "string",
+          "default": "training_snapshot_aggregation_v1"
+        },
+        "primary_key": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "pair_id",
+              "layout_spec_id",
+              "preview_renderer_version"
+            ]
+          }
+        },
+        "same_annotator_overwrite": {
+          "type": "string",
+          "enum": [
+            "most_recent"
+          ]
+        },
+        "multi_annotator_aggregation": {
+          "type": "string",
+          "enum": [
+            "majority_vote_with_tie_break",
+            "not_applicable"
+          ]
+        },
+        "tie_break": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "most_recent",
+            null
+          ]
+        },
+        "log_disagreement": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "source_review_event_ids": {
+      "type": "array",
+      "description": "ReviewEvent ids used to produce this training row.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "pair_id": {
+      "type": "string"
+    },
+    "campaign_id": {
+      "type": "string"
+    },
+    "image_id": {
+      "type": "string"
+    },
+    "layout_spec_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "preview_renderer_version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "duplicate_group_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "feature_snapshot_id": {
+      "type": "string",
+      "description": "Foreign key to immutable PairFeatureSnapshot. Backward-compatible pattern; new v2.2.2 snapshots include layout_spec_id.",
+      "pattern": "^feat_[A-Za-z0-9_\\-:.]+__.+__.+(?:__.+)?$"
+    },
+    "label": {
+      "type": [
+        "integer",
+        "number",
+        "null"
+      ],
+      "description": "Final numeric training label. Classifier: 0/1. Ranker: 0/1/2/3. Critic: task-specific."
+    },
+    "label_status": {
+      "type": "string",
+      "enum": [
+        "human_reviewed",
+        "machine_suggested",
+        "pending_excluded",
+        "conflict_excluded",
+        "diagnostic_only"
+      ]
+    },
+    "decision_label": {
+      "type": "string",
+      "enum": [
+        "reject",
+        "acceptable",
+        "accept",
+        "best",
+        "pending",
+        "skip"
+      ]
+    },
+    "issue_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "season_mismatch",
+          "semantic_mismatch",
+          "brand_tone_mismatch",
+          "mood_mismatch",
+          "text_region_conflict",
+          "low_contrast",
+          "too_busy_background",
+          "visual_hierarchy_weak",
+          "duplicate_or_too_similar",
+          "already_used_in_recent_campaign",
+          "low_resolution",
+          "poor_composition"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "preference_rank": {
+      "type": [
+        "integer",
+        "number",
+        "null"
+      ]
+    },
+    "group_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Ranking group id. Usually campaign_id for ranker snapshots."
+    },
+    "relevance_grade": {
+      "type": [
+        "integer",
+        "number",
+        "null"
+      ],
+      "description": "Ranker-specific relevance grade. reject=0, acceptable=1, accept=2, best=3."
+    },
+    "disagreement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "has_disagreement"
+      ],
+      "properties": {
+        "has_disagreement": {
+          "type": "boolean"
+        },
+        "disagreement_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "positive_negative_conflict",
+            "accept_acceptable_conflict",
+            "layout_issue_conflict",
+            "multi_annotator_tie",
+            null
+          ]
+        },
+        "excluded_from_critic": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_bucket": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "queue_stage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "campaign_id": "phase1b_architecture_exhibition_visit",
+  "campaign_version": "phase1b_v1",
+  "campaign_family": "architecture_family",
+  "campaign_text": "건축의 선과 여백을 따라 만나는 사유원의 공간. 조용히 머무는 전시와 방문.",
+  "purpose_type": "exhibition",
+  "space_type": "architecture",
+  "season": "autumn",
+  "mood_tags": ["calm_elegant", "premium"],
+  "place_name": "소요헌",
+  "target_channel": "poster",
+  "brand_tone": "calm_premium"
+}
