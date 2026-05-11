@@ -1,0 +1,621 @@
+{
+  "campaign_summaries": {
+    "가을 정원 산책": {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "effective_count": 43,
+      "effective_examples": [
+        {
+          "image_id": "raw_04cecb0a9c",
+          "path": "gallery/정원/별유동천/space9_1_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_0c5ae66373",
+          "path": "gallery/정원/풍설기천년/space2_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_12f7b0ac6f",
+          "path": "arbor/tree/소사나무/nature4_2.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "4월",
+              "5월"
+            ],
+            "bloom_seasons": [
+              "봄"
+            ],
+            "bloom_values": [
+              "4월",
+              "5월",
+              "봄"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "KoreanHornbeam",
+            "plant_type": "tree"
+          },
+          "subject_name": "소사나무"
+        },
+        {
+          "image_id": "raw_19c9aa3ffa",
+          "path": "gallery/건축/몽몽미방/space7_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_1c06d4ca44",
+          "path": "gallery/정원/풍설기천년/space2_4_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_1e0c34f4ae",
+          "path": "arbor/flower/맥문동/nature7_1.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "5월",
+              "6월",
+              "7월",
+              "8월",
+              "9월"
+            ],
+            "bloom_seasons": [
+              "가을",
+              "여름"
+            ],
+            "bloom_values": [
+              "5월",
+              "6월",
+              "7월",
+              "8월",
+              "9월",
+              "가을",
+              "여름"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "Lilyturf",
+            "plant_type": "flower"
+          },
+          "subject_name": "맥문동"
+        },
+        {
+          "image_id": "raw_208d2d0895",
+          "path": "arbor/tree/느티나무/nature3_1.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "4월",
+              "5월"
+            ],
+            "bloom_seasons": [
+              "봄"
+            ],
+            "bloom_values": [
+              "4월",
+              "5월",
+              "봄"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "Zelkova",
+            "plant_type": "tree"
+          },
+          "subject_name": "느티나무"
+        },
+        {
+          "image_id": "raw_22d63fd86a",
+          "path": "gallery/건축/유원/space5_3_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_2507ee3d61",
+          "path": "gallery/건축/소요헌/space3_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_31b278973b",
+          "path": "gallery/정원/풍설기천년/space2_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_3431004177",
+          "path": "gallery/건축/현암/space1_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_34da4bc897",
+          "path": "gallery/건축/몽몽미방/space7_1_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        }
+      ],
+      "effective_subject_counts": {
+        "(no_subject)": 37,
+        "감나무": 1,
+        "느티나무": 1,
+        "맥문동": 1,
+        "모과나무": 1,
+        "소사나무": 2
+      },
+      "excluded_count": 7,
+      "excluded_examples": [
+        {
+          "image_id": "raw_0265165be9",
+          "path": "arbor/flower/산수국/nature11_2.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "산수국"
+        },
+        {
+          "image_id": "raw_787ceac869",
+          "path": "arbor/flower/진달래/nature15_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "진달래"
+        },
+        {
+          "image_id": "raw_a0ba1b33b2",
+          "path": "arbor/flower/참나리/nature5_2.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "참나리"
+        },
+        {
+          "image_id": "raw_bc5f26f1fa",
+          "path": "arbor/flower/산딸기/nature13_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "산딸기"
+        },
+        {
+          "image_id": "raw_c310b5be34",
+          "path": "arbor/flower/수련/nature10_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "수련"
+        },
+        {
+          "image_id": "raw_d5d3c67349",
+          "path": "arbor/flower/참나리/nature5_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "참나리"
+        },
+        {
+          "image_id": "raw_ebe21d1cfd",
+          "path": "arbor/flower/수련/nature10_2.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "수련"
+        }
+      ],
+      "excluded_subject_counts": {
+        "산딸기": 1,
+        "산수국": 1,
+        "수련": 2,
+        "진달래": 1,
+        "참나리": 2
+      }
+    },
+    "겨울 실내 전시": {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "effective_count": 50,
+      "effective_examples": [
+        {
+          "image_id": "raw_01461f5add",
+          "path": "gallery/건축/내심낙원/space4_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_06196affb7",
+          "path": "gallery/건축/소요헌/space3_4_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_0c55ceb0d6",
+          "path": "gallery/건축/소요헌/space3_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_0f37eb334a",
+          "path": "gallery/건축/몽몽미방/space7_3_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_171a797d54",
+          "path": "gallery/건축/와사/space6_4_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_19c9aa3ffa",
+          "path": "gallery/건축/몽몽미방/space7_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_1f83bfb714",
+          "path": "gallery/건축/소대/space12_4_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_22d63fd86a",
+          "path": "gallery/건축/유원/space5_3_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_31b278973b",
+          "path": "gallery/정원/풍설기천년/space2_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_34da4bc897",
+          "path": "gallery/건축/몽몽미방/space7_1_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_355f229fb9",
+          "path": "gallery/정원/몽몽미방/space7_4_4.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_36390c31f3",
+          "path": "gallery/건축/소대/space12_3_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        }
+      ],
+      "effective_subject_counts": {
+        "(no_subject)": 49,
+        "배롱나무": 1
+      },
+      "excluded_count": 0,
+      "excluded_examples": [],
+      "excluded_subject_counts": {}
+    },
+    "봄 식물 프로그램": {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "effective_count": 45,
+      "effective_examples": [
+        {
+          "image_id": "raw_05886ac033",
+          "path": "gallery/건축/소대/space12_3_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_0c55ceb0d6",
+          "path": "gallery/건축/소요헌/space3_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_0c5ae66373",
+          "path": "gallery/정원/풍설기천년/space2_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_19c9aa3ffa",
+          "path": "gallery/건축/몽몽미방/space7_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_22d63fd86a",
+          "path": "gallery/건축/유원/space5_3_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_241fc7cc41",
+          "path": "gallery/건축/소요헌/space3_4_5.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_2507ee3d61",
+          "path": "gallery/건축/소요헌/space3_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_297d31b4ef",
+          "path": "gallery/건축/내심낙원/space4_4_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_29a21d3e23",
+          "path": "gallery/건축/첨단/space8_3_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_31b278973b",
+          "path": "gallery/정원/풍설기천년/space2_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_3458f4c869",
+          "path": "gallery/건축/심포니6/space18_4_1.png",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_34da4bc897",
+          "path": "gallery/건축/몽몽미방/space7_1_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        }
+      ],
+      "effective_subject_counts": {
+        "(no_subject)": 44,
+        "진달래": 1
+      },
+      "excluded_count": 5,
+      "excluded_examples": [
+        {
+          "image_id": "raw_0265165be9",
+          "path": "arbor/flower/산수국/nature11_2.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "산수국"
+        },
+        {
+          "image_id": "raw_0a5bd0d204",
+          "path": "arbor/flower/산수국/nature11_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "산수국"
+        },
+        {
+          "image_id": "raw_1e0c34f4ae",
+          "path": "arbor/flower/맥문동/nature7_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "맥문동"
+        },
+        {
+          "image_id": "raw_a0ba1b33b2",
+          "path": "arbor/flower/참나리/nature5_2.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "참나리"
+        },
+        {
+          "image_id": "raw_c310b5be34",
+          "path": "arbor/flower/수련/nature10_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "수련"
+        }
+      ],
+      "excluded_subject_counts": {
+        "맥문동": 1,
+        "산수국": 2,
+        "수련": 1,
+        "참나리": 1
+      }
+    },
+    "여름 정원 산책": {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "effective_count": 49,
+      "effective_examples": [
+        {
+          "image_id": "raw_0265165be9",
+          "path": "arbor/flower/산수국/nature11_2.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "6월",
+              "7월",
+              "8월"
+            ],
+            "bloom_seasons": [
+              "여름"
+            ],
+            "bloom_values": [
+              "6월",
+              "7월",
+              "8월",
+              "여름"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "MountainHydrangea",
+            "plant_type": "flower"
+          },
+          "subject_name": "산수국"
+        },
+        {
+          "image_id": "raw_04cecb0a9c",
+          "path": "gallery/정원/별유동천/space9_1_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_0a5bd0d204",
+          "path": "arbor/flower/산수국/nature11_1.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "6월",
+              "7월",
+              "8월"
+            ],
+            "bloom_seasons": [
+              "여름"
+            ],
+            "bloom_values": [
+              "6월",
+              "7월",
+              "8월",
+              "여름"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "MountainHydrangea",
+            "plant_type": "flower"
+          },
+          "subject_name": "산수국"
+        },
+        {
+          "image_id": "raw_0c5ae66373",
+          "path": "gallery/정원/풍설기천년/space2_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_19c9aa3ffa",
+          "path": "gallery/건축/몽몽미방/space7_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_1a9d7aebc4",
+          "path": "arbor/tree/느티나무/nature3_2.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "4월",
+              "5월"
+            ],
+            "bloom_seasons": [
+              "봄"
+            ],
+            "bloom_values": [
+              "4월",
+              "5월",
+              "봄"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "Zelkova",
+            "plant_type": "tree"
+          },
+          "subject_name": "느티나무"
+        },
+        {
+          "image_id": "raw_1e0c34f4ae",
+          "path": "arbor/flower/맥문동/nature7_1.jpg",
+          "plant_bloom_prior": {
+            "bloom_months": [
+              "5월",
+              "6월",
+              "7월",
+              "8월",
+              "9월"
+            ],
+            "bloom_seasons": [
+              "가을",
+              "여름"
+            ],
+            "bloom_values": [
+              "5월",
+              "6월",
+              "7월",
+              "8월",
+              "9월",
+              "가을",
+              "여름"
+            ],
+            "confidence_statuses": [
+              "domain_knowledge_prior"
+            ],
+            "plant_id": "Lilyturf",
+            "plant_type": "flower"
+          },
+          "subject_name": "맥문동"
+        },
+        {
+          "image_id": "raw_22d63fd86a",
+          "path": "gallery/건축/유원/space5_3_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_2507ee3d61",
+          "path": "gallery/건축/소요헌/space3_4_1.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_297d31b4ef",
+          "path": "gallery/건축/내심낙원/space4_4_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_31b278973b",
+          "path": "gallery/정원/풍설기천년/space2_1_2.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        },
+        {
+          "image_id": "raw_34afd0c0b1",
+          "path": "gallery/건축/내심낙원/space4_1_3.jpg",
+          "plant_bloom_prior": null,
+          "subject_name": null
+        }
+      ],
+      "effective_subject_counts": {
+        "(no_subject)": 36,
+        "느티나무": 1,
+        "매화나무": 1,
+        "맥문동": 1,
+        "배롱나무": 1,
+        "산수국": 2,
+        "수련": 2,
+        "쑥부쟁이": 1,
+        "잔대": 2,
+        "참나리": 2
+      },
+      "excluded_count": 1,
+      "excluded_examples": [
+        {
+          "image_id": "raw_787ceac869",
+          "path": "arbor/flower/진달래/nature15_1.jpg",
+          "reason": "flower_not_in_requested_season",
+          "subject_name": "진달래"
+        }
+      ],
+      "excluded_subject_counts": {
+        "진달래": 1
+      }
+    }
+  },
+  "consistency_check": {
+    "conflict_examples": [],
+    "excluded_and_effective_same_campaign_conflicts": 0,
+    "passed": true
+  },
+  "effective_campaign_counts": {
+    "phase1a_summer_garden_walk": 49,
+    "phase1b_architecture_exhibition_visit": 50,
+    "phase1b_autumn_garden_walk": 43,
+    "phase1b_botanical_spring_program": 45,
+    "phase1b_indoor_gallery_winter_art": 50,
+    "phase1b_summer_garden_walk": 49
+  },
+  "excluded_campaign_counts": {
+    "phase1a_summer_garden_walk": 1,
+    "phase1b_autumn_garden_walk": 7,
+    "phase1b_botanical_spring_program": 5,
+    "phase1b_summer_garden_walk": 1
+  },
+  "image_count": 206,
+  "images_with_effective_campaigns": 112,
+  "images_with_exclusions": 9,
+  "index": "data/search/ontology_effective_search_index_v1.jsonl",
+  "report_name": "ontology_effective_search_index_query_smoke_v1",
+  "해석": "이 smoke test는 effective search index에서 flower-season exclusion이 적용된 campaign-image pair가 effective_campaigns에 동시에 남아 있지 않은지 확인한다. 검색 품질의 최종 평가는 아니며, DB export 일관성 확인용이다."
+}

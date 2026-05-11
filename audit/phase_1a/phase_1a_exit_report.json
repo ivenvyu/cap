@@ -1,0 +1,95 @@
+{
+  "artifact_paths": {
+    "clip_embeddings": "data/embeddings/clip_image_embeddings.npy",
+    "clip_index": "data/embeddings/clip_image_index.csv",
+    "dinov2_clusters": "data/ontology/dinov2_clusters_v1.jsonl",
+    "dinov2_embeddings": "data/embeddings/dinov2_image_embeddings.npy",
+    "dinov2_index": "data/embeddings/dinov2_image_index.csv",
+    "duplicate_groups": "data/ontology/duplicate_groups_v1.jsonl",
+    "pair_feature_snapshots": "data/feature_snapshots/v2_2_1/phase1a_summer_garden_walk.jsonl",
+    "raw_manifest": "data/ontology/raw_image_manifest_v2_2_1.jsonl",
+    "region_safety": "data/ontology/region_safety_maps_v1.jsonl",
+    "retrieval_candidates": "data/retrieval/clip_retrieval_candidates_v1.jsonl",
+    "review_events": "data/review/review_events_phase1a_v1.jsonl",
+    "review_queue": "data/review/review_queue_phase1a_v1.csv",
+    "training_classifier": "data/review/training_snapshot_phase1a_classifier_v1.jsonl",
+    "training_ranker": "data/review/training_snapshot_phase1a_ranker_v1.jsonl"
+  },
+  "checks": {
+    "cold_start_review_queue_generated": true,
+    "dinov2_cluster_assignment_completed": true,
+    "duplicate_group_assignment_completed": true,
+    "embedding_index_consistency_valid": true,
+    "phase1a_artifact_consistency_valid": true,
+    "region_safety_map_completed": true,
+    "sample_feature_snapshot_valid": true,
+    "sample_review_event_valid": true,
+    "sample_training_snapshot_valid": true
+  },
+  "counts": {
+    "clip_embedding_count": 206,
+    "clip_embedding_dim": 512,
+    "clip_index_count": 206,
+    "cluster_coarse_count": 20,
+    "cluster_fine_count": 182,
+    "cluster_mid_count": 100,
+    "cluster_rows": 206,
+    "dinov2_embedding_count": 206,
+    "dinov2_embedding_dim": 768,
+    "dinov2_index_count": 206,
+    "duplicate_group_count": 182,
+    "duplicate_group_rows": 206,
+    "exact_duplicate_rows": 48,
+    "pair_feature_snapshot_count": 50,
+    "raw_gallery_count": 206,
+    "region_safety_count": 206,
+    "regions_per_image": 16,
+    "retrieval_candidate_count": 50,
+    "review_event_count": 30,
+    "review_queue_row_count": 30,
+    "training_classifier_rows": 30,
+    "training_ranker_rows": 30
+  },
+  "created_at": "2026-05-10T13:42:11.865989Z",
+  "diagnostic_warnings": [
+    "Phase 1a validates end-to-end pipeline completeness, not production model quality.",
+    "All CLIP, DINOv2, region safety, retrieval, and queue scores are diagnostic_only.",
+    "Only one campaign was used, so ranker/generalization metrics are not valid.",
+    "No calibrated pass/fail threshold was produced.",
+    "Visual Critic is not trained in Phase 1a.",
+    "Final PPTX/Canva export quality was not evaluated."
+  ],
+  "exit_status": "pass_with_diagnostic_warnings",
+  "phase": "phase_1a",
+  "review_summary": {
+    "classifier_label_counts": {
+      "0": 13,
+      "1": 17
+    },
+    "queue_bucket_counts": {
+      "clip_high_model_low": 12,
+      "cluster_diversity": 8,
+      "layout_safe_coverage": 6,
+      "random_coverage": 1,
+      "uncertainty": 3
+    },
+    "ranker_label_counts": {
+      "0": 13,
+      "1": 7,
+      "2": 10
+    },
+    "review_event_issue_tag_counts": {
+      "semantic_mismatch": 12,
+      "too_busy_background": 1
+    },
+    "review_event_label_counts": {
+      "accept": 10,
+      "acceptable": 7,
+      "reject": 13
+    }
+  },
+  "run_id": "phase1a_summer_garden_walk",
+  "score_status": "diagnostic_only",
+  "spec_version": "v2.2.1",
+  "threshold_policy": "no final pass/fail threshold produced"
+}
