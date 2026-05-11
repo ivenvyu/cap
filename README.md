@@ -34,6 +34,7 @@ Campaign 정보 (계절/프로그램/공간/분위기)
 
 ## 실행 환경
 ```bash
+
 conda env create -f environment.yaml
 conda activate cap_embed
 ```
@@ -52,6 +53,7 @@ conda activate cap_embed
 
 ### 검증 스크립트 (즉시 실행 가능)
 ```bash
+
 # Phase 0 schema cross-file consistency 검증 (16개 항목)
 python scripts/validate_phase0_specs.py
 
@@ -67,12 +69,14 @@ python scripts/validate_ontology_tag_assertions.py
 
 ### Classifier 학습 (즉시 실행 가능)
 ```bash
+
 # v2.2.5 진단용 classifier 학습
 python scripts/train_phase1b_classifier_smoke_v2_2_5_from_jsonl.py
 ```
 
 ### 이미지 데이테 폴더 추가
 ```bash
+
 # raw 폴더를 data/raw로 넣어주세요!!!
 
 ### 추천 shortlist 생성
@@ -85,6 +89,7 @@ python scripts/build_phase1b_recommendation_shortlist_v2_2_5_global_dedupe.py
 
 ### 추천 결과 생성 확인
 ```bash
+
 # open data/review/phase1b/v2_2_5/shortlist_global_dedupe/index.html (사파리에서 안 열리면 크롬에서 열어주세요)
 
 
