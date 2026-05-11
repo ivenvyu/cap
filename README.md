@@ -78,8 +78,14 @@ python scripts/train_phase1b_classifier_smoke_v2_2_5_from_jsonl.py
 
 ```bash
 # candidate score snapshot 필요 (data/retrieval/phase1b/v2_2_5/)
-python scripts/build_phase1b_recommendation_shortlist_v2_2_5.py
+python scripts/score_phase1b_candidates_v2_2_5_from_jsonl.py
+python scripts/build_phase1b_recommendation_shortlist_v2_2_5_global_dedupe.py
 ```
+
+### 추천 결과 생성 확인
+```bash
+# open data/review/phase1b/v2_2_5/shortlist_global_dedupe/index.html
+
 
 ### 전체 파이프라인 (이미지 pool 확장 시)
 
