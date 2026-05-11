@@ -1,4 +1,4 @@
-# CAP Image Reranker
+
 ## 홍보물 이미지 자동 추천 시스템
 
 ---
