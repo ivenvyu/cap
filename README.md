@@ -33,7 +33,6 @@ Campaign 정보 (계절/프로그램/공간/분위기)
 ---
 
 ## 실행 환경
-
 ```bash
 conda env create -f environment.yaml
 conda activate cap_embed
@@ -52,7 +51,6 @@ conda activate cap_embed
 ## 스크립트 실행 가이드
 
 ### 검증 스크립트 (즉시 실행 가능)
-
 ```bash
 # Phase 0 schema cross-file consistency 검증 (16개 항목)
 python scripts/validate_phase0_specs.py
@@ -68,7 +66,6 @@ python scripts/validate_ontology_tag_assertions.py
 ```
 
 ### Classifier 학습 (즉시 실행 가능)
-
 ```bash
 # v2.2.5 진단용 classifier 학습
 python scripts/train_phase1b_classifier_smoke_v2_2_5_from_jsonl.py
