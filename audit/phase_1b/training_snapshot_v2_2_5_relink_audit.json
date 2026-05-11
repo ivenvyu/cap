@@ -1,0 +1,61 @@
+{
+  "classifier": {
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 32,
+      "phase1b_autumn_garden_walk": 32,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_indoor_gallery_winter_art": 5,
+      "phase1b_summer_garden_walk": 32
+    },
+    "duplicate_canonicalization_status_counts": {
+      "exact_duplicate_canonicalized": 33,
+      "not_in_exact_duplicate_canonical_map": 98
+    },
+    "input_rows": 131,
+    "label_counts": {
+      "0": 73,
+      "1": 58
+    },
+    "missing_rows": 0,
+    "output_rows": 131
+  },
+  "created_at": "2026-05-11T10:04:10.502911Z",
+  "event": "training_snapshot_v2_2_5_relink_done",
+  "inputs": {
+    "classifier_in": "data/review/phase1b/v2_2_3/training_snapshot_classifier_v2_2_3.jsonl",
+    "feature_glob": "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/*.jsonl",
+    "ranker_in": "data/review/phase1b/v2_2_3/training_snapshot_ranker_v2_2_3.jsonl"
+  },
+  "missing": {
+    "classifier": [],
+    "ranker": []
+  },
+  "outputs": {
+    "classifier": "data/review/phase1b/v2_2_5/training_snapshot_classifier_v2_2_5.jsonl",
+    "ranker": "data/review/phase1b/v2_2_5/training_snapshot_ranker_v2_2_5.jsonl"
+  },
+  "ranker": {
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 32,
+      "phase1b_autumn_garden_walk": 32,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_indoor_gallery_winter_art": 5,
+      "phase1b_summer_garden_walk": 32
+    },
+    "duplicate_canonicalization_status_counts": {
+      "exact_duplicate_canonicalized": 33,
+      "not_in_exact_duplicate_canonical_map": 98
+    },
+    "input_rows": 131,
+    "label_counts": {
+      "0": 73,
+      "1": 26,
+      "2": 29,
+      "3": 3
+    },
+    "missing_rows": 0,
+    "output_rows": 131
+  },
+  "score_status": "diagnostic_only",
+  "threshold_status": "no_calibrated_threshold"
+}

@@ -1,0 +1,166 @@
+metadata:
+  spec_version: v2.2.1
+  phase_introduced: phase_1b
+  status: active
+  decision_log: docs/design_history/phase_1b_classifier_smoke_summary.md
+  superseded_by: null
+
+name: layout_treatment_preview_policy_v1
+description: >
+  Phase 1b layout preview policy. This policy treats layout/text-region problems
+  as treatment-selection signals, not immediate candidate rejection signals.
+
+scope:
+  renderer_role: reviewer_audit_preview
+  preview_object: campaign_image_layout_treatment_candidate
+  score_status: diagnostic_only
+  candidate_support_explanation_status: deferred_from_phase_1b
+  final_design_renderer: false
+  final_poster_quality_claim: false
+
+core_decision:
+  campaign_decision:
+    source: existing_review_decision
+    allowed_values:
+      "0": reject
+      "1": acceptable
+      "2": accept
+    meaning: >
+      Whether the image is suitable for the campaign in semantic, seasonal,
+      compositional, and brand-tone terms.
+
+  layout_treatment_decision:
+    source: new_layout_treatment_review
+    meaning: >
+      Which design treatment is needed to make the candidate usable as a
+      promotional material layout. This does not override campaign_decision.
+
+separation_rules:
+  - text_region_conflict_is_not_immediate_reject
+  - low_contrast_is_not_immediate_reject
+  - too_busy_background_is_not_immediate_reject
+  - layout_issue_tags_indicate_treatment_need
+  - campaign_unsuitability_and_layout_treatment_need_must_be_recorded_separately
+
+contrast_reference:
+  source_type: external_standard_explicitly_cited_and_scoped
+  standard_name: WCAG_2_2_SC_1_4_3_Contrast_Minimum
+  scope: diagnostic_preview_text_contrast_only
+  normal_text_min_contrast_ratio: 4.5
+  large_text_min_contrast_ratio: 3.0
+  notes:
+    - The contrast reference is used only to create diagnostic preview variants.
+    - It is not an accept/reject threshold.
+    - It is not a poster-quality threshold.
+    - It does not calibrate critic scores.
+
+treatment_options:
+  use_as_is:
+    meaning: >
+      Text can likely be placed without additional background treatment.
+    review_status: human_labeled_treatment
+
+  needs_dark_scrim:
+    meaning: >
+      Candidate likely needs a dark overlay or darkened text region to support light text.
+    review_status: human_labeled_treatment
+
+  needs_light_scrim:
+    meaning: >
+      Candidate likely needs a light overlay or lightened text region to support dark text.
+    review_status: human_labeled_treatment
+
+  needs_gradient_scrim:
+    meaning: >
+      Candidate likely needs local gradient/scrim around text regions rather than global darkening.
+    review_status: human_labeled_treatment
+
+  needs_split_panel:
+    meaning: >
+      Candidate likely works better when image and text are spatially separated.
+      This corresponds to the practical image/text split pattern observed in promotional design.
+    review_status: human_labeled_treatment
+
+  needs_text_color_swap:
+    meaning: >
+      Candidate may be usable by changing text color rather than changing image treatment.
+    review_status: human_labeled_treatment
+
+  needs_manual_design:
+    meaning: >
+      Candidate may be usable, but simple predefined treatments are insufficient.
+    review_status: human_labeled_treatment
+
+  unusable_even_with_treatment:
+    meaning: >
+      Candidate remains unsuitable for layout even after basic treatment options.
+      This is the only layout treatment decision that may support a layout-level rejection.
+    review_status: human_labeled_treatment
+
+preview_variants:
+  full_bleed_plain:
+    treatment_option: use_as_is
+    purpose: show image with title/info regions and no treatment
+
+  full_bleed_dark_scrim:
+    treatment_option: needs_dark_scrim
+    purpose: show whether light text could be supported by darkening the image or text region
+    contrast_reference: WCAG_2_2_SC_1_4_3_Contrast_Minimum
+
+  full_bleed_light_scrim:
+    treatment_option: needs_light_scrim
+    purpose: show whether dark text could be supported by lightening the image or text region
+    contrast_reference: WCAG_2_2_SC_1_4_3_Contrast_Minimum
+
+  local_gradient_or_scrim:
+    treatment_option: needs_gradient_scrim
+    purpose: show whether local text-region treatment is enough
+
+  split_image_text_panel:
+    treatment_option: needs_split_panel
+    purpose: show whether separating image and text is more appropriate than overlaying text
+
+  text_color_alternative:
+    treatment_option: needs_text_color_swap
+    purpose: compare light-text and dark-text feasibility at the same text region
+
+layout_treatment_review_event:
+  required_fields:
+    - treatment_review_event_id
+    - campaign_id
+    - image_id
+    - pair_id
+    - layout_spec_id
+    - feature_snapshot_id
+    - preview_renderer_version
+    - campaign_decision
+    - layout_treatment_decision
+    - layout_issue_tags
+    - reviewer_notes
+    - timestamp
+
+  allowed_layout_issue_tags:
+    - text_region_conflict
+    - low_contrast
+    - too_busy_background
+    - visual_hierarchy_weak
+    - subject_occlusion_risk
+    - treatment_required
+    - manual_design_required
+
+  allowed_layout_treatment_decisions:
+    - use_as_is
+    - needs_dark_scrim
+    - needs_light_scrim
+    - needs_gradient_scrim
+    - needs_split_panel
+    - needs_text_color_swap
+    - needs_manual_design
+    - unusable_even_with_treatment
+
+non_claims:
+  - This policy does not produce final poster design.
+  - This policy does not produce calibrated accept/reject thresholds.
+  - This policy does not train a visual critic.
+  - This policy does not replace human review.
+  - This policy does not introduce candidate-level support explanation.

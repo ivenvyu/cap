@@ -1,0 +1,500 @@
+{
+  "dataset": {
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 30,
+      "phase1b_autumn_garden_walk": 30,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_summer_garden_walk": 30
+    },
+    "feature_columns": [
+      "brightness",
+      "campaign_is_garden",
+      "campaign_is_summer",
+      "campaign_is_walking_program",
+      "clip_margin",
+      "clip_negative_max_sim",
+      "clip_negative_mean_sim",
+      "clip_positive_max_sim",
+      "clip_positive_mean_sim",
+      "clip_rank_percentile",
+      "contrast",
+      "dinov2_campaign_anchor_missing",
+      "dinov2_campaign_neg_count",
+      "dinov2_campaign_pos_count",
+      "dinov2_cluster_review_count_coarse",
+      "dinov2_cluster_review_count_fine",
+      "dinov2_cluster_review_count_mid",
+      "dinov2_duplicate_group_seen",
+      "dinov2_family_anchor_missing",
+      "dinov2_family_support_count",
+      "edge_density",
+      "image_category_course",
+      "image_category_flower",
+      "image_category_gallery",
+      "image_category_tree",
+      "image_season_unknown",
+      "info_region_safe_score",
+      "path_has_architecture",
+      "path_has_garden",
+      "required_region_safe_mean",
+      "required_region_safe_min",
+      "saturation",
+      "title_region_safe_score"
+    ],
+    "feature_count": 33,
+    "label_counts": {
+      "0": 70,
+      "1": 50
+    },
+    "rows": 120
+  },
+  "inputs": {
+    "db": "data/db/cap_reranker_ontology.db",
+    "training_set_id": "phase1b_filtered_classifier_v1"
+  },
+  "interpretation": {
+    "ko": "이 결과는 DB source-of-truth 기준 classifier smoke training 진단이다. DB의 named training set에서 120 rows를 읽어 feature matrix, campaign-held-out loop, model serialization이 동작하는지 확인한다. production quality 또는 calibrated threshold를 주장하지 않는다."
+  },
+  "leave_one_campaign_out": {
+    "folds": [
+      {
+        "fold": 1,
+        "heldout_campaign": "phase1b_architecture_exhibition_visit",
+        "metrics": {
+          "accuracy": 0.4,
+          "average_precision": 0.5410305336928368,
+          "balanced_accuracy": 0.35,
+          "confusion_matrix": [
+            [
+              2,
+              8
+            ],
+            [
+              10,
+              10
+            ]
+          ],
+          "confusion_matrix_labels": [
+            "0",
+            "1"
+          ],
+          "diagnostic_threshold": 0.5,
+          "label_counts": {
+            "0": 10,
+            "1": 20
+          },
+          "n": 30,
+          "per_class": {
+            "0": {
+              "f1": 0.18181818181818182,
+              "precision": 0.16666666666666666,
+              "recall": 0.2,
+              "support": 10
+            },
+            "1": {
+              "f1": 0.5263157894736842,
+              "precision": 0.5555555555555556,
+              "recall": 0.5,
+              "support": 20
+            }
+          },
+          "roc_auc": 0.25999999999999995,
+          "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+        },
+        "test_label_counts": {
+          "0": 10,
+          "1": 20
+        },
+        "test_n": 30,
+        "train_label_counts": {
+          "0": 60,
+          "1": 30
+        },
+        "train_n": 90
+      },
+      {
+        "fold": 2,
+        "heldout_campaign": "phase1b_autumn_garden_walk",
+        "metrics": {
+          "accuracy": 0.6666666666666666,
+          "average_precision": 0.5285959076357994,
+          "balanced_accuracy": 0.6349206349206349,
+          "confusion_matrix": [
+            [
+              15,
+              6
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "confusion_matrix_labels": [
+            "0",
+            "1"
+          ],
+          "diagnostic_threshold": 0.5,
+          "label_counts": {
+            "0": 21,
+            "1": 9
+          },
+          "n": 30,
+          "per_class": {
+            "0": {
+              "f1": 0.75,
+              "precision": 0.7894736842105263,
+              "recall": 0.7142857142857143,
+              "support": 21
+            },
+            "1": {
+              "f1": 0.5,
+              "precision": 0.45454545454545453,
+              "recall": 0.5555555555555556,
+              "support": 9
+            }
+          },
+          "roc_auc": 0.6190476190476191,
+          "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+        },
+        "test_label_counts": {
+          "0": 21,
+          "1": 9
+        },
+        "test_n": 30,
+        "train_label_counts": {
+          "0": 49,
+          "1": 41
+        },
+        "train_n": 90
+      },
+      {
+        "fold": 3,
+        "heldout_campaign": "phase1b_botanical_spring_program",
+        "metrics": {
+          "accuracy": 0.6333333333333333,
+          "average_precision": 0.49353922860316723,
+          "balanced_accuracy": 0.6,
+          "confusion_matrix": [
+            [
+              14,
+              6
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "confusion_matrix_labels": [
+            "0",
+            "1"
+          ],
+          "diagnostic_threshold": 0.5,
+          "label_counts": {
+            "0": 20,
+            "1": 10
+          },
+          "n": 30,
+          "per_class": {
+            "0": {
+              "f1": 0.717948717948718,
+              "precision": 0.7368421052631579,
+              "recall": 0.7,
+              "support": 20
+            },
+            "1": {
+              "f1": 0.47619047619047616,
+              "precision": 0.45454545454545453,
+              "recall": 0.5,
+              "support": 10
+            }
+          },
+          "roc_auc": 0.615,
+          "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+        },
+        "test_label_counts": {
+          "0": 20,
+          "1": 10
+        },
+        "test_n": 30,
+        "train_label_counts": {
+          "0": 50,
+          "1": 40
+        },
+        "train_n": 90
+      },
+      {
+        "fold": 4,
+        "heldout_campaign": "phase1b_summer_garden_walk",
+        "metrics": {
+          "accuracy": 0.6666666666666666,
+          "average_precision": 0.5703172644349115,
+          "balanced_accuracy": 0.6220095693779905,
+          "confusion_matrix": [
+            [
+              15,
+              4
+            ],
+            [
+              6,
+              5
+            ]
+          ],
+          "confusion_matrix_labels": [
+            "0",
+            "1"
+          ],
+          "diagnostic_threshold": 0.5,
+          "label_counts": {
+            "0": 19,
+            "1": 11
+          },
+          "n": 30,
+          "per_class": {
+            "0": {
+              "f1": 0.75,
+              "precision": 0.7142857142857143,
+              "recall": 0.7894736842105263,
+              "support": 19
+            },
+            "1": {
+              "f1": 0.5,
+              "precision": 0.5555555555555556,
+              "recall": 0.45454545454545453,
+              "support": 11
+            }
+          },
+          "roc_auc": 0.7129186602870814,
+          "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+        },
+        "test_label_counts": {
+          "0": 19,
+          "1": 11
+        },
+        "test_n": 30,
+        "train_label_counts": {
+          "0": 51,
+          "1": 39
+        },
+        "train_n": 90
+      }
+    ],
+    "out_of_fold_metrics": {
+      "accuracy": 0.5916666666666667,
+      "average_precision": 0.4792324459486294,
+      "balanced_accuracy": 0.5785714285714285,
+      "confusion_matrix": [
+        [
+          46,
+          24
+        ],
+        [
+          25,
+          25
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "0",
+        "1"
+      ],
+      "diagnostic_threshold": 0.5,
+      "label_counts": {
+        "0": 70,
+        "1": 50
+      },
+      "n": 120,
+      "per_class": {
+        "0": {
+          "f1": 0.6524822695035462,
+          "precision": 0.647887323943662,
+          "recall": 0.6571428571428571,
+          "support": 70
+        },
+        "1": {
+          "f1": 0.5050505050505051,
+          "precision": 0.5102040816326531,
+          "recall": 0.5,
+          "support": 50
+        }
+      },
+      "roc_auc": 0.5977142857142856,
+      "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+    }
+  },
+  "metadata": {
+    "created_at": "2026-05-10T22:26:00.994604Z",
+    "db_role": "operational_source_of_truth",
+    "phase": "phase_1b",
+    "report_status": "classifier_smoke_training_diagnostic_db_first",
+    "score_status": "diagnostic_only",
+    "spec_version": "v2.2.1",
+    "threshold_status": "no_calibrated_threshold"
+  },
+  "model": {
+    "calibration": "uncalibrated",
+    "class_weight": "balanced",
+    "kind": "sklearn_logistic_regression",
+    "purpose": "db_first_smoke_training_feature_plumbing_check"
+  },
+  "non_claims": [
+    "production reranker quality를 주장하지 않는다.",
+    "calibrated accept/reject threshold를 주장하지 않는다.",
+    "automatic accept/reject에 사용하지 않는다.",
+    "candidate-level support explanation을 생성하지 않는다."
+  ],
+  "outputs": {
+    "model_out": "models/phase1b_smoke/classifier_smoke_model_db.joblib",
+    "report_out": "audit/phase_1b/phase_1b_classifier_smoke_report_db.json"
+  },
+  "top_abs_coefficients": [
+    {
+      "abs_coefficient": 0.9373698467318944,
+      "coefficient": 0.9373698467318944,
+      "feature": "clip_positive_mean_sim"
+    },
+    {
+      "abs_coefficient": 0.6273990987961945,
+      "coefficient": 0.6273990987961945,
+      "feature": "clip_negative_max_sim"
+    },
+    {
+      "abs_coefficient": 0.5339730191357356,
+      "coefficient": -0.5339730191357356,
+      "feature": "clip_negative_mean_sim"
+    },
+    {
+      "abs_coefficient": 0.48404366856849673,
+      "coefficient": 0.48404366856849673,
+      "feature": "edge_density"
+    },
+    {
+      "abs_coefficient": 0.4796152840359372,
+      "coefficient": 0.4796152840359372,
+      "feature": "clip_positive_max_sim"
+    },
+    {
+      "abs_coefficient": 0.45745384234779995,
+      "coefficient": -0.45745384234779995,
+      "feature": "image_category_flower"
+    },
+    {
+      "abs_coefficient": 0.37819010155956034,
+      "coefficient": -0.37819010155956034,
+      "feature": "saturation"
+    },
+    {
+      "abs_coefficient": 0.3281006592150902,
+      "coefficient": 0.3281006592150902,
+      "feature": "image_category_tree"
+    },
+    {
+      "abs_coefficient": 0.3251190107904187,
+      "coefficient": 0.3251190107904187,
+      "feature": "path_has_architecture"
+    },
+    {
+      "abs_coefficient": 0.2950755304598143,
+      "coefficient": 0.2950755304598143,
+      "feature": "image_category_gallery"
+    },
+    {
+      "abs_coefficient": 0.1759497547517117,
+      "coefficient": -0.1759497547517117,
+      "feature": "campaign_is_garden"
+    },
+    {
+      "abs_coefficient": 0.1759497547517117,
+      "coefficient": -0.1759497547517117,
+      "feature": "campaign_is_walking_program"
+    },
+    {
+      "abs_coefficient": 0.17385616677628254,
+      "coefficient": 0.17385616677628254,
+      "feature": "required_region_safe_min"
+    },
+    {
+      "abs_coefficient": 0.16862922045864506,
+      "coefficient": 0.16862922045864506,
+      "feature": "brightness"
+    },
+    {
+      "abs_coefficient": 0.16270094579104097,
+      "coefficient": 0.16270094579104097,
+      "feature": "campaign_is_summer"
+    },
+    {
+      "abs_coefficient": 0.13129783487553112,
+      "coefficient": 0.13129783487553112,
+      "feature": "title_region_safe_score"
+    },
+    {
+      "abs_coefficient": 0.12597405294894407,
+      "coefficient": -0.12597405294894407,
+      "feature": "contrast"
+    },
+    {
+      "abs_coefficient": 0.10769261134643425,
+      "coefficient": -0.10769261134643425,
+      "feature": "path_has_garden"
+    },
+    {
+      "abs_coefficient": 0.09301352577052842,
+      "coefficient": 0.09301352577052842,
+      "feature": "required_region_safe_mean"
+    },
+    {
+      "abs_coefficient": 0.05729411899196442,
+      "coefficient": -0.05729411899196442,
+      "feature": "clip_rank_percentile"
+    },
+    {
+      "abs_coefficient": 0.04713009318250403,
+      "coefficient": 0.04713009318250403,
+      "feature": "clip_margin"
+    },
+    {
+      "abs_coefficient": 0.023395645994243798,
+      "coefficient": 0.023395645994243798,
+      "feature": "info_region_safe_score"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_campaign_anchor_missing"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_campaign_neg_count"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_campaign_pos_count"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_cluster_review_count_coarse"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_cluster_review_count_fine"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_cluster_review_count_mid"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_duplicate_group_seen"
+    },
+    {
+      "abs_coefficient": 0.0,
+      "coefficient": 0.0,
+      "feature": "dinov2_family_anchor_missing"
+    }
+  ]
+}

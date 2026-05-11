@@ -1,0 +1,99 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: draft_patch_v2_2_2
+  superseded_by: null
+
+name: feature_profile_v2_2_2
+description: >
+  Diagnostic feature profile for v2.2.2 stabilization. This file does not set
+  final pass/fail thresholds. It classifies expected feature columns and tells
+  downstream training code how to treat placeholder or unavailable signals.
+
+policy:
+  threshold_status: diagnostic_only
+  no_manual_aesthetic_constants: true
+  final_pass_fail_allowed_only_for:
+    - missing_required_feature_key
+    - malformed_features_json
+  notes: >
+    Null rate, constant rate, and cardinality are reported for diagnosis only.
+    They must not be converted into final acceptance thresholds unless tied to
+    empirical reference percentiles, calibrated validation thresholds, human
+    labeled preference model outputs, or an explicitly cited external standard.
+
+feature_groups:
+  clip_semantic:
+    training_action: active_diagnostic
+    features:
+      - clip_positive_max_sim
+      - clip_positive_mean_sim
+      - clip_negative_max_sim
+      - clip_negative_mean_sim
+      - clip_margin
+      - clip_rank_percentile
+
+  dinov2_anchor:
+    training_action: active_when_non_null
+    features:
+      - dinov2_campaign_pos_nn_sim
+      - dinov2_campaign_neg_nn_sim
+      - dinov2_campaign_margin
+      - dinov2_campaign_pos_count
+      - dinov2_campaign_neg_count
+      - dinov2_campaign_anchor_missing
+      - dinov2_family_pos_nn_sim
+      - dinov2_family_neg_nn_sim
+      - dinov2_family_margin
+      - dinov2_family_support_count
+      - dinov2_family_anchor_missing
+
+  dinov2_cluster_duplicate:
+    training_action: active_when_non_null
+    features:
+      - dinov2_cluster_id_coarse
+      - dinov2_cluster_id_mid
+      - dinov2_cluster_id_fine
+      - dinov2_cluster_positive_rate_coarse
+      - dinov2_cluster_positive_rate_mid
+      - dinov2_cluster_positive_rate_fine
+      - dinov2_cluster_review_count_coarse
+      - dinov2_cluster_review_count_mid
+      - dinov2_cluster_review_count_fine
+      - dinov2_duplicate_group_seen
+
+  layout_safety:
+    training_action: active_diagnostic
+    features:
+      - required_region_safe_mean
+      - required_region_safe_min
+      - title_region_safe_score
+      - info_region_safe_score
+      - edge_density
+      - contrast
+      - brightness
+      - saturation
+
+  critic:
+    training_action: exclude_until_critic_available
+    features:
+      - critic_text_region_conflict_score
+      - critic_low_contrast_score
+      - critic_too_busy_background_score
+      - critic_visual_hierarchy_risk_score
+      - critic_layout_fit_score
+
+  weak_metadata:
+    training_action: active_diagnostic_low_priority
+    features:
+      - image_season_unknown
+      - image_category_gallery
+      - image_category_tree
+      - image_category_flower
+      - image_category_course
+      - path_has_architecture
+      - path_has_garden
+      - campaign_is_summer
+      - campaign_is_walking_program
+      - campaign_is_garden

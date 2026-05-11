@@ -1,0 +1,74 @@
+{
+  "campaign_counts": {
+    "phase1b_architecture_exhibition_visit": 30,
+    "phase1b_autumn_garden_walk": 30,
+    "phase1b_botanical_spring_program": 30,
+    "phase1b_summer_garden_walk": 30
+  },
+  "counts": {
+    "classifier_training_filtered": 120,
+    "ranker_training_filtered": 120,
+    "review_events_filtered": 120
+  },
+  "excluded_campaigns": {
+    "phase1b_indoor_gallery_winter_art": {
+      "exclusion_scope": [
+        "classifier_smoke_training",
+        "ranker_smoke_training",
+        "evaluation_claims"
+      ],
+      "reason": "이 campaign은 30개 review 후보 중 29개가 reject되었다. 이 결과는 모델 품질 실패가 아니라 현재 raw image pool에 실내/겨울/gallery 계열 이미지가 부족하다는 coverage gap evidence로 해석한다.\n",
+      "retained_for": [
+        "audit",
+        "raw_pool_expansion_evidence",
+        "future_reactivation_after_pool_expansion"
+      ],
+      "role": "coverage_gap_diagnostic"
+    }
+  },
+  "included_campaigns": [
+    "phase1b_architecture_exhibition_visit",
+    "phase1b_autumn_garden_walk",
+    "phase1b_botanical_spring_program",
+    "phase1b_summer_garden_walk"
+  ],
+  "interpretation": {
+    "excluded_campaign_treatment": "phase1b_indoor_gallery_winter_art는 coverage-gap diagnostic evidence로 보존하되, classifier/ranker smoke training 및 evaluation claim에서는 제외한다.",
+    "training_claim": "이 filtered set은 feature plumbing 및 classifier smoke training 확인용으로만 사용할 수 있다. production quality 또는 calibrated threshold claim은 하지 않는다."
+  },
+  "issue_tag_counts": {
+    "poor_composition": 3,
+    "season_mismatch": 31,
+    "semantic_mismatch": 37,
+    "text_region_conflict": 1
+  },
+  "label_counts": {
+    "classifier_labels": {
+      "0": 70,
+      "1": 50
+    },
+    "ranker_labels": {
+      "0": 70,
+      "1": 24,
+      "2": 26
+    },
+    "review_event_decision_labels": {
+      "accept": 26,
+      "acceptable": 24,
+      "reject": 70
+    }
+  },
+  "metadata": {
+    "created_at": "2026-05-10T17:26:25.236597Z",
+    "filter_policy": "configs/phase1b_training_filter_v1.yaml",
+    "phase": "phase_1b",
+    "report_status": "filtered_training_set_audit",
+    "score_status": "diagnostic_only",
+    "spec_version": "v2.2.1"
+  },
+  "outputs": {
+    "classifier_training_filtered": "data/review/phase1b/filtered/training_snapshot_phase1b_classifier_v1__filtered.jsonl",
+    "ranker_training_filtered": "data/review/phase1b/filtered/training_snapshot_phase1b_ranker_v1__filtered.jsonl",
+    "review_events_filtered": "data/review/phase1b/filtered/review_events_phase1b_v1__filtered.jsonl"
+  }
+}

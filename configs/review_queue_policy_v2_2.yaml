@@ -1,0 +1,295 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: review_queue_policy_v2_2
+description: >
+  Discovery-oriented review queue policy for CAP Image Reranker v2.2.1.
+  The queue must not be simple top-N sorting. It must combine semantic retrieval,
+  visual anchor expansion, model disagreement, uncertainty, cluster coverage,
+  layout-risk coverage, and random coverage.
+
+stage_policy:
+  cold_start:
+    trigger:
+      any:
+        - total_reviewed_pairs_less_than: 200
+        - held_out_campaigns_less_than: 5
+    intent: >
+      Do not trust LightGBM strongly. Use CLIP, DINOv2, and cluster diversity
+      to discover positive and hard-negative regions.
+    allocation:
+      clip_high_model_low: primary
+      dinov2_anchor_high_model_low: primary
+      cluster_diversity: secondary
+      layout_safe_coverage: secondary
+      lightgbm_top: limited
+      uncertainty: limited
+      random_coverage: minimal
+
+  trained:
+    trigger:
+      all:
+        - total_reviewed_pairs_at_least: 200
+        - held_out_campaigns_at_least: 5
+    intent: >
+      Use learned reranker scores, model disagreement, and uncertainty while
+      preserving coverage and anti-confirmation-bias buckets.
+    allocation:
+      lightgbm_top: primary
+      model_disagreement: primary
+      uncertainty: secondary
+      clip_high_model_low: secondary
+      dinov2_anchor_high_model_low: secondary
+      cluster_diversity: limited
+      random_coverage: minimal
+
+allocation_classes:
+  primary:
+    description: Main source of candidates for the stage.
+  secondary:
+    description: Regular support bucket used for discovery and coverage.
+  limited:
+    description: Small support bucket. Must not dominate the queue.
+  minimal:
+    description: Minimal exploration budget.
+  note: >
+    Allocation classes are budget classes, not quality thresholds.
+    Concrete per-campaign counts may be resolved by implementation config.
+    These classes must not be interpreted as pass/fail criteria.
+
+bucket_definitions:
+  clip_high_model_low:
+    purpose: missed_positive_discovery
+    description: >
+      CLIP sees semantic campaign fit, but the learned model scores the candidate low.
+      This bucket protects against classifier confirmation bias.
+    required_signals:
+      - clip_positive_max_sim
+      - diagnostic_model_score
+    selection_logic: >
+      Select high CLIP semantic rank and low model rank candidates using empirical
+      percentile bands within the candidate pool.
+    threshold_policy: empirical_reference_percentile_or_diagnostic_only
+
+  dinov2_anchor_high_model_low:
+    purpose: visual_missed_positive_discovery
+    description: >
+      DINOv2 sees similarity to accepted visual anchors, but the learned model scores
+      the candidate low.
+    required_signals:
+      - dinov2_campaign_pos_nn_sim
+      - dinov2_family_pos_nn_sim
+      - dinov2_cluster_positive_rate_mid
+      - diagnostic_model_score
+    selection_logic: >
+      Prefer candidates that are visually close to campaign/family positives or
+      positive-rate clusters while model rank remains low.
+    cold_start_fallback: cluster_diversity
+    threshold_policy: empirical_reference_percentile_or_diagnostic_only
+
+  model_high_clip_negative_high:
+    purpose: hard_negative_discovery
+    description: >
+      The learned model scores a candidate high, but the image is close to negative
+      CLIP prompts such as indoor gallery, winter landscape, or performance stage.
+    required_signals:
+      - diagnostic_model_score
+      - clip_negative_max_sim
+    selection_logic: >
+      Select high model rank and high negative-prompt rank candidates.
+    threshold_policy: empirical_reference_percentile_or_diagnostic_only
+
+  critic_high_risk_reranker_high:
+    purpose: critic_reranker_disagreement
+    description: >
+      Reranker likes the candidate, but critic predicts text/layout risk.
+      This is the highest-priority model_disagreement bucket once critic is available.
+    required_signals:
+      - diagnostic_model_score
+      - critic_text_region_conflict_score
+      - critic_low_contrast_score
+      - critic_too_busy_background_score
+      - critic_visual_hierarchy_risk_score
+    availability: critic_available_only
+    selection_logic: >
+      Select high reranker rank and high critic-risk rank candidates.
+    threshold_policy: calibrated_validation_threshold_or_empirical_reference_percentile
+
+  uncertainty:
+    purpose: decision_boundary_sampling
+    description: >
+      Candidate lies in an uncertain region of the current model score distribution.
+      Uncertainty is not calibrated by F1 or ROC. It is a percentile-band sampling rule.
+    required_signals:
+      - diagnostic_model_score
+    selection_logic: >
+      Select candidates from an empirical score percentile band around the current
+      model's middle region.
+    threshold_policy: empirical_score_percentile_band_only
+
+  cluster_diversity:
+    purpose: coverage_discovery
+    description: >
+      Force exposure to under-reviewed DINOv2 clusters so the model does not repeatedly
+      see the same visual region.
+    required_signals:
+      - dinov2_cluster_id_coarse
+      - dinov2_cluster_id_mid
+      - dinov2_cluster_id_fine
+      - dinov2_cluster_review_count_mid
+    selection_logic: >
+      Prefer clusters with low review count or insufficient positive/negative evidence.
+    threshold_policy: diagnostic_only
+
+  layout_safe_coverage:
+    purpose: layout_coverage_without_hard_reject
+    description: >
+      Include candidates with plausible layout safety across different semantic regions.
+      Layout safety is not used as a hard reject threshold here.
+    required_signals:
+      - required_region_safe_mean
+      - required_region_safe_min
+      - title_region_safe_score
+      - info_region_safe_score
+    selection_logic: >
+      Sample across empirical layout-safety percentiles to ensure coverage, while avoiding
+      a queue dominated by obvious layout failures.
+    threshold_policy: empirical_reference_percentile_or_diagnostic_only
+
+  lightgbm_top:
+    purpose: exploit_current_best_model
+    description: >
+      Top candidates according to the current LightGBM diagnostic score or ranker score.
+      This bucket is intentionally limited in cold_start.
+    required_signals:
+      - diagnostic_model_score
+    selection_logic: >
+      Select top-ranked candidates by current model score.
+    threshold_policy: diagnostic_only_until_validation_calibrated
+
+  random_coverage:
+    purpose: blind_spot_exploration
+    description: >
+      Small random sample from eligible non-reviewed candidates to expose blind spots.
+    required_signals: []
+    selection_logic: >
+      Uniform or stratified random sampling from eligible candidates after exclusions.
+    threshold_policy: none
+
+  classifier_ranker_disagreement:
+    purpose: classifier_ranker_disagreement_discovery
+    description: >
+      Classifier snapshot and Ranker snapshot rank the candidate differently.
+      This bucket becomes available only after Phase 5 when a ranker model exists.
+    required_signals:
+      - lightgbm_classifier_score
+      - lightgbm_ranker_score
+    availability: ranker_available_only
+    selection_logic: >
+      Select candidates with high rank divergence between classifier and ranker.
+      This bucket is useful after LGBMRanker is introduced and classifier/ranker
+      disagree on candidate ordering.
+    threshold_policy: diagnostic_only_until_validation_calibrated
+
+model_disagreement_policy:
+  if_critic_available:
+    priority:
+      - critic_high_risk_reranker_high
+      - clip_high_model_low
+      - dinov2_anchor_high_model_low
+      - classifier_ranker_disagreement
+
+  if_critic_unavailable:
+    priority:
+      - clip_high_model_low
+      - dinov2_anchor_high_model_low
+      - model_high_clip_negative_high
+      - classifier_ranker_disagreement
+
+  notes:
+    - >
+      Bucket D, critic_high_risk_reranker_high, must not be required before a critic
+      model exists.
+    - >
+      Before Phase 4, CLIP/DINO/model disagreement is the fallback exploration signal.
+
+exclusion_policy:
+  exclude_reviewed_pair_ids: true
+  exclude_reviewed_duplicate_group_ids: true
+  reviewed_source: ReviewEvent log
+
+  exceptions:
+    - conflict_audit
+    - multi_annotator_review
+    - critic_relabeling_after_preview_renderer_change
+    - manual_audit
+
+  rationale: >
+    In a 10,000-image setting, the same pair or duplicate group must not repeatedly
+    consume human review budget unless it is explicitly requested for audit or relabeling.
+
+duplicate_policy:
+  default_queue_unit: duplicate_group_representative
+  allow_multiple_same_duplicate_group_in_same_queue: false
+  representative_selection:
+    policy: choose_best_available_representative
+    criteria:
+      - original_parent_image_preferred
+      - higher_resolution_preferred
+      - not_recently_reviewed_preferred
+
+stage_outputs:
+  required_review_queue_columns:
+    - queue_id
+    - queue_stage
+    - source_bucket
+    - pair_id
+    - campaign_id
+    - image_id
+    - duplicate_group_id
+    - feature_snapshot_id
+    - diagnostic_model_score
+    - clip_positive_max_sim
+    - clip_negative_max_sim
+    - dinov2_campaign_pos_nn_sim
+    - required_region_safe_min
+    - preview_path
+    - decision
+    - issue_tags
+    - preference_rank
+    - notes
+
+validation:
+  require_issue_tags_vocabulary: configs/issue_tags_v1.yaml
+  require_review_event_schema: schemas/review_event.schema.json
+  require_pair_feature_snapshot_schema: schemas/pair_feature_snapshot.schema.json
+
+failure_policy:
+  missing_feature_snapshot_id:
+    action: exclude_candidate
+    severity: error
+
+  missing_required_signal_for_bucket:
+    action: use_bucket_fallback_or_skip_candidate
+    severity: warning
+
+  duplicate_candidate_in_queue:
+    action: keep_first_and_drop_later
+    severity: warning
+
+  reviewed_pair_reappears_without_exception:
+    action: reject_queue_build
+    severity: error
+
+notes:
+  - >
+    This policy defines sampling logic, not final acceptance thresholds.
+  - >
+    All uncalibrated model scores are diagnostic_only until validated on held-out campaigns.
+  - >
+    Concrete per-bucket counts may be configured later, but bucket intent and relative
+    allocation class are frozen in v2.2.1.

@@ -1,0 +1,111 @@
+{
+  "db": "data/db/cap_reranker_ontology.db",
+  "effective_pair_features": 286,
+  "effective_retrieval_candidates": 286,
+  "event": "done",
+  "excluded_by_campaign_subject": [
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "산딸기",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "산수국",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "수련",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "참나리",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "맥문동",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "산수국",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "수련",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "참나리",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 1
+    }
+  ],
+  "excluded_retrieval_candidates": 14,
+  "filter_run_id": "flower_season_exclusion_filter_v1",
+  "interpretation": "Effective retrieval views apply campaign-specific flower season exclusions. This is not a calibrated quality threshold.",
+  "retained_by_campaign": [
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "retained_candidates": 49
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "retained_candidates": 50
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "retained_candidates": 43
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "retained_candidates": 45
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "retained_candidates": 50
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "retained_candidates": 49
+    }
+  ],
+  "score_status": "diagnostic_only",
+  "source_pair_features": 300,
+  "source_retrieval_candidates": 300,
+  "views": [
+    "v_effective_retrieval_candidates_v1",
+    "v_effective_pair_features_v1",
+    "v_effective_retrieval_candidates_excluded_v1"
+  ]
+}

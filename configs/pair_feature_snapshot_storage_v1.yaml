@@ -1,0 +1,122 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: pair_feature_snapshot_storage_v1
+description: >
+  Storage policy for immutable pair feature snapshots.
+  ReviewEvent.feature_snapshot_id must point to one immutable feature snapshot row.
+  Feature snapshots preserve the feature values seen at review/scoring time.
+
+storage_policy:
+  granularity: per_review_batch
+  description: >
+    One review queue generation or scoring run produces one batch file.
+    A batch file contains multiple PairFeatureSnapshot rows as JSONL.
+
+  root_dir: data/feature_snapshots
+
+  path_pattern: data/feature_snapshots/{snapshot_version}/{batch_id}.jsonl
+
+  snapshot_version_format:
+    pattern: "v{major}_{minor}_{patch}"
+    example: v2_2_1
+
+  batch_id_format:
+    pattern: "{queue_version}__{timestamp_utc}"
+    example: review_queue_v3__20260510T142311Z
+
+  feature_snapshot_id_format:
+    pattern: "feat_{snapshot_version}__{campaign_id}__{image_id}__{layout_spec_id}"
+    example: feat_v2_2_2__campaign_001__raw_000123__layout_top_left_bottom_left
+    backward_compatible_legacy_pattern: "feat_{snapshot_version}__{campaign_id}__{image_id}"
+    rationale: >
+      v2.2.1 image-only ids are preserved for historical ReviewEvents.
+      New snapshots should include layout_spec_id because several features are
+      layout-dependent.
+
+immutability:
+  write_once: true
+  append_only: false
+  allow_in_place_update: false
+  allow_delete: false
+  retention: indefinite
+  rationale: >
+    Past ReviewEvents must remain auditable even if feature definitions change later.
+    New feature definitions must create a new snapshot_version instead of modifying old files.
+
+lookup:
+  foreign_key_source: ReviewEvent.feature_snapshot_id
+  lookup_keys:
+    - snapshot_version
+    - batch_id
+    - feature_snapshot_id
+
+  expected_index_file: data/feature_snapshots/index_v1.jsonl
+  index_row_fields:
+    - feature_snapshot_id
+    - snapshot_version
+    - batch_id
+    - path
+    - pair_id
+    - campaign_id
+    - image_id
+    - layout_spec_id
+    - created_at
+
+versioning:
+  feature_schema_version: v2.2.1
+  schema_file: schemas/pair_feature_snapshot.schema.json
+
+  when_feature_definition_changes:
+    action: create_new_snapshot_version
+    old_snapshot_policy: preserve
+    migration_required: false
+
+  when_only_model_score_changes:
+    action: create_new_batch_same_snapshot_version
+    rationale: >
+      Model scores at review time belong to ReviewEvent.model_score_at_review.
+      Pair feature snapshots store candidate features, not mutable model decision history.
+
+validation:
+  schema_validation_required: true
+  schema_file: schemas/pair_feature_snapshot.schema.json
+
+  required_before_review_event_ingest:
+    - feature_snapshot_id_exists
+    - feature_snapshot_schema_valid
+    - feature_snapshot_id_matches_review_event
+    - pair_id_matches_review_event
+    - campaign_id_matches_review_event
+    - image_id_matches_review_event
+
+failure_policy:
+  missing_feature_snapshot:
+    action: reject_review_event_ingest
+    severity: error
+
+  schema_invalid_snapshot:
+    action: reject_batch
+    severity: error
+
+  duplicate_feature_snapshot_id_in_same_batch:
+    action: reject_batch
+    severity: error
+
+  duplicate_feature_snapshot_id_across_batches:
+    action: reject_newer_batch
+    severity: error
+    rationale: >
+      feature_snapshot_id is immutable and must identify exactly one historical feature row.
+
+notes:
+  - >
+    ReviewEvent may store model_score_at_review separately.
+    PairFeatureSnapshot stores feature values used to construct or score a candidate.
+  - >
+    Do not inline full feature maps into ReviewEvent except for temporary debugging.
+    The canonical source is the immutable PairFeatureSnapshot JSONL.

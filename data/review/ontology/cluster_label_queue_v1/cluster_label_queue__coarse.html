@@ -1,0 +1,1094 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ontology Cluster Label Queue v1</title>
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 24px;
+}
+.summary {
+  padding: 12px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 22px;
+}
+.meta {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+}
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+.thumb {
+  width: 220px;
+  font-size: 12px;
+  word-break: break-all;
+}
+.thumb img {
+  width: 220px;
+  height: 160px;
+  object-fit: contain;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+.label-box {
+  margin-top: 14px;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+code {
+  background: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<h1>Ontology Cluster Label Queue v1</h1>
+<div class="summary">
+  <b>purpose:</b> DINOv2 cluster 대표 이미지를 보고 cluster-level ontology tag를 붙이기 위한 queue<br/>
+  <b>rows:</b> 20<br/>
+  <b>score_status:</b> diagnostic_only<br/>
+  <b>주의:</b> 이 queue는 pass/fail 평가가 아니라 ontology content를 채우기 위한 human labeling queue다.
+</div>
+<h2>Active tag vocabulary</h2>
+<div class="summary">
+<div><b>design_affordance_axis</b>: <code>good_background_texture</code>, <code>layout_unknown</code>, <code>needs_crop</code>, <code>strong_subject_center</code>, <code>text_overlay_easy</code>, <code>text_overlay_hard</code></div><div><b>mood_axis</b>: <code>active</code>, <code>bright</code>, <code>calm</code>, <code>dense</code>, <code>mysterious</code>, <code>open</code>, <code>quiet</code>, <code>solemn</code></div><div><b>space_axis</b>: <code>architecture</code>, <code>courtyard</code>, <code>flowerbed</code>, <code>forest</code>, <code>garden</code>, <code>indoor</code>, <code>path</code>, <code>water</code></div><div><b>subject_axis</b>: <code>building</code>, <code>empty_space</code>, <code>flower</code>, <code>path</code>, <code>plant_detail</code>, <code>sculpture</code>, <code>tree</code>, <code>visitor</code>, <code>water_feature</code></div><div><b>temporal_axis</b>: <code>autumn</code>, <code>daytime</code>, <code>evening</code>, <code>season_unknown</code>, <code>spring</code>, <code>summer</code>, <code>winter</code></div><div><b>usage_axis</b>: <code>archive_reference</code>, <code>brochure</code>, <code>poster</code>, <code>proposal</code>, <code>sns</code>, <code>web_banner</code></div><div><b>weather_light_axis</b>: <code>backlit</code>, <code>cloudy</code>, <code>foggy</code>, <code>low_light</code>, <code>rainy</code>, <code>snowy</code>, <code>sunny</code>, <code>unknown</code></div>
+</div>
+
+            <section class="card">
+              <h2>coarse_20_0000</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0000<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 4<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0000__raw_4e39435909.jpg" />
+                  <div>raw_4e39435909</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0000__raw_2eaf462c16.jpg" />
+                  <div>raw_2eaf462c16</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0000__raw_d9022526d3.jpg" />
+                  <div>raw_d9022526d3</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0000__raw_1eeb7232a9.jpg" />
+                  <div>raw_1eeb7232a9</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0001</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0001<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 7<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0001__raw_97eb3ef7cd.jpg" />
+                  <div>raw_97eb3ef7cd</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0001__raw_af7ef5a4c3.jpg" />
+                  <div>raw_af7ef5a4c3</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0001__raw_01461f5add.jpg" />
+                  <div>raw_01461f5add</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0001__raw_171a797d54.jpg" />
+                  <div>raw_171a797d54</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0001__raw_dbc4569a46.jpg" />
+                  <div>raw_dbc4569a46</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0002</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0002<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 6<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0002__raw_f87d58016b.jpg" />
+                  <div>raw_f87d58016b</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0002__raw_66d595ed3e.jpg" />
+                  <div>raw_66d595ed3e</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0002__raw_297d31b4ef.jpg" />
+                  <div>raw_297d31b4ef</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0002__raw_3abab99064.jpg" />
+                  <div>raw_3abab99064</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0002__raw_1a9d7aebc4.jpg" />
+                  <div>raw_1a9d7aebc4</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0003</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0003<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 11<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0003__raw_61fc86118e.jpg" />
+                  <div>raw_61fc86118e</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0003__raw_7f5320f89f.jpg" />
+                  <div>raw_7f5320f89f</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0003__raw_735aba25cc.jpg" />
+                  <div>raw_735aba25cc</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0003__raw_95003c4a96.jpg" />
+                  <div>raw_95003c4a96</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0003__raw_553035c3d0.jpg" />
+                  <div>raw_553035c3d0</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0004</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0004<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 21<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0004__raw_572e8cc431.jpg" />
+                  <div>raw_572e8cc431</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0004__raw_03979ecf06.jpg" />
+                  <div>raw_03979ecf06</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0004__raw_448aa545e9.jpg" />
+                  <div>raw_448aa545e9</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0004__raw_d1b48c4dcb.jpg" />
+                  <div>raw_d1b48c4dcb</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0004__raw_2a834b6409.jpg" />
+                  <div>raw_2a834b6409</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0005</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0005<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 14<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0005__raw_502843a887.jpg" />
+                  <div>raw_502843a887</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0005__raw_c9fb41f69a.jpg" />
+                  <div>raw_c9fb41f69a</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0005__raw_d33f8a9f18.jpg" />
+                  <div>raw_d33f8a9f18</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0005__raw_1e0c34f4ae.jpg" />
+                  <div>raw_1e0c34f4ae</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0005__raw_bc5f26f1fa.jpg" />
+                  <div>raw_bc5f26f1fa</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0006</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0006<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 26<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0006__raw_ff74488cd9.jpg" />
+                  <div>raw_ff74488cd9</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0006__raw_9d4a2beade.jpg" />
+                  <div>raw_9d4a2beade</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0006__raw_a2e4454028.jpg" />
+                  <div>raw_a2e4454028</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0006__raw_2d2dd65cb0.jpg" />
+                  <div>raw_2d2dd65cb0</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0006__raw_8d5bb10a16.jpg" />
+                  <div>raw_8d5bb10a16</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0007</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0007<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 25<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0007__raw_9fe8761d5a.jpg" />
+                  <div>raw_9fe8761d5a</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0007__raw_7a7dc4ec93.jpg" />
+                  <div>raw_7a7dc4ec93</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0007__raw_ade5896e2e.jpg" />
+                  <div>raw_ade5896e2e</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0007__raw_7400374ac0.jpg" />
+                  <div>raw_7400374ac0</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0007__raw_c2e785628f.jpg" />
+                  <div>raw_c2e785628f</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0008</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0008<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 11<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0008__raw_208d2d0895.jpg" />
+                  <div>raw_208d2d0895</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0008__raw_0265165be9.jpg" />
+                  <div>raw_0265165be9</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0008__raw_3a5d8f8832.jpg" />
+                  <div>raw_3a5d8f8832</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0008__raw_ffb8abb1a8.jpg" />
+                  <div>raw_ffb8abb1a8</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0008__raw_6b7da5b76b.jpg" />
+                  <div>raw_6b7da5b76b</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0009</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0009<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 14<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0009__raw_2f24639a54.jpg" />
+                  <div>raw_2f24639a54</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0009__raw_6e52d00c71.jpg" />
+                  <div>raw_6e52d00c71</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0009__raw_c01d2de4c0.jpg" />
+                  <div>raw_c01d2de4c0</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0009__raw_1706a44540.jpg" />
+                  <div>raw_1706a44540</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0009__raw_d64c6196f5.jpg" />
+                  <div>raw_d64c6196f5</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0010</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0010<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 2<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0010__raw_c310b5be34.jpg" />
+                  <div>raw_c310b5be34</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0010__raw_ebe21d1cfd.jpg" />
+                  <div>raw_ebe21d1cfd</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0011</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0011<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 5<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0011__raw_681edda32e.jpg" />
+                  <div>raw_681edda32e</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0011__raw_0a5bd0d204.jpg" />
+                  <div>raw_0a5bd0d204</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0011__raw_19c9aa3ffa.jpg" />
+                  <div>raw_19c9aa3ffa</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0011__raw_c2c0208981.jpg" />
+                  <div>raw_c2c0208981</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0011__raw_b37dfe627b.jpg" />
+                  <div>raw_b37dfe627b</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0012</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0012<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 9<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0012__raw_277a82318c.jpg" />
+                  <div>raw_277a82318c</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0012__raw_4e6c171e96.jpg" />
+                  <div>raw_4e6c171e96</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0012__raw_38bfd0e4cd.jpg" />
+                  <div>raw_38bfd0e4cd</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0012__raw_2c3293b2b9.jpg" />
+                  <div>raw_2c3293b2b9</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0012__raw_bfd9e19ca6.jpg" />
+                  <div>raw_bfd9e19ca6</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0013</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0013<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 8<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0013__raw_e6b27b849a.jpg" />
+                  <div>raw_e6b27b849a</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0013__raw_efe4c4c060.jpg" />
+                  <div>raw_efe4c4c060</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0013__raw_d206795824.jpg" />
+                  <div>raw_d206795824</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0013__raw_e1064a803d.jpg" />
+                  <div>raw_e1064a803d</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0013__raw_04cecb0a9c.jpg" />
+                  <div>raw_04cecb0a9c</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0014</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0014<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 14<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0014__raw_721e07ba0a.jpg" />
+                  <div>raw_721e07ba0a</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0014__raw_31b278973b.jpg" />
+                  <div>raw_31b278973b</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0014__raw_4584fbd0b1.jpg" />
+                  <div>raw_4584fbd0b1</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0014__raw_5714fe4daf.jpg" />
+                  <div>raw_5714fe4daf</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0014__raw_4b11a22112.jpg" />
+                  <div>raw_4b11a22112</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0015</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0015<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 10<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0015__raw_39a0295efc.jpg" />
+                  <div>raw_39a0295efc</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0015__raw_5ed5b2d6c4.jpg" />
+                  <div>raw_5ed5b2d6c4</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0015__raw_22d63fd86a.jpg" />
+                  <div>raw_22d63fd86a</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0015__raw_3375f5ca20.jpg" />
+                  <div>raw_3375f5ca20</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0015__raw_ab1479ebb7.jpg" />
+                  <div>raw_ab1479ebb7</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0016</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0016<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 6<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0016__raw_faf2998d9e.jpg" />
+                  <div>raw_faf2998d9e</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0016__raw_172c623e65.jpg" />
+                  <div>raw_172c623e65</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0016__raw_0600563ca5.jpg" />
+                  <div>raw_0600563ca5</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0016__raw_3458f4c869.jpg" />
+                  <div>raw_3458f4c869</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0016__raw_f75d8b6c40.jpg" />
+                  <div>raw_f75d8b6c40</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0017</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0017<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 6<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0017__raw_4c231302c4.jpg" />
+                  <div>raw_4c231302c4</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0017__raw_09572549a0.jpg" />
+                  <div>raw_09572549a0</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0017__raw_67ac209ecc.jpg" />
+                  <div>raw_67ac209ecc</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0017__raw_e9b4c4e62c.jpg" />
+                  <div>raw_e9b4c4e62c</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0017__raw_83afcab58c.jpg" />
+                  <div>raw_83afcab58c</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0018</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0018<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 2<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0018__raw_a0ba1b33b2.jpg" />
+                  <div>raw_a0ba1b33b2</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0018__raw_d5d3c67349.jpg" />
+                  <div>raw_d5d3c67349</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2>coarse_20_0019</h2>
+              <div class="meta">
+                <b>queue_id:</b> cluster_label_queue_v1__coarse__coarse_20_0019<br/>
+                <b>level:</b> coarse<br/>
+                <b>size:</b> 5<br/>
+                <b>method:</b> dinov2_centroid_medoid_plus_greedy_diversity
+              </div>
+              <div class="thumbs">
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0019__raw_0f37eb334a.jpg" />
+                  <div>raw_0f37eb334a</div>
+                  <div><code>centroid_medoid</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0019__raw_ad26a620af.jpg" />
+                  <div>raw_ad26a620af</div>
+                  <div><code>diversity_1</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0019__raw_3431004177.jpg" />
+                  <div>raw_3431004177</div>
+                  <div><code>diversity_2</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0019__raw_1c06d4ca44.jpg" />
+                  <div>raw_1c06d4ca44</div>
+                  <div><code>diversity_3</code></div>
+                </div>
+                
+                <div class="thumb">
+                  <img src="thumbs/cluster_label_queue_v1__coarse__coarse_20_0019__raw_c3f434c77f.jpg" />
+                  <div>raw_c3f434c77f</div>
+                  <div><code>diversity_4</code></div>
+                </div>
+                
+              </div>
+              <div class="label-box">
+                <b>라벨링 메모:</b><br/>
+                space_axis_tags:<br/>
+                temporal_axis_tags:<br/>
+                weather_light_axis_tags:<br/>
+                subject_axis_tags:<br/>
+                mood_axis_tags:<br/>
+                usage_axis_tags:<br/>
+                notes:
+              </div>
+            </section>
+            
+</body>
+</html>

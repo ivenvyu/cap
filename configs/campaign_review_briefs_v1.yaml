@@ -1,0 +1,93 @@
+metadata:
+  spec_version: v2.2.3
+  status: active
+  purpose: >
+    Review sheet에서 campaign_id만 보고 판단하지 않도록
+    한국어 campaign 설명과 판단 기준을 제공한다.
+
+campaigns:
+  phase1b_summer_garden_walk:
+    title_ko: "여름 정원 산책"
+    campaign_status: "active_diagnostic"
+    brief_ko: "초록 정원, 산책길, 여름의 차분한 야외 분위기를 보여주는 홍보물"
+    positive_visual_criteria_ko:
+      - "초록 정원 또는 숲길"
+      - "산책로가 보임"
+      - "여름 느낌"
+      - "텍스트를 얹기 좋은 여백"
+    negative_visual_criteria_ko:
+      - "가을/겨울 느낌"
+      - "실내 갤러리"
+      - "꽃 클로즈업만 있는 이미지"
+      - "건축물이 지나치게 주인공인 이미지"
+    use_for_training: true
+    exclude_from_model_quality_claims: false
+
+  phase1b_autumn_garden_walk:
+    title_ko: "가을 정원 산책"
+    campaign_status: "active_diagnostic"
+    brief_ko: "단풍, 갈색·노란색 계절감, 차분한 가을 정원 산책 분위기를 보여주는 홍보물"
+    positive_visual_criteria_ko:
+      - "단풍 또는 가을 foliage"
+      - "정원 산책로"
+      - "가을 계절감"
+      - "차분한 야외 풍경"
+    negative_visual_criteria_ko:
+      - "여름처럼 초록색이 강한 사진"
+      - "봄꽃 중심 이미지"
+      - "실내 갤러리"
+      - "겨울/눈 이미지"
+    use_for_training: true
+    exclude_from_model_quality_claims: false
+
+  phase1b_architecture_exhibition_visit:
+    title_ko: "건축/전시 방문"
+    campaign_status: "active_diagnostic"
+    brief_ko: "사유원의 건축물, 전시 공간, 방문 동선, 구조적 공간감을 보여주는 홍보물"
+    positive_visual_criteria_ko:
+      - "건축물 또는 구조물이 중심"
+      - "전시/방문 공간 느낌"
+      - "실내외 공간감"
+      - "방문 동선이 느껴짐"
+    negative_visual_criteria_ko:
+      - "정원 풍경만 있는 사진"
+      - "꽃/식물 클로즈업"
+      - "계절 풍경만 강한 사진"
+      - "건축/전시 느낌이 약한 사진"
+    use_for_training: true
+    exclude_from_model_quality_claims: false
+
+  phase1b_botanical_spring_program:
+    title_ko: "봄 식물 프로그램"
+    campaign_status: "active_diagnostic"
+    brief_ko: "봄, 식물, 꽃, 새싹, 식물 관찰 프로그램의 분위기를 보여주는 홍보물"
+    positive_visual_criteria_ko:
+      - "봄 느낌"
+      - "식물 또는 꽃"
+      - "생태/식물 관찰 프로그램에 어울림"
+      - "밝고 부드러운 계절감"
+    negative_visual_criteria_ko:
+      - "가을 단풍"
+      - "겨울/눈 이미지"
+      - "건축물 중심 이미지"
+      - "일반 산책로 느낌만 강한 사진"
+    use_for_training: true
+    exclude_from_model_quality_claims: false
+
+  phase1b_indoor_gallery_winter_art:
+    title_ko: "겨울 실내 갤러리 전시"
+    campaign_status: "coverage_gap_diagnostic"
+    brief_ko: "실내 갤러리, 겨울, 예술 전시, 차분한 공간감을 보여주는 홍보물"
+    positive_visual_criteria_ko:
+      - "실내 공간"
+      - "갤러리 또는 전시 분위기"
+      - "겨울 느낌"
+      - "차분하고 예술적인 공간감"
+    negative_visual_criteria_ko:
+      - "야외 정원"
+      - "여름 초록 풍경"
+      - "봄꽃"
+      - "산책로 중심 이미지"
+    use_for_training: false
+    use_for_coverage_gap_report: true
+    exclude_from_model_quality_claims: true

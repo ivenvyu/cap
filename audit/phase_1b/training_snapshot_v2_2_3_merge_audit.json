@@ -1,0 +1,394 @@
+{
+  "classifier": {
+    "base_rows": 120,
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 32,
+      "phase1b_autumn_garden_walk": 32,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_indoor_gallery_winter_art": 5,
+      "phase1b_summer_garden_walk": 32
+    },
+    "campaign_status_counts": {
+      "active_diagnostic": 126,
+      "coverage_gap_diagnostic": 5
+    },
+    "decision_counts": {
+      "accept": 29,
+      "acceptable": 26,
+      "best": 3,
+      "reject": 73
+    },
+    "duplicate_events": [
+      {
+        "key": [
+          "phase1b_architecture_exhibition_visit__raw_2c3293b2b9__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_architecture_exhibition_visit__raw_476995f1f8__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_architecture_exhibition_visit__raw_39a0295efc__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_autumn_garden_walk__raw_50d3d9c9da__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_autumn_garden_walk__raw_31b278973b__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_autumn_garden_walk__raw_681edda32e__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_a0ba1b33b2__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_241fc7cc41__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_50d3d9c9da__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_9b34fc0214__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_297d31b4ef__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_summer_garden_walk__raw_a0ba1b33b2__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_summer_garden_walk__raw_e6b27b849a__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_summer_garden_walk__raw_39a0295efc__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      }
+    ],
+    "label_counts": {
+      "0": 73,
+      "1": 58
+    },
+    "merge_key": [
+      "pair_id",
+      "layout_spec_id",
+      "preview_renderer_version"
+    ],
+    "merge_policy": "triage_label_overrides_base_label_on_same_key",
+    "merged_rows": 131,
+    "quality_claim_eligible_rows": 126,
+    "score_status": "diagnostic_only",
+    "source_counts": {
+      "v2_2_2_base": 106,
+      "v2_2_2_triage_25": 25
+    },
+    "task": "classifier",
+    "threshold_status": "no_calibrated_threshold",
+    "training_eligible_rows": 126,
+    "triage_added": 11,
+    "triage_replaced_existing": 14,
+    "triage_rows": 25
+  },
+  "created_at": "2026-05-11T06:25:41.807985Z",
+  "event": "training_snapshot_v2_2_3_merge_done",
+  "inputs": {
+    "base_classifier": "data/review/phase1b/v2_2_2/training_snapshot_phase1b_classifier_v2_2_2.jsonl",
+    "base_ranker": "data/review/phase1b/v2_2_2/training_snapshot_phase1b_ranker_v2_2_2.jsonl",
+    "campaign_briefs": "configs/campaign_review_briefs_v1.yaml",
+    "triage_classifier": "data/review/phase1b/v2_2_2/triage/training_snapshot_classifier_v2_2_2_triage_25.jsonl",
+    "triage_ranker": "data/review/phase1b/v2_2_2/triage/training_snapshot_ranker_v2_2_2_triage_25.jsonl"
+  },
+  "non_claims": [
+    "calibrated accept/reject threshold를 만들지 않는다.",
+    "production model quality를 주장하지 않는다.",
+    "coverage_gap campaign을 일반 모델 품질 claim에 섞지 않는다."
+  ],
+  "outputs": {
+    "classifier": "data/review/phase1b/v2_2_3/training_snapshot_classifier_v2_2_3.jsonl",
+    "ranker": "data/review/phase1b/v2_2_3/training_snapshot_ranker_v2_2_3.jsonl"
+  },
+  "ranker": {
+    "base_rows": 120,
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 32,
+      "phase1b_autumn_garden_walk": 32,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_indoor_gallery_winter_art": 5,
+      "phase1b_summer_garden_walk": 32
+    },
+    "campaign_status_counts": {
+      "active_diagnostic": 126,
+      "coverage_gap_diagnostic": 5
+    },
+    "decision_counts": {
+      "accept": 29,
+      "acceptable": 26,
+      "best": 3,
+      "reject": 73
+    },
+    "duplicate_events": [
+      {
+        "key": [
+          "phase1b_architecture_exhibition_visit__raw_2c3293b2b9__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_architecture_exhibition_visit__raw_476995f1f8__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_architecture_exhibition_visit__raw_39a0295efc__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_autumn_garden_walk__raw_50d3d9c9da__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_autumn_garden_walk__raw_31b278973b__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_autumn_garden_walk__raw_681edda32e__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_a0ba1b33b2__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_241fc7cc41__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_50d3d9c9da__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_9b34fc0214__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_botanical_spring_program__raw_297d31b4ef__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_summer_garden_walk__raw_a0ba1b33b2__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_summer_garden_walk__raw_e6b27b849a__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      },
+      {
+        "key": [
+          "phase1b_summer_garden_walk__raw_39a0295efc__layout_top_left_bottom_left",
+          "layout_top_left_bottom_left",
+          ""
+        ],
+        "new_source": "v2_2_2_triage_25",
+        "policy": "triage_label_overrides_base_label",
+        "previous_source": "v2_2_2_base"
+      }
+    ],
+    "label_counts": {
+      "0": 73,
+      "1": 26,
+      "2": 29,
+      "3": 3
+    },
+    "merge_key": [
+      "pair_id",
+      "layout_spec_id",
+      "preview_renderer_version"
+    ],
+    "merge_policy": "triage_label_overrides_base_label_on_same_key",
+    "merged_rows": 131,
+    "quality_claim_eligible_rows": 126,
+    "score_status": "diagnostic_only",
+    "source_counts": {
+      "v2_2_2_base": 106,
+      "v2_2_2_triage_25": 25
+    },
+    "task": "ranker",
+    "threshold_status": "no_calibrated_threshold",
+    "training_eligible_rows": 126,
+    "triage_added": 11,
+    "triage_replaced_existing": 14,
+    "triage_rows": 25
+  },
+  "score_status": "diagnostic_only",
+  "threshold_status": "no_calibrated_threshold"
+}

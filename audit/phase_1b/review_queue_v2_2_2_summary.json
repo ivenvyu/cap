@@ -1,0 +1,520 @@
+{
+  "bucket_definitions": {
+    "clip_high_model_low": "High CLIP rank but low diagnostic model rank within the same campaign; disagreement discovery bucket.",
+    "cluster_diversity": "One strong candidate per DINOv2 mid cluster where possible; coverage bucket.",
+    "dinov2_high_model_low": "High DINOv2 campaign/family visual-anchor rank but low diagnostic model rank within the same campaign; missed-positive discovery bucket.",
+    "fill_remaining_diagnostic_mixed": "Fills remaining rows after duplicate/image dedupe using a campaign-local mixed diagnostic rank. Not a final quality claim.",
+    "layout_safe_coverage": "High campaign-local layout-safety rank; layout compatibility coverage bucket.",
+    "model_high_clip_negative_high": "High diagnostic model rank and high CLIP-negative rank within the same campaign; hard-negative / semantic-conflict audit bucket.",
+    "model_top_diagnostic": "Campaign-local top diagnostic model scores. Scores are not calibrated pass/fail probabilities.",
+    "random_control": "Deterministic random control bucket for blind-spot monitoring."
+  },
+  "campaign_count": 5,
+  "campaigns": [
+    {
+      "bucket_audit": [
+        {
+          "bucket": "model_top_diagnostic",
+          "candidate_rows_considered": 50,
+          "note": "Campaign-local top diagnostic model scores. Scores are not calibrated pass/fail probabilities.",
+          "requested_budget": 6,
+          "rows_added": 6,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "clip_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High CLIP rank but low diagnostic model rank within the same campaign; disagreement discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "dinov2_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High DINOv2 campaign/family visual-anchor rank but low diagnostic model rank within the same campaign; missed-positive discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 2,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "model_high_clip_negative_high",
+          "candidate_rows_considered": 50,
+          "note": "High diagnostic model rank and high CLIP-negative rank within the same campaign; hard-negative / semantic-conflict audit bucket.",
+          "requested_budget": 4,
+          "rows_added": 4,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 6,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "cluster_diversity",
+          "candidate_rows_considered": 33,
+          "note": "One strong candidate per DINOv2 mid cluster where possible; coverage bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 10,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "layout_safe_coverage",
+          "candidate_rows_considered": 50,
+          "note": "High campaign-local layout-safety rank; layout compatibility coverage bucket.",
+          "requested_budget": 3,
+          "rows_added": 3,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 7,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "random_control",
+          "candidate_rows_considered": 50,
+          "note": "Deterministic random control bucket for blind-spot monitoring.",
+          "requested_budget": 2,
+          "rows_added": 2,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 7,
+          "threshold_status": "no_calibrated_threshold"
+        }
+      ],
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "candidate_rows_available": 50,
+      "out": "data/review/phase1b/v2_2_2/queues/review_queue_v2_2_2__phase1b_architecture_exhibition_visit.csv",
+      "queue_id": "review_queue_v2_2_2__phase1b_architecture_exhibition_visit",
+      "rows_selected": 30,
+      "score_summary": {
+        "max": 0.9990590891928869,
+        "median": 0.8605186129745517,
+        "min": 0.021678761438024618
+      },
+      "source_bucket_counts": {
+        "clip_high_model_low": 5,
+        "cluster_diversity": 5,
+        "dinov2_high_model_low": 5,
+        "layout_safe_coverage": 3,
+        "model_high_clip_negative_high": 4,
+        "model_top_diagnostic": 6,
+        "random_control": 2
+      },
+      "unique_duplicate_groups": 30,
+      "unique_images": 30
+    },
+    {
+      "bucket_audit": [
+        {
+          "bucket": "model_top_diagnostic",
+          "candidate_rows_considered": 50,
+          "note": "Campaign-local top diagnostic model scores. Scores are not calibrated pass/fail probabilities.",
+          "requested_budget": 6,
+          "rows_added": 6,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "clip_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High CLIP rank but low diagnostic model rank within the same campaign; disagreement discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 1,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "dinov2_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High DINOv2 campaign/family visual-anchor rank but low diagnostic model rank within the same campaign; missed-positive discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 3,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "model_high_clip_negative_high",
+          "candidate_rows_considered": 50,
+          "note": "High diagnostic model rank and high CLIP-negative rank within the same campaign; hard-negative / semantic-conflict audit bucket.",
+          "requested_budget": 4,
+          "rows_added": 4,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 6,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "cluster_diversity",
+          "candidate_rows_considered": 32,
+          "note": "One strong candidate per DINOv2 mid cluster where possible; coverage bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 10,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "layout_safe_coverage",
+          "candidate_rows_considered": 50,
+          "note": "High campaign-local layout-safety rank; layout compatibility coverage bucket.",
+          "requested_budget": 3,
+          "rows_added": 3,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "random_control",
+          "candidate_rows_considered": 50,
+          "note": "Deterministic random control bucket for blind-spot monitoring.",
+          "requested_budget": 2,
+          "rows_added": 2,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 1,
+          "threshold_status": "no_calibrated_threshold"
+        }
+      ],
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "candidate_rows_available": 50,
+      "out": "data/review/phase1b/v2_2_2/queues/review_queue_v2_2_2__phase1b_autumn_garden_walk.csv",
+      "queue_id": "review_queue_v2_2_2__phase1b_autumn_garden_walk",
+      "rows_selected": 30,
+      "score_summary": {
+        "max": 0.9908997018509237,
+        "median": 0.15543826924783785,
+        "min": 7.291358340627792e-05
+      },
+      "source_bucket_counts": {
+        "clip_high_model_low": 5,
+        "cluster_diversity": 5,
+        "dinov2_high_model_low": 5,
+        "layout_safe_coverage": 3,
+        "model_high_clip_negative_high": 4,
+        "model_top_diagnostic": 6,
+        "random_control": 2
+      },
+      "unique_duplicate_groups": 30,
+      "unique_images": 30
+    },
+    {
+      "bucket_audit": [
+        {
+          "bucket": "model_top_diagnostic",
+          "candidate_rows_considered": 50,
+          "note": "Campaign-local top diagnostic model scores. Scores are not calibrated pass/fail probabilities.",
+          "requested_budget": 6,
+          "rows_added": 6,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "clip_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High CLIP rank but low diagnostic model rank within the same campaign; disagreement discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 3,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "dinov2_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High DINOv2 campaign/family visual-anchor rank but low diagnostic model rank within the same campaign; missed-positive discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 4,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "model_high_clip_negative_high",
+          "candidate_rows_considered": 50,
+          "note": "High diagnostic model rank and high CLIP-negative rank within the same campaign; hard-negative / semantic-conflict audit bucket.",
+          "requested_budget": 4,
+          "rows_added": 4,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 8,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "cluster_diversity",
+          "candidate_rows_considered": 29,
+          "note": "One strong candidate per DINOv2 mid cluster where possible; coverage bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 7,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "layout_safe_coverage",
+          "candidate_rows_considered": 50,
+          "note": "High campaign-local layout-safety rank; layout compatibility coverage bucket.",
+          "requested_budget": 3,
+          "rows_added": 3,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 1,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "random_control",
+          "candidate_rows_considered": 50,
+          "note": "Deterministic random control bucket for blind-spot monitoring.",
+          "requested_budget": 2,
+          "rows_added": 2,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 2,
+          "threshold_status": "no_calibrated_threshold"
+        }
+      ],
+      "campaign_id": "phase1b_botanical_spring_program",
+      "candidate_rows_available": 50,
+      "out": "data/review/phase1b/v2_2_2/queues/review_queue_v2_2_2__phase1b_botanical_spring_program.csv",
+      "queue_id": "review_queue_v2_2_2__phase1b_botanical_spring_program",
+      "rows_selected": 30,
+      "score_summary": {
+        "max": 0.9994941524241222,
+        "median": 0.30629880579942304,
+        "min": 0.0019018966297786348
+      },
+      "source_bucket_counts": {
+        "clip_high_model_low": 5,
+        "cluster_diversity": 5,
+        "dinov2_high_model_low": 5,
+        "layout_safe_coverage": 3,
+        "model_high_clip_negative_high": 4,
+        "model_top_diagnostic": 6,
+        "random_control": 2
+      },
+      "unique_duplicate_groups": 30,
+      "unique_images": 30
+    },
+    {
+      "bucket_audit": [
+        {
+          "bucket": "model_top_diagnostic",
+          "candidate_rows_considered": 50,
+          "note": "Campaign-local top diagnostic model scores. Scores are not calibrated pass/fail probabilities.",
+          "requested_budget": 6,
+          "rows_added": 6,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "clip_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High CLIP rank but low diagnostic model rank within the same campaign; disagreement discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 2,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "dinov2_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High DINOv2 campaign/family visual-anchor rank but low diagnostic model rank within the same campaign; missed-positive discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 3,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "model_high_clip_negative_high",
+          "candidate_rows_considered": 50,
+          "note": "High diagnostic model rank and high CLIP-negative rank within the same campaign; hard-negative / semantic-conflict audit bucket.",
+          "requested_budget": 4,
+          "rows_added": 4,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 9,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "cluster_diversity",
+          "candidate_rows_considered": 30,
+          "note": "One strong candidate per DINOv2 mid cluster where possible; coverage bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 11,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "layout_safe_coverage",
+          "candidate_rows_considered": 50,
+          "note": "High campaign-local layout-safety rank; layout compatibility coverage bucket.",
+          "requested_budget": 3,
+          "rows_added": 3,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 6,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "random_control",
+          "candidate_rows_considered": 50,
+          "note": "Deterministic random control bucket for blind-spot monitoring.",
+          "requested_budget": 2,
+          "rows_added": 2,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 5,
+          "threshold_status": "no_calibrated_threshold"
+        }
+      ],
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "candidate_rows_available": 50,
+      "out": "data/review/phase1b/v2_2_2/queues/review_queue_v2_2_2__phase1b_indoor_gallery_winter_art.csv",
+      "queue_id": "review_queue_v2_2_2__phase1b_indoor_gallery_winter_art",
+      "rows_selected": 30,
+      "score_summary": {
+        "max": 0.9975375155523881,
+        "median": 0.6840920498242768,
+        "min": 0.012148782291720428
+      },
+      "source_bucket_counts": {
+        "clip_high_model_low": 5,
+        "cluster_diversity": 5,
+        "dinov2_high_model_low": 5,
+        "layout_safe_coverage": 3,
+        "model_high_clip_negative_high": 4,
+        "model_top_diagnostic": 6,
+        "random_control": 2
+      },
+      "unique_duplicate_groups": 30,
+      "unique_images": 30
+    },
+    {
+      "bucket_audit": [
+        {
+          "bucket": "model_top_diagnostic",
+          "candidate_rows_considered": 50,
+          "note": "Campaign-local top diagnostic model scores. Scores are not calibrated pass/fail probabilities.",
+          "requested_budget": 6,
+          "rows_added": 6,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "clip_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High CLIP rank but low diagnostic model rank within the same campaign; disagreement discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 0,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "dinov2_high_model_low",
+          "candidate_rows_considered": 50,
+          "note": "High DINOv2 campaign/family visual-anchor rank but low diagnostic model rank within the same campaign; missed-positive discovery bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 2,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "model_high_clip_negative_high",
+          "candidate_rows_considered": 50,
+          "note": "High diagnostic model rank and high CLIP-negative rank within the same campaign; hard-negative / semantic-conflict audit bucket.",
+          "requested_budget": 4,
+          "rows_added": 4,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 6,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "cluster_diversity",
+          "candidate_rows_considered": 29,
+          "note": "One strong candidate per DINOv2 mid cluster where possible; coverage bucket.",
+          "requested_budget": 5,
+          "rows_added": 5,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 7,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "layout_safe_coverage",
+          "candidate_rows_considered": 50,
+          "note": "High campaign-local layout-safety rank; layout compatibility coverage bucket.",
+          "requested_budget": 3,
+          "rows_added": 3,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 1,
+          "threshold_status": "no_calibrated_threshold"
+        },
+        {
+          "bucket": "random_control",
+          "candidate_rows_considered": 50,
+          "note": "Deterministic random control bucket for blind-spot monitoring.",
+          "requested_budget": 2,
+          "rows_added": 2,
+          "score_status": "diagnostic_only",
+          "skipped_duplicate_or_image": 1,
+          "threshold_status": "no_calibrated_threshold"
+        }
+      ],
+      "campaign_id": "phase1b_summer_garden_walk",
+      "candidate_rows_available": 50,
+      "out": "data/review/phase1b/v2_2_2/queues/review_queue_v2_2_2__phase1b_summer_garden_walk.csv",
+      "queue_id": "review_queue_v2_2_2__phase1b_summer_garden_walk",
+      "rows_selected": 30,
+      "score_summary": {
+        "max": 0.9991561676685543,
+        "median": 0.2197818657287641,
+        "min": 0.00010849077564460962
+      },
+      "source_bucket_counts": {
+        "clip_high_model_low": 5,
+        "cluster_diversity": 5,
+        "dinov2_high_model_low": 5,
+        "layout_safe_coverage": 3,
+        "model_high_clip_negative_high": 4,
+        "model_top_diagnostic": 6,
+        "random_control": 2
+      },
+      "unique_duplicate_groups": 30,
+      "unique_images": 30
+    }
+  ],
+  "combined_out": "data/review/phase1b/v2_2_2/review_queue_v2_2_2_all_campaigns.csv",
+  "event": "done",
+  "feature_snapshot_files": [
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_architecture_exhibition_visit.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_autumn_garden_walk.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_botanical_spring_program.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_indoor_gallery_winter_art.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_summer_garden_walk.jsonl"
+  ],
+  "feature_snapshots_glob": "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/*.jsonl",
+  "global_source_bucket_counts": {
+    "clip_high_model_low": 25,
+    "cluster_diversity": 25,
+    "dinov2_high_model_low": 25,
+    "layout_safe_coverage": 15,
+    "model_high_clip_negative_high": 20,
+    "model_top_diagnostic": 30,
+    "random_control": 10
+  },
+  "input_rows": 250,
+  "interpretation": "Review queue uses campaign-local ranks and bucket allocations. Diagnostic model scores are not calibrated pass/fail probabilities and are not compared globally across campaigns.",
+  "out_dir": "data/review/phase1b/v2_2_2/queues",
+  "policy_note": "Bucket budgets are review-sampling allocations. They are not aesthetic thresholds, final quality thresholds, or calibrated acceptance rules.",
+  "queue_stage": "diagnostic_model_available",
+  "queue_version": "review_queue_v2_2_2",
+  "score_snapshot": "data/retrieval/phase1b/v2_2_2/candidate_score_snapshot_v2_2_2.jsonl",
+  "score_status": "diagnostic_only",
+  "selected_rows": 150,
+  "target_per_campaign": 30,
+  "threshold_status": "no_calibrated_threshold"
+}

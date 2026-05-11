@@ -1,0 +1,1046 @@
+{
+  "gallery_entities": [
+    {
+      "gallery_id": "sodae",
+      "name_ko": ["소대"],
+      "name_eng" : ["Sodae", "Miradouro"],
+      "gallery_type": ["architecture"],
+      "description": ["알바로 시자의 요청으로 소요헌과 함께 구상한 전망대, 포르투갈어로 미라도로라 했던 이 곳을 새둥지 소대라고 새롭게 부릅니다." , "기울어진 20.5m의 탑을 오르면서 사유원의 멀고 가까운 전망을 동서남북으로 모두 가집니다."],
+      "gallery_detail": {
+        "architect": ["Alvaro Siza", "알바로 시자", "Carlos Castanheira", "카를로스 카스탄헤이라"],
+        "completion_year" : 2019
+      }
+    },
+    {
+      "gallery_id": "soyoheon",
+      "name_ko": ["소요헌"],
+      "name_eng" : ["Soyoheon", "Art Pavillion"],
+      "gallery_type": ["architecture"],
+      "description": ["알바로 시자는 피카소의 <임신한 여인>과 <게르니카>를 전시할 마드리드 오에스테 공원의 가상 프로젝트를 사유원에 새롭게 만들었습니다." , "피카소의 작품 대신 시자의 조각들이 설치된 소요헌, 한국 전쟁의 격전지였던 이 곳은 생명과 죽음의 순환이 새겨진 공간입니다."],
+      "gallery_detail": {
+        "architect": ["Alvaro Siza", "알바로 시자", "Carlos Castanheira", "카를로스 카스탄헤이라"],
+        "art_objects" : ["Alvaro Siza", "알바로 시자"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "completion_year" : 2017
+      }
+    },
+    {
+      "gallery_id": "hyeonam",
+      "name_ko": ["현암"],
+      "name_eng" : ["Hyeonam"],
+      "gallery_type": ["architecture"],
+      "description": ["사유원에서 첫번째로 지어진 현암, 오묘하고 아름다운 집입니다. 작은 집이지만 장대한 자연이 계절 따라 변하는 풍광으로 펼쳐집니다.", "옥상 코르텐 마루는 열린 하늘을, 사랑방에서는 수평 파노라마, 그리고 안방에서는 아담한 자연을 품습니다."],
+      "gallery_detail": {
+        "architect": ["Seung H-Sang", "승효상"],
+        "landscape_design" : ["Jung Youngsun", "정영선", "Park Seungjin", "박승진"],
+        "plaque_calligraphy" : ["Wei Liang", "웨이량"],
+        "completion_year" : 2013
+      }
+    },
+    {
+      "gallery_id": "gagabinbin",
+      "name_ko": ["가가빈빈"],
+      "name_eng" : ["Gaga Binbin"],
+      "gallery_type": ["architecture"],
+      "description": ["공자는 본바탕과 꾸밈의 균형을 문질빈빈이라 하였습니다.", "사유원 가장 높은 곳에 수평의 자태를 간직한 가가빈빈은 지세와 풍광, 편안함과 긴장됨의 균형을 이룬 쉼터입니다."],
+      "gallery_detail": {
+        "architect": ["Choi Wook", "최욱"],
+        "landscape_design" : ["Park Seungjin", "박승진"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "completion_year" : 2022
+      }
+    },
+    {
+      "gallery_id": "sadam",
+      "name_ko": ["사담", "몽몽미방"],
+      "name_eng" : ["Sadam", "Mongmong Mibang"],
+      "gallery_type": ["architecture", "garden"],
+      "description": ["물의 정원 사담. 깊은 계곡의 풍치, 수생식물과 비단잉어의 연못, 춤과 음악이 펼쳐지는 데크, 마주하는 느티나무 숲 한유시경, 이 모두에 열린 레스토랑.", "사담은 사람이 만든 자연의 정수입니다."],
+      "gallery_detail": {
+        "architect": ["Seung H-Sang", "승효상"],
+        "landscape_design" : ["Jung Youngsun", "정영선", "Park Seungjin", "박승진"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "completion_year" : 2016
+      }
+    },
+    {
+      "gallery_id": "yuwon",
+      "name_ko": ["유원"],
+      "name_eng" : ["Yuwon"],
+      "gallery_type": ["architecture", "garden"],
+      "description": ["설립자의 소나무와 돌 컬렉션을 계곡에 모아 한국 정원을 만들었습니다. 한옥 사야정과 팔공산 비로봉 간의 기운을 둘러싸고 주변 풍광을 적당히 열고 닫았습니다.", "솔 향기와 물 소리가 함께 하는 풍류의 공간입니다."],
+      "gallery_detail": {
+        "architect": ["Park Changyeol", "박창열"],
+        "landscape_design" : ["Jung Youngsun", "정영선", "Park Seungjin", "박승진"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "completion_year" : 2019
+      }
+    },
+    {
+      "gallery_id": "naesimnakwon",
+      "name_ko": ["내심낙원"],
+      "name_eng" : ["Naesim Nakwon"],
+      "gallery_type": ["architecture"],
+      "description": ["근대기 한국 가톨릭계의 거장이자 사유원 설립자의 장인 김익진, 그와 영혼의 우정을 나누었던 찰스 메우스 신부를 함께 기리는 경당.", "해방 무렵 물려받은 재산을 소작농에게 나눠주고 대구에서 청빈한 일생을 가톨릭에 바쳤던 김익진, 중국 종교학자 우징숑의 <내심낙원>의 번역자이기도 했습니다.", "김익진과 찰스 메우스의 인연이 우징숑을 통해 이루어졌으니, <내심낙원>의 뜻을 여기에 간직했습니다."],
+      "gallery_detail": {
+        "architect": ["Alvaro Siza", "알바로 시자", "Carlos Castanheira", "카를로스 카스텐헤이라"],
+        "furniture" : ["Alvaro Siza", "알바로 시자"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "plaque_calligraphy" : ["Wei Liang", "웨이량"],
+        "completion_year" : 2017
+      }
+    },
+    {
+      "gallery_id": "myeongjeong",
+      "name_ko": ["명정"],
+      "name_eng" : ["Myeongjeong"],
+      "gallery_type": ["architecture"],
+      "description": ["명정은 현생과 내생이 교차하는 곳입니다.", "아름다운 풍경을 잊고 오로지 하늘만 보이는 마당, 물이 흐르는 망각의 바다와 붉은 피안의 세계로 구성되어 있고, 작은 성소와 삶의 좁은 통로로 둘러 쌓여 있습니다."],
+      "gallery_detail": {
+        "architect": ["Seung H-Sang", "승효상"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "completion_year" : 2019
+      }
+    },
+    {
+      "gallery_id": "cheomdan",
+      "name_ko": ["첨단"],
+      "name_eng" : ["Cheomdan"],
+      "gallery_type": ["architecture"],
+      "description": ["사유원 가장 높은 곳, 물탱크에 콘크리트를 입혀 별을 보는 제단을 만들었습니다.", "신라 시대부터 나쁜 기운을 막는 12지신을 묘나 불탑에 새겨왔던 것처럼 사유원을 둘러싼 하늘과 땅을 평범한 물탱크에 새겼습니다."],
+      "gallery_detail": {
+        "architect": ["Seung H-Sang", "승효상"],
+        "completion_year" : 2018
+      }
+    },
+    {
+      "gallery_id": "wasa",
+      "name_ko": ["와사"],
+      "name_eng" : ["Wasa"],
+      "gallery_type": ["architecture"],
+      "description": ["깨달음을 얻는 연못 오당의 낙차를 따라 붉게 물든 철판이 접혀 흘러갑니다. 명상의 수도원이 물 길 따라 누웠다 하여 와사라 부릅니다."],
+      "gallery_detail": {
+        "architect": ["Seung H-Sang", "승효상"],
+        "completion_year" : 2019
+      }
+    },
+    {
+      "gallery_id": "symphony6",
+      "name_ko": ["심포니 6"],
+      "name_eng" : ["Symphony 6"],
+      "gallery_type": ["architecture"],
+      "description": ["사유원 상단부 명정 옆에 자리한 심포니6는 국악, 클래식, 무용 등 다양한 공연과 문화 행사가 열리는 다목적 야외 공연장이다. 이탈리아 건축가 안드레아 리베라니가 설계했으며, 강철과 자연이 어우러진 ‘텐트’ 콘셉트와 종이접기에서 영감을 받은 코르텐강 구조물이 특징이다.", "팔공산의 웅장한 풍광과 조화를 이루는 250석 규모의 이 공간에서는 예술성과 기능을 겸비한 다채로운 문화 이벤트가 펼쳐진다."],
+      "gallery_detail": {
+        "architect": ["Andrea Liverani", "안드레아 리베라니"]
+      }
+    },
+    {
+      "gallery_id": "pungseolgicheonyeon",
+      "name_ko": ["풍설기천년"],
+      "name_eng" : ["Pungseol Gicheonyeon"],
+      "gallery_type": ["garden"],
+      "description": ["바람과 서리, 인간의 욕망을 견뎌낸 반 천년 모과나무들이 사유원의 심장부를 찾아왔습니다.", "한 때 나무 둥치로 밀반출되려던 이들을 사유원의 설립자가 지켜내고 정성으로 다시 키웠습니다.", "팔공산의 정기를 받아 천년을 맞이할 108그루의 희귀한 절경을 함께 그려봅니다."],
+      "gallery_detail": {
+        "landscape_design" : ["Jung Youngsun", "정영선", "Park Seungjin", "박승진"],
+        "stone_arrangement" : ["Kawagishi Matsunobu" , "가와시기 마쓰노부"],
+        "lighting" : ["Ko Kiyoung", "고기영"],
+        "completion_year" : 2016
+      }
+    },
+    {
+      "gallery_id": "byeolyudongcheon",
+      "name_ko": ["별유동천"],
+      "name_eng" : ["Byeolyu Dongcheon"],
+      "gallery_type": ["garden"],
+      "description": ["설립자가 수집한 200년 넘은 배롱나무들을 조경가 카와기시 마츠노부가 정성스럽게 사유원에 옮겨 심었습니다.", "짙고 맑은 붉은 꽃들이 긴 여름 흐드러지면 인간 세상이 사라진 별유천지 무릉도원입니다. 사유원의 그 곳을 별유동천이라 부릅니다."],
+      "gallery_detail": {
+        "landscape_design" : ["Kawagishi Matsunobu", "가와시기 마쓰노부"],
+        "completion_year" : 2014
+      }
+    },
+    {
+      "gallery_id": "hanyusigyeong",
+      "name_ko": ["한유시경"],
+      "name_eng" : ["Hanyu Sigyeong"],
+      "gallery_type": ["garden"],
+      "description": ["리기다 소나무의 상록 숲 길을 걷다가 느낌이 다른 숲으로 들어갑니다. 사계절 하늘의 빛, 숲의 색과 향이 오묘하게 변하는 느티나무 숲입니다.", "한가로이 노닐면 시인의 경지에 다다르는 곳, 여기를 한유시경이라 부릅니다."],
+      "gallery_detail": {
+        "landscape_design" : ["Kawagishi Matsunobu", "가와시기 마쓰노부"]
+      }
+    }
+  ],
+
+
+  "plant_entities" : [
+    {
+      "plant_id": "ChineseQuince",
+      "name_ko": ["모과나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Chaenomeles sinensis (Thouin) Koehne"],
+      "개화시기" : ["5월", "봄"],
+      "꽃말" : ["정열", "평범", "조숙"]
+    },    
+    {
+      "plant_id": "CrapeMyrtle",
+      "name_ko": ["배롱나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Lagerstroemia indica L."],
+      "개화시기" : ["7월", "8월", "9월", "여름"],
+      "꽃말" : ["부귀"]
+    },
+    {
+      "plant_id": "Zelkova",
+      "name_ko": ["느티나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Zelkova serrata (Thunb.) Makino"],
+      "개화시기" : ["4월", "5월", "봄"],
+      "꽃말" : ["운명"]
+    },
+    {
+      "plant_id": "KoreanHornbeam",
+      "name_ko": ["소사나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Carpinus turczaninowii Hance"],
+      "개화시기" : ["4월", "5월", "봄"],
+      "꽃말" : ["믿을 수 있는 사람"]
+    },
+    {
+      "plant_id": "JapaneseApricot",
+      "name_ko": ["매화나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Prunus mume S. et Z."],
+      "개화시기" : ["4월", "봄"],
+      "꽃말" : ["기쁨"]
+    },
+    {
+      "plant_id": "PersimmonTree",
+      "name_ko": ["감나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Diospyros kaki Thunb."],
+      "개화시기" : ["5월", "6월", "봄", "여름"],
+      "꽃말" : ["경의", "자애", "소박"]
+    },
+    {
+      "plant_id": "KoreanMountainAsh",
+      "name_ko": ["팥배나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Sorbus alnifolia"],
+      "개화시기" : ["5월", "6월", "봄", "여름"],
+      "꽃말" : ["매혹"]
+    },
+    {
+      "plant_id": "AsiaticDogwood",
+      "name_ko": ["산수유나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Cornus officinalis Siebold & Zucc."],
+      "개화시기" : ["3월", "4월", "봄"],
+      "꽃말" : ["봄맞이"]
+    },
+    {
+      "plant_id": "PineTree",
+      "name_ko": ["소나무"],
+      "plant_type": ["tree"],
+      "학명" : ["Pinus densiflora Siebold & Zucc."],
+      "개화시기" : ["5월", "봄"],
+      "꽃말" : ["정절", "장수"]
+    },
+    {
+      "plant_id": "PitchPine",
+      "name_ko": ["리기다소나무"],
+      "plant_type":["tree"],
+      "학명" : ["Pinus rigida Mill."],
+      "개화시기" : ["5월", "봄"],
+      "꽃말" : ["철학", "희망의 속삭임"]
+    },
+    {
+      "plant_id": "TigerLily",
+      "name_ko": ["참나리"],
+      "plant_type": ["flower"],
+      "학명" : ["Lilium lancifolium"],
+      "개화시기" : ["7월", "8월", "여름"],
+      "꽃말" : ["깨끗한 마음"]
+    },
+    {
+      "plant_id": "LadyBell",
+      "name_ko": ["잔대"],
+      "plant_type": ["flower"],
+      "학명" : ["Adenophora triphylla var. japonica HARA."],
+      "개화시기" : ["7월", "8월", "9월", "여름", "가을"],
+      "꽃말" : ["은혜", "감상"]
+    },
+    {
+      "plant_id": "Lilyturf",
+      "name_ko": ["맥문동"],
+      "plant_type": ["flower"],
+      "학명" : ["Liriope platyphylla"],
+      "개화시기" : ["5월", "6월", "7월", "8월", "9월", "여름", "가을"],
+      "꽃말" : ["기쁨의 연속"]
+    },
+    {
+      "plant_id": "WaterLily",
+      "name_ko": ["수련"],
+      "plant_type": ["flower"],
+      "학명" : ["Nymphaea tetragona"],
+      "개화시기" : ["6월", "7월", "8월", "여름"],
+      "꽃말" : ["청순한 마음"]
+    },
+    {
+      "plant_id": "MountainHydrangea",
+      "name_ko": ["산수국"],
+      "plant_type": ["flower"],
+      "학명" : ["Hydrangea serrata for. acuminata (Siebold & Zucc.) Wilson"],
+      "개화시기" : ["6월", "7월", "8월", "여름"],
+      "꽃말" : ["변하기 쉬운 마음"]
+    },
+    {
+      "plant_id": "Raspberry",
+      "name_ko": ["산딸기"],
+      "plant_type": ["flower"],
+      "학명" : ["Rubus crataegifolius"],
+      "개화시기" : ["5월", "6월", "봄", "여름"],
+      "꽃말" : ["사랑", "질투"]
+    },
+    {
+      "plant_id": "Azalea",
+      "name_ko": ["진달래"],
+      "plant_type": ["flower"],
+      "학명" : ["Rhododendron mucronulatum"],
+      "개화시기" : ["4월", "봄"],
+      "꽃말" : ["사랑의 기쁨"]
+    },
+    {
+      "plant_id": "RoughAster",
+      "name_ko": ["참취"],
+      "plant_type": ["flower"],
+      "학명" : ["Aster scaber"],
+      "개화시기" : ["8월", "9월", "10월", "여름", "가을"],
+      "꽃말" : ["이별"]
+    },
+    {
+      "plant_id": "KoreanAster",
+      "name_ko": ["쑥부쟁이"],
+      "plant_type": ["flower"],
+      "학명" : ["Aster yomena"],
+      "개화시기" : ["7월", "8월", "여름"],
+      "꽃말" : ["기다림", "그리움"]
+    }
+  ],
+
+  "route_entities" : [
+    {
+      "route_id": "mokryeongil",
+      "name_ko": ["목련길"],
+      "route_type": ["route"],
+      "description": [
+        "목련길은 1시간 정도 소요되는 코스입니다. 치허문을 출발, 호젓한 비나리길을 따라 알바로 시자의 대표적 건축물인 소요헌과 소대를 관람할 수 있습니다.",
+        "울창한 리기다 소나무숲을 지나 한참을 걷다보면 시자가 좋아하는 나무로 잘 알려진 목련이 일렬로 도열해 관람객을 반갑게 맞아줍니다. 솔향 가득한 숲속을 따라 건축거장이 자연과 교감하며 만들어낸 빛과 어둠의 조화를 느껴 보시기 바랍니다.",
+        "20.5미터 높이 소대에서 보는 압도적인 풍경이 투어의 핵심입니다."
+      ]
+    },
+    {
+      "route_id": "baekilhonggil",
+      "name_ko": ["백일홍길"],
+      "route_type": ["route"],
+      "description": [
+        "백일홍길은 2시간 정도 소요되는 코스입니다. 백일홍은 꽃이 백일동안 피어있어서 백일홍이라고 합니다. 배롱나무가 원래 이름입니다.",
+        "알바로 시자의 소대와 소요헌을 관람한후 쉼자리길을 따라 올라오면 별유동천에 신선처럼 자리잡은 백일홍 고목들을 만날 수 있습니다. 백일홍나무는 한여름 무더위가 오면 아름다운 붉은 꽃을 피웁니다.",
+        "풍설기천년을 바라보며 잠시 땀을 식힌 후 건축가 승효상이 설계한 현암에 올라 소나무숲이 펼치는 아름다운 파도도 꼭 감상해 보시기 바랍니다."
+      ]
+    },
+    {
+      "route_id": "mogyuagil",
+      "name_ko": ["모과길"],
+      "route_type": ["route"],
+      "description": [
+        "모과길은 3시간정도 소요되는 코스입니다. 천천히 여유롭게 걸으며 사유원의 숨결을 느낄 수 있는 코스입니다. 치허문 또는 곡신문에서 출발 가능한 순환코스입니다.",
+        "모과나무는 4월에 분홍색 예쁜 꽃이 핀 후 콩알만한 열매가 한여름이 되면 어른 주먹크기로 자랍니다. 오랜세월 풍파를 겪으면서도 꿋꿋하게 살아온 모과의 기운을 느끼며 걷다보면 어느덧 한유시경입니다.",
+        "전통정원 유원을 따라 보현산의 맑은 기운을 한껏 받은 내심낙원에선 마음이 더 맑아집니다.",
+        "명정에선 고요한 사색을 정향대에선 느티나무숲의 푸른기운을 한껏 즐겨보실 수 있는 코스입니다."
+      ]
+    },
+    {
+      "route_id": "gosonggil",
+      "name_ko": ["고송길"],
+      "route_type": ["route"],
+      "description": [
+        "고송길은 4시간정도 소요되는 코스입니다. 오래된 소나무는 사유원의 가장 소중한 나무중에 하나입니다. 소나무는 선비의 품위를 상징했고 솔향은 피로에 지친 심신을 맑게 해줍니다. 겨울에도 홀로 푸른 소나무의 정기를 마음껏 느끼시며 천천히 걸어보시기 바랍니다. 치허문 또는 곡신문에서 출발 가능한 순환코스입니다.",
+        "고송길을 선택한 관람객들에겐 오당과 와사의 호젓한 외로움을 느껴보실 것을 권합니다.",
+        "모든 곳을 돌아보신 후 하산하기 전에 꼭 들러서 계곡의 물소리, 새소리, 바람소리를 느껴 보시기 바랍니다."
+      ]
+    }
+  ],
+
+  "relationships" : [
+    {
+    "source_type": "plant",
+    "source_id": "ChineseQuince",
+    "target_type": "gallery",
+    "target_id": "pungseolgicheonyeon",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "CrapeMyrtle",
+    "target_type": "gallery",
+    "target_id": "byeolyudongcheon",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "Zelkova",
+    "target_type": "gallery",
+    "target_id": "hanyusigyeong",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "JapaneseApricot",
+    "target_type": "gallery",
+    "target_id": "yuwon",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "PersimmonTree",
+    "target_type": "gallery",
+    "target_id": "pungseolgicheonyeon",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "AsiaticDogwood",
+    "target_type": "gallery",
+    "target_id": "pungseolgicheonyeon",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "PineTree",
+    "target_type": "gallery",
+    "target_id": "yuwon",
+    "relation_type": "exists_in"
+    },
+    {
+    "source_type": "plant",
+    "source_id": "TigerLily",
+    "target_type": "gallery",
+    "target_id": "pungseolgicheonyeon",
+    "relation_type": "exists_in"
+    }
+  ],
+
+
+  "route_points": [
+    {
+      "point_id": "chiheomun",
+      "name_ko": ["치허문"],
+      "point_type": ["main_gate", "entrance", "start_finish_point"],
+      "description": ["사유원의 정문입니다."]
+    }
+  ],
+
+  "route_steps": [
+    {
+      "route_id": "mokryeongil",
+      "sequence_order": 1,
+      "map_step_order": 1,
+      "step_role": "start",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+    {
+      "route_id": "mokryeongil",
+      "sequence_order": 2,
+      "map_step_order": 2,
+      "step_role": "stop",
+      "display_name": "소요헌",
+      "target_type": "gallery",
+      "target_id": "soyoheon"
+    },
+    {
+      "route_id": "mokryeongil",
+      "sequence_order": 3,
+      "map_step_order": 3,
+      "step_role": "stop",
+      "display_name": "소대",
+      "target_type": "gallery",
+      "target_id": "sodae"
+    },
+    {
+      "route_id": "mokryeongil",
+      "sequence_order": 4,
+      "map_step_order": null,
+      "step_role": "finish",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 1,
+      "map_step_order": 1,
+      "step_role": "start",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 2,
+      "map_step_order": 2,
+      "step_role": "stop",
+      "display_name": "소요헌",
+      "target_type": "gallery",
+      "target_id": "soyoheon"
+    },
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 3,
+      "map_step_order": 3,
+      "step_role": "stop",
+      "display_name": "소대",
+      "target_type": "gallery",
+      "target_id": "sodae"
+    },
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 4,
+      "map_step_order": 4,
+      "step_role": "stop",
+      "display_name": "풍설기천년",
+      "target_type": "gallery",
+      "target_id": "pungseolgicheonyeon"
+    },
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 5,
+      "map_step_order": 5,
+      "step_role": "stop",
+      "display_name": "별유동천",
+      "target_type": "gallery",
+      "target_id": "byeolyudongcheon"
+    },
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 6,
+      "map_step_order": 6,
+      "step_role": "stop",
+      "display_name": "현암",
+      "target_type": "gallery",
+      "target_id": "hyeonam"
+    },
+    {
+      "route_id": "baekilhonggil",
+      "sequence_order": 7,
+      "map_step_order": null,
+      "step_role": "finish",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 1,
+      "map_step_order": 1,
+      "step_role": "start",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 2,
+      "map_step_order": 2,
+      "step_role": "stop",
+      "display_name": "소요헌",
+      "target_type": "gallery",
+      "target_id": "soyoheon"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 3,
+      "map_step_order": 3,
+      "step_role": "stop",
+      "display_name": "소대",
+      "target_type": "gallery",
+      "target_id": "sodae"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 4,
+      "map_step_order": 4,
+      "step_role": "stop",
+      "display_name": "풍설기천년",
+      "target_type": "gallery",
+      "target_id": "pungseolgicheonyeon"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 5,
+      "map_step_order": 5,
+      "step_role": "stop",
+      "display_name": "별유동천",
+      "target_type": "gallery",
+      "target_id": "byeolyudongcheon"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 6,
+      "map_step_order": 6,
+      "step_role": "stop",
+      "display_name": "현암",
+      "target_type": "gallery",
+      "target_id": "hyeonam"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 7,
+      "map_step_order": 8,
+      "step_role": "stop",
+      "display_name": "한유시경",
+      "target_type": "gallery",
+      "target_id": "hanyusigyeong"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 8,
+      "map_step_order": 9,
+      "step_role": "stop",
+      "display_name": "사담",
+      "target_type": "gallery",
+      "target_id": "sadam"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 9,
+      "map_step_order": 10,
+      "step_role": "stop",
+      "display_name": "유원",
+      "target_type": "gallery",
+      "target_id": "yuwon"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 10,
+      "map_step_order": 11,
+      "step_role": "stop",
+      "display_name": "내심낙원",
+      "target_type": "gallery",
+      "target_id": "naesimnakwon"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 11,
+      "map_step_order": 12,
+      "step_role": "stop",
+      "display_name": "가가빈빈",
+      "target_type": "gallery",
+      "target_id": "gagabinbin"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 12,
+      "map_step_order": 13,
+      "step_role": "stop",
+      "display_name": "명정",
+      "target_type": "gallery",
+      "target_id": "myeongjeong"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 13,
+      "map_step_order": 15,
+      "step_role": "stop",
+      "display_name": "한유시경",
+      "target_type": "gallery",
+      "target_id": "hanyusigyeong"
+    },
+    {
+      "route_id": "mogyuagil",
+      "sequence_order": 14,
+      "map_step_order": null,
+      "step_role": "finish",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 1,
+      "map_step_order": 1,
+      "step_role": "start",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 2,
+      "map_step_order": 2,
+      "step_role": "stop",
+      "display_name": "소요헌",
+      "target_type": "gallery",
+      "target_id": "soyoheon"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 3,
+      "map_step_order": 3,
+      "step_role": "stop",
+      "display_name": "소대",
+      "target_type": "gallery",
+      "target_id": "sodae"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 4,
+      "map_step_order": 4,
+      "step_role": "stop",
+      "display_name": "풍설기천년",
+      "target_type": "gallery",
+      "target_id": "pungseolgicheonyeon"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 5,
+      "map_step_order": 5,
+      "step_role": "stop",
+      "display_name": "별유동천",
+      "target_type": "gallery",
+      "target_id": "byeolyudongcheon"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 6,
+      "map_step_order": 6,
+      "step_role": "stop",
+      "display_name": "현암",
+      "target_type": "gallery",
+      "target_id": "hyeonam"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 7,
+      "map_step_order": 8,
+      "step_role": "stop",
+      "display_name": "한유시경",
+      "target_type": "gallery",
+      "target_id": "hanyusigyeong"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 8,
+      "map_step_order": 9,
+      "step_role": "stop",
+      "display_name": "사담",
+      "target_type": "gallery",
+      "target_id": "sadam"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 9,
+      "map_step_order": 10,
+      "step_role": "stop",
+      "display_name": "유원",
+      "target_type": "gallery",
+      "target_id": "yuwon"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 10,
+      "map_step_order": 11,
+      "step_role": "stop",
+      "display_name": "내심낙원",
+      "target_type": "gallery",
+      "target_id": "naesimnakwon"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 11,
+      "map_step_order": 13,
+      "step_role": "stop",
+      "display_name": "첨단",
+      "target_type": "gallery",
+      "target_id": "cheomdan"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 12,
+      "map_step_order": 14,
+      "step_role": "stop",
+      "display_name": "가가빈빈",
+      "target_type": "gallery",
+      "target_id": "gagabinbin"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 13,
+      "map_step_order": 15,
+      "step_role": "stop",
+      "display_name": "명정",
+      "target_type": "gallery",
+      "target_id": "myeongjeong"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 14,
+      "map_step_order": 17,
+      "step_role": "stop",
+      "display_name": "한유시경",
+      "target_type": "gallery",
+      "target_id": "hanyusigyeong"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 15,
+      "map_step_order": 18,
+      "step_role": "stop",
+      "display_name": "와사",
+      "map_label": "오당/와사",
+      "target_type": "gallery",
+      "target_id": "wasa"
+    },
+    {
+      "route_id": "gosonggil",
+      "sequence_order": 16,
+      "map_step_order": null,
+      "step_role": "finish",
+      "display_name": "치허문",
+      "target_type": "route_point",
+      "target_id": "chiheomun"
+    }
+  ],
+
+  "route_segments": [
+    {
+      "route_id": "mokryeongil",
+      "from_sequence_order": 1,
+      "to_sequence_order": 2,
+      "segment_names": ["비나리길", "초하루길"]
+    },
+    {
+      "route_id": "mokryeongil",
+      "from_sequence_order": 2,
+      "to_sequence_order": 3,
+      "segment_names": []
+    },
+    {
+      "route_id": "mokryeongil",
+      "from_sequence_order": 3,
+      "to_sequence_order": 4,
+      "segment_names": ["십자길"]
+    },
+
+    {
+      "route_id": "baekilhonggil",
+      "from_sequence_order": 1,
+      "to_sequence_order": 2,
+      "segment_names": ["비나리길", "초하루길"]
+    },
+    {
+      "route_id": "baekilhonggil",
+      "from_sequence_order": 2,
+      "to_sequence_order": 3,
+      "segment_names": []
+    },
+    {
+      "route_id": "baekilhonggil",
+      "from_sequence_order": 3,
+      "to_sequence_order": 4,
+      "segment_names": ["실자길"]
+    },
+    {
+      "route_id": "baekilhonggil",
+      "from_sequence_order": 4,
+      "to_sequence_order": 5,
+      "segment_names": []
+    },
+    {
+      "route_id": "baekilhonggil",
+      "from_sequence_order": 5,
+      "to_sequence_order": 6,
+      "segment_names": []
+    },
+    {
+      "route_id": "baekilhonggil",
+      "from_sequence_order": 6,
+      "to_sequence_order": 7,
+      "segment_names": []
+    },
+
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 1,
+      "to_sequence_order": 2,
+      "segment_names": ["비나리길", "초하루길"]
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 2,
+      "to_sequence_order": 3,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 3,
+      "to_sequence_order": 4,
+      "segment_names": ["실자길"]
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 4,
+      "to_sequence_order": 5,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 5,
+      "to_sequence_order": 6,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 6,
+      "to_sequence_order": 7,
+      "segment_names": ["미리내길"]
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 7,
+      "to_sequence_order": 8,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 8,
+      "to_sequence_order": 9,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 9,
+      "to_sequence_order": 10,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 10,
+      "to_sequence_order": 11,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 11,
+      "to_sequence_order": 12,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 12,
+      "to_sequence_order": 13,
+      "segment_names": []
+    },
+    {
+      "route_id": "mogyuagil",
+      "from_sequence_order": 13,
+      "to_sequence_order": 14,
+      "segment_names": ["보름달길"]
+    },
+
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 1,
+      "to_sequence_order": 2,
+      "segment_names": ["비나리길", "초하루길"]
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 2,
+      "to_sequence_order": 3,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 3,
+      "to_sequence_order": 4,
+      "segment_names": ["실자길"]
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 4,
+      "to_sequence_order": 5,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 5,
+      "to_sequence_order": 6,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 6,
+      "to_sequence_order": 7,
+      "segment_names": ["미리내길"]
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 7,
+      "to_sequence_order": 8,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 8,
+      "to_sequence_order": 9,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 9,
+      "to_sequence_order": 10,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 10,
+      "to_sequence_order": 11,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 11,
+      "to_sequence_order": 12,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 12,
+      "to_sequence_order": 13,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 13,
+      "to_sequence_order": 14,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 14,
+      "to_sequence_order": 15,
+      "segment_names": []
+    },
+    {
+      "route_id": "gosonggil",
+      "from_sequence_order": 15,
+      "to_sequence_order": 16,
+      "segment_names": ["구비길", "비나리길"]
+    }
+  ]
+
+}

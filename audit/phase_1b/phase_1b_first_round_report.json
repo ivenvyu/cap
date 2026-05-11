@@ -1,0 +1,443 @@
+{
+  "artifact_counts": {
+    "classifier_training_rows_total": 150,
+    "pair_feature_snapshot_files": 5,
+    "pair_feature_snapshot_rows_total": 250,
+    "ranker_training_rows_total": 150,
+    "retrieval_files": 5,
+    "retrieval_rows_total": 250,
+    "review_event_files": 5,
+    "review_event_rows_total": 150,
+    "review_queue_files": 5,
+    "review_queue_rows_total": 150
+  },
+  "bucket_label_matrix": {
+    "clip_high_model_low": {
+      "accept": 14,
+      "acceptable": 9,
+      "reject": 37
+    },
+    "cluster_diversity": {
+      "accept": 7,
+      "acceptable": 7,
+      "reject": 26
+    },
+    "layout_safe_coverage": {
+      "accept": 4,
+      "acceptable": 3,
+      "reject": 23
+    },
+    "random_coverage": {
+      "reject": 5
+    },
+    "uncertainty": {
+      "accept": 2,
+      "acceptable": 5,
+      "reject": 8
+    }
+  },
+  "campaign_distribution": {
+    "campaign_family_counts": {
+      "architecture_family": 1,
+      "botanical_or_flower_family": 1,
+      "garden_walking_family": 2,
+      "indoor_gallery_or_winter_family": 1
+    },
+    "campaign_ids": [
+      "phase1b_summer_garden_walk",
+      "phase1b_autumn_garden_walk",
+      "phase1b_architecture_exhibition_visit",
+      "phase1b_botanical_spring_program",
+      "phase1b_indoor_gallery_winter_art"
+    ],
+    "purpose_type_counts": {
+      "education": 1,
+      "exhibition": 2,
+      "walking_program": 2
+    },
+    "season_counts": {
+      "autumn": 2,
+      "spring": 1,
+      "summer": 1,
+      "winter": 1
+    },
+    "space_type_counts": {
+      "architecture": 1,
+      "flower": 1,
+      "gallery": 1,
+      "garden": 2
+    }
+  },
+  "campaign_label_matrix": {
+    "phase1b_architecture_exhibition_visit": {
+      "accept": 11,
+      "acceptable": 9,
+      "reject": 10
+    },
+    "phase1b_autumn_garden_walk": {
+      "accept": 6,
+      "acceptable": 3,
+      "reject": 21
+    },
+    "phase1b_botanical_spring_program": {
+      "accept": 2,
+      "acceptable": 8,
+      "reject": 20
+    },
+    "phase1b_indoor_gallery_winter_art": {
+      "accept": 1,
+      "reject": 29
+    },
+    "phase1b_summer_garden_walk": {
+      "accept": 7,
+      "acceptable": 4,
+      "reject": 19
+    }
+  },
+  "campaign_summaries": {
+    "phase1b_architecture_exhibition_visit": {
+      "bucket_counts": {
+        "clip_high_model_low": 12,
+        "cluster_diversity": 8,
+        "layout_safe_coverage": 6,
+        "random_coverage": 1,
+        "uncertainty": 3
+      },
+      "campaign_family": "architecture_family",
+      "classifier_training_rows": 30,
+      "decision_counts": {
+        "0": 10,
+        "1": 9,
+        "2": 11
+      },
+      "decision_label_counts": {
+        "accept": 11,
+        "acceptable": 9,
+        "reject": 10
+      },
+      "diagnostic_positive_rate": 0.6666666666666666,
+      "diagnostic_reject_rate": 0.3333333333333333,
+      "issue_tag_counts": {
+        "poor_composition": 3,
+        "semantic_mismatch": 7,
+        "text_region_conflict": 1
+      },
+      "pair_feature_snapshot_rows": 50,
+      "positive_count_accept_or_acceptable": 20,
+      "purpose_type": "exhibition",
+      "ranker_training_rows": 30,
+      "reject_count": 10,
+      "retrieval_rows": 50,
+      "review_event_rows": 30,
+      "review_queue_rows": 30,
+      "season": "autumn",
+      "space_type": "architecture",
+      "unique_duplicate_groups_in_queue": 30
+    },
+    "phase1b_autumn_garden_walk": {
+      "bucket_counts": {
+        "clip_high_model_low": 12,
+        "cluster_diversity": 8,
+        "layout_safe_coverage": 6,
+        "random_coverage": 1,
+        "uncertainty": 3
+      },
+      "campaign_family": "garden_walking_family",
+      "classifier_training_rows": 30,
+      "decision_counts": {
+        "0": 21,
+        "1": 3,
+        "2": 6
+      },
+      "decision_label_counts": {
+        "accept": 6,
+        "acceptable": 3,
+        "reject": 21
+      },
+      "diagnostic_positive_rate": 0.3,
+      "diagnostic_reject_rate": 0.7,
+      "issue_tag_counts": {
+        "season_mismatch": 16,
+        "semantic_mismatch": 5
+      },
+      "pair_feature_snapshot_rows": 50,
+      "positive_count_accept_or_acceptable": 9,
+      "purpose_type": "walking_program",
+      "ranker_training_rows": 30,
+      "reject_count": 21,
+      "retrieval_rows": 50,
+      "review_event_rows": 30,
+      "review_queue_rows": 30,
+      "season": "autumn",
+      "space_type": "garden",
+      "unique_duplicate_groups_in_queue": 30
+    },
+    "phase1b_botanical_spring_program": {
+      "bucket_counts": {
+        "clip_high_model_low": 12,
+        "cluster_diversity": 8,
+        "layout_safe_coverage": 6,
+        "random_coverage": 1,
+        "uncertainty": 3
+      },
+      "campaign_family": "botanical_or_flower_family",
+      "classifier_training_rows": 30,
+      "decision_counts": {
+        "0": 20,
+        "1": 8,
+        "2": 2
+      },
+      "decision_label_counts": {
+        "accept": 2,
+        "acceptable": 8,
+        "reject": 20
+      },
+      "diagnostic_positive_rate": 0.3333333333333333,
+      "diagnostic_reject_rate": 0.6666666666666666,
+      "issue_tag_counts": {
+        "season_mismatch": 11,
+        "semantic_mismatch": 9
+      },
+      "pair_feature_snapshot_rows": 50,
+      "positive_count_accept_or_acceptable": 10,
+      "purpose_type": "education",
+      "ranker_training_rows": 30,
+      "reject_count": 20,
+      "retrieval_rows": 50,
+      "review_event_rows": 30,
+      "review_queue_rows": 30,
+      "season": "spring",
+      "space_type": "flower",
+      "unique_duplicate_groups_in_queue": 30
+    },
+    "phase1b_indoor_gallery_winter_art": {
+      "bucket_counts": {
+        "clip_high_model_low": 12,
+        "cluster_diversity": 8,
+        "layout_safe_coverage": 6,
+        "random_coverage": 1,
+        "uncertainty": 3
+      },
+      "campaign_family": "indoor_gallery_or_winter_family",
+      "classifier_training_rows": 30,
+      "decision_counts": {
+        "0": 29,
+        "2": 1
+      },
+      "decision_label_counts": {
+        "accept": 1,
+        "reject": 29
+      },
+      "diagnostic_positive_rate": 0.03333333333333333,
+      "diagnostic_reject_rate": 0.9666666666666667,
+      "issue_tag_counts": {
+        "season_mismatch": 25,
+        "semantic_mismatch": 21
+      },
+      "pair_feature_snapshot_rows": 50,
+      "positive_count_accept_or_acceptable": 1,
+      "purpose_type": "exhibition",
+      "ranker_training_rows": 30,
+      "reject_count": 29,
+      "retrieval_rows": 50,
+      "review_event_rows": 30,
+      "review_queue_rows": 30,
+      "season": "winter",
+      "space_type": "gallery",
+      "unique_duplicate_groups_in_queue": 30
+    },
+    "phase1b_summer_garden_walk": {
+      "bucket_counts": {
+        "clip_high_model_low": 12,
+        "cluster_diversity": 8,
+        "layout_safe_coverage": 6,
+        "random_coverage": 1,
+        "uncertainty": 3
+      },
+      "campaign_family": "garden_walking_family",
+      "classifier_training_rows": 30,
+      "decision_counts": {
+        "0": 19,
+        "1": 4,
+        "2": 7
+      },
+      "decision_label_counts": {
+        "accept": 7,
+        "acceptable": 4,
+        "reject": 19
+      },
+      "diagnostic_positive_rate": 0.36666666666666664,
+      "diagnostic_reject_rate": 0.6333333333333333,
+      "issue_tag_counts": {
+        "season_mismatch": 4,
+        "semantic_mismatch": 16
+      },
+      "pair_feature_snapshot_rows": 50,
+      "positive_count_accept_or_acceptable": 11,
+      "purpose_type": "walking_program",
+      "ranker_training_rows": 30,
+      "reject_count": 19,
+      "retrieval_rows": 50,
+      "review_event_rows": 30,
+      "review_queue_rows": 30,
+      "season": "summer",
+      "space_type": "garden",
+      "unique_duplicate_groups_in_queue": 30
+    }
+  },
+  "cumulative_review_summary": {
+    "bucket_counts": {
+      "clip_high_model_low": 60,
+      "cluster_diversity": 40,
+      "layout_safe_coverage": 30,
+      "random_coverage": 5,
+      "uncertainty": 15
+    },
+    "classifier_label_counts": {
+      "0": 99,
+      "1": 51
+    },
+    "decision_counts": {
+      "0": 99,
+      "1": 24,
+      "2": 27
+    },
+    "decision_label_counts": {
+      "accept": 27,
+      "acceptable": 24,
+      "reject": 99
+    },
+    "issue_tag_counts": {
+      "poor_composition": 3,
+      "season_mismatch": 56,
+      "semantic_mismatch": 58,
+      "text_region_conflict": 1
+    },
+    "ranker_label_counts": {
+      "0": 99,
+      "1": 24,
+      "2": 27
+    }
+  },
+  "diagnostic_findings": [
+    {
+      "evidence": {
+        "campaign_id": "phase1b_indoor_gallery_winter_art",
+        "issue_tags": {
+          "season_mismatch": 25,
+          "semantic_mismatch": 21
+        },
+        "reject_count": 29,
+        "review_rows": 30
+      },
+      "interpretation": "The indoor/winter campaign produced 29 rejects out of 30 reviewed candidates. This is most likely an image-pool coverage problem rather than a calibrated model-quality result.",
+      "name": "indoor_gallery_winter_pool_coverage_gap",
+      "status": "diagnostic_warning"
+    },
+    {
+      "evidence": {
+        "all_issue_tags": {
+          "poor_composition": 3,
+          "season_mismatch": 56,
+          "semantic_mismatch": 58,
+          "text_region_conflict": 1
+        },
+        "season_mismatch": 56,
+        "semantic_mismatch": 58
+      },
+      "interpretation": "Most rejects are explained by semantic or season mismatch. This is useful for campaign coverage diagnosis, but it also shows that layout/critic labels remain sparse.",
+      "name": "issue_tags_concentrated_in_semantic_and_season",
+      "status": "diagnostic_warning"
+    },
+    {
+      "evidence": {
+        "layout_related_issue_count": 1,
+        "layout_related_tags": {
+          "low_contrast": 0,
+          "text_region_conflict": 1,
+          "too_busy_background": 0,
+          "visual_hierarchy_weak": 0
+        }
+      },
+      "interpretation": "Layout-related issue tags are nearly absent. This supports the Phase 1b scope decision that preview renderer v1 should be considered before critic training.",
+      "name": "layout_related_issue_tags_sparse",
+      "status": "preview_renderer_trigger"
+    },
+    {
+      "evidence": {
+        "classifier_label_counts": {
+          "0": 99,
+          "1": 51
+        },
+        "ranker_label_counts": {
+          "0": 99,
+          "1": 24,
+          "2": 27
+        }
+      },
+      "interpretation": "Classifier and ranker snapshots now have 150 rows each. This is enough for schema and smoke training checks, but not enough for production quality claims.",
+      "name": "classifier_data_available_but_imbalanced",
+      "status": "diagnostic_note"
+    },
+    {
+      "evidence": {
+        "campaign_count": 5,
+        "campaign_family_count": 4,
+        "campaign_rows": {
+          "phase1b_architecture_exhibition_visit": 30,
+          "phase1b_autumn_garden_walk": 30,
+          "phase1b_botanical_spring_program": 30,
+          "phase1b_indoor_gallery_winter_art": 30,
+          "phase1b_summer_garden_walk": 30
+        }
+      },
+      "interpretation": "The minimum formal structure for held-out campaign splitting now exists. Any metric based on it remains diagnostic_only until more data and leakage checks are added.",
+      "name": "heldout_campaign_split_minimum_structure_available",
+      "status": "diagnostic_note"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-05-10T17:18:13.573213Z",
+    "phase": "phase_1b",
+    "report_status": "first_round_audit",
+    "run_id": "phase1b_first_round_cold_start_all_campaigns",
+    "score_status": "diagnostic_only",
+    "spec_version": "v2.2.1",
+    "support_explanation_status": "deferred_from_phase_1b"
+  },
+  "non_claims": [
+    "No production reranker quality is claimed.",
+    "No calibrated accept/reject threshold is claimed.",
+    "No LGBMRanker generalization quality is claimed.",
+    "No Visual Critic performance is claimed.",
+    "No final poster/PPTX/Canva quality is claimed.",
+    "Support explanation remains deferred from Phase 1b."
+  ],
+  "phase_scope_alignment": {
+    "actual_campaign_families": 4,
+    "actual_campaigns": 5,
+    "first_round_anchor_policy": "cold_start_all_campaigns",
+    "minimum_campaign_families_required": 4,
+    "minimum_campaigns_required": 5,
+    "runner_scope": "shell_script_runner",
+    "support_explanation": "deferred",
+    "threshold_policy": "no calibrated accept/reject threshold produced"
+  },
+  "recommended_next_actions": [
+    {
+      "action": "expand_raw_image_pool",
+      "priority": 1,
+      "rationale": "Indoor/winter campaign coverage is weak. Adding more raw images should come before interpreting model failure."
+    },
+    {
+      "action": "add_preview_renderer_v1",
+      "priority": 2,
+      "rationale": "Layout-related issue tags are sparse. A box-overlay preview renderer should improve text-region and background-complexity labeling."
+    },
+    {
+      "action": "run_classifier_smoke_training",
+      "priority": 3,
+      "rationale": "There are now 150 classifier rows. Smoke training can validate feature plumbing, but results must remain diagnostic_only."
+    }
+  ]
+}

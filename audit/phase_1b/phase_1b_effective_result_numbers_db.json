@@ -1,0 +1,346 @@
+{
+  "db_counts": {
+    "campaign_image_botanical_bloom_priors": 1236,
+    "campaign_image_cue_scores": 1442,
+    "campaign_image_flower_season_exclusions": 44,
+    "campaign_visual_cue_requirements": 7,
+    "campaigns": 6,
+    "cluster_label_queue": 20,
+    "cluster_tag_assertions": 108,
+    "image_tag_assertions": 1173,
+    "images": 206,
+    "pair_features": 300,
+    "plant_bloom_priors": 66,
+    "plant_entities": 19,
+    "plant_names": 19,
+    "retrieval_candidate_filter_decisions": 300,
+    "retrieval_candidates": 300,
+    "review_events": 180,
+    "training_set_items": 240,
+    "training_sets": 2,
+    "training_snapshots": 360,
+    "visual_cues": 5
+  },
+  "effective_training": {
+    "classifier_decision_label_counts": {
+      "accept": 26,
+      "acceptable": 24,
+      "reject": 62
+    },
+    "classifier_label_counts": {
+      "0": 62,
+      "1": 50
+    },
+    "classifier_rows": 112,
+    "effective_training_set_items": 224,
+    "effective_training_snapshots": 342,
+    "excluded_training_set_items": 16,
+    "excluded_training_snapshots": 18,
+    "ranker_decision_label_counts": {
+      "accept": 26,
+      "acceptable": 24,
+      "reject": 62
+    },
+    "ranker_label_counts": {
+      "0": 62,
+      "1": 24,
+      "2": 26
+    },
+    "ranker_rows": 112,
+    "source_training_set_items": 240,
+    "source_training_snapshots": 360
+  },
+  "metadata": {
+    "db": "data/db/cap_reranker_ontology.db",
+    "db_role": "operational_source_of_truth",
+    "interpretation": "Phase 1b effective retrieval 결과 숫자를 DB와 audit 산출물에서 모은 요약이다. 꽃 개화시기 제외 규칙은 classifier 성능 기준이 아니라 retrieval pre-filter 기준으로 평가한다.",
+    "report_status": "phase1b_effective_result_numbers_db_first",
+    "score_status": "diagnostic_only",
+    "threshold_status": "no_calibrated_threshold"
+  },
+  "pipeline": {
+    "pipeline": "phase1b_effective_retrieval_pipeline_v1",
+    "step_count": 17,
+    "summary_present": true
+  },
+  "query_smoke": {
+    "conflicts": 0,
+    "excluded_campaign_counts": {
+      "phase1a_summer_garden_walk": 1,
+      "phase1b_autumn_garden_walk": 7,
+      "phase1b_botanical_spring_program": 5,
+      "phase1b_summer_garden_walk": 1
+    },
+    "image_count": 206,
+    "images_with_effective_campaigns": 112,
+    "images_with_exclusions": 9,
+    "passed": true,
+    "summary_present": true
+  },
+  "retrieval_effective": {
+    "effective_by_campaign": [
+      {
+        "campaign_id": "phase1a_summer_garden_walk",
+        "n": 49
+      },
+      {
+        "campaign_id": "phase1b_architecture_exhibition_visit",
+        "n": 50
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "n": 43
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "n": 45
+      },
+      {
+        "campaign_id": "phase1b_indoor_gallery_winter_art",
+        "n": 50
+      },
+      {
+        "campaign_id": "phase1b_summer_garden_walk",
+        "n": 49
+      }
+    ],
+    "effective_pair_features": 286,
+    "effective_retrieval_candidates": 286,
+    "excluded_by_campaign_subject": [
+      {
+        "campaign_id": "phase1a_summer_garden_walk",
+        "excluded_subject_name": "진달래",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "excluded_subject_name": "산딸기",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "excluded_subject_name": "산수국",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "excluded_subject_name": "수련",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 2
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "excluded_subject_name": "진달래",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "excluded_subject_name": "참나리",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 2
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "excluded_subject_name": "맥문동",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "excluded_subject_name": "산수국",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 2
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "excluded_subject_name": "수련",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "excluded_subject_name": "참나리",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      },
+      {
+        "campaign_id": "phase1b_summer_garden_walk",
+        "excluded_subject_name": "진달래",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "n": 1
+      }
+    ],
+    "excluded_retrieval_candidates": 14,
+    "original_pair_features": 300,
+    "original_retrieval_candidates": 300
+  },
+  "retrieval_label_impact": {
+    "decision_label_counts": {
+      "effective": {
+        "accept": 37,
+        "acceptable": 31,
+        "reject": 103
+      },
+      "excluded": {
+        "None": 5,
+        "reject": 9
+      },
+      "original": {
+        "accept": 37,
+        "acceptable": 31,
+        "reject": 112
+      }
+    },
+    "excluded_examples": [
+      {
+        "campaign_id": "phase1a_summer_garden_walk",
+        "decision_label": "reject",
+        "excluded_subject_name": "진달래",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_787ceac869",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": null,
+        "excluded_subject_name": "산딸기",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_bc5f26f1fa",
+        "label": null
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": "reject",
+        "excluded_subject_name": "산수국",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_0265165be9",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": null,
+        "excluded_subject_name": "수련",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_c310b5be34",
+        "label": null
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": null,
+        "excluded_subject_name": "수련",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_ebe21d1cfd",
+        "label": null
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": "reject",
+        "excluded_subject_name": "진달래",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_787ceac869",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": "reject",
+        "excluded_subject_name": "참나리",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_a0ba1b33b2",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_autumn_garden_walk",
+        "decision_label": "reject",
+        "excluded_subject_name": "참나리",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_d5d3c67349",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "decision_label": null,
+        "excluded_subject_name": "맥문동",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_1e0c34f4ae",
+        "label": null
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "decision_label": "reject",
+        "excluded_subject_name": "산수국",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_0265165be9",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "decision_label": "reject",
+        "excluded_subject_name": "산수국",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_0a5bd0d204",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "decision_label": null,
+        "excluded_subject_name": "수련",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_c310b5be34",
+        "label": null
+      },
+      {
+        "campaign_id": "phase1b_botanical_spring_program",
+        "decision_label": "reject",
+        "excluded_subject_name": "참나리",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_a0ba1b33b2",
+        "label": 0
+      },
+      {
+        "campaign_id": "phase1b_summer_garden_walk",
+        "decision_label": "reject",
+        "excluded_subject_name": "진달래",
+        "exclusion_reason": "flower_not_in_requested_season",
+        "image_id": "raw_787ceac869",
+        "label": 0
+      }
+    ],
+    "labeled_candidate_counts": {
+      "effective_labeled": 171,
+      "excluded_candidates_total": 14,
+      "original_labeled": 180
+    },
+    "safety_check": {
+      "excluded_accept_or_acceptable": 0,
+      "excluded_reject": 9,
+      "excluded_unlabeled": 5,
+      "pass": true
+    }
+  },
+  "search_index": {
+    "effective_campaign_counts": {
+      "phase1a_summer_garden_walk": 49,
+      "phase1b_architecture_exhibition_visit": 50,
+      "phase1b_autumn_garden_walk": 43,
+      "phase1b_botanical_spring_program": 45,
+      "phase1b_indoor_gallery_winter_art": 50,
+      "phase1b_summer_garden_walk": 49
+    },
+    "excluded_campaign_counts": {
+      "phase1a_summer_garden_walk": 1,
+      "phase1b_autumn_garden_walk": 7,
+      "phase1b_botanical_spring_program": 5,
+      "phase1b_summer_garden_walk": 1
+    },
+    "images_exported": 206,
+    "images_with_effective_campaigns": 112,
+    "images_with_excluded_campaigns": 9,
+    "images_with_ontology_tags": 202,
+    "images_with_plant_bloom_prior": 28,
+    "summary_present": true
+  }
+}

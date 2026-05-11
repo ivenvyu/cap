@@ -1,0 +1,123 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: issue_tags_v1
+description: >
+  Closed vocabulary for human review issue tags.
+  Human annotators must choose from this list.
+  Free-form explanations must go into notes, not issue_tags.
+
+review_ui_constraint:
+  issue_tags:
+    type: closed_list
+    multi_select: true
+  notes:
+    type: free_text
+    used_for_training: false
+    used_for_audit: true
+
+categories:
+  semantic:
+    critic_trainable: false
+    tags:
+      - id: season_mismatch
+        label: Season mismatch
+        description: Image appears seasonally incompatible with the campaign.
+      - id: semantic_mismatch
+        label: Semantic mismatch
+        description: Image subject does not match campaign meaning or program intent.
+      - id: brand_tone_mismatch
+        label: Brand tone mismatch
+        description: Image conflicts with Sayuwon brand tone.
+      - id: mood_mismatch
+        label: Mood mismatch
+        description: Image mood does not match the requested mood tags.
+
+  layout:
+    critic_trainable: true
+    tags:
+      - id: text_region_conflict
+        label: Text region conflict
+        description: Required text region overlaps visually busy or important image content.
+      - id: low_contrast
+        label: Low contrast
+        description: Text is likely to have insufficient contrast against the background.
+      - id: too_busy_background
+        label: Too busy background
+        description: Overall background is too visually complex for poster text.
+      - id: visual_hierarchy_weak
+        label: Weak visual hierarchy
+        description: Image/layout combination makes visual hierarchy unclear.
+
+  redundancy:
+    critic_trainable: false
+    tags:
+      - id: duplicate_or_too_similar
+        label: Duplicate or too similar
+        description: Candidate is visually redundant with another reviewed or selected image.
+      - id: already_used_in_recent_campaign
+        label: Already used in recent campaign
+        description: Candidate was recently used and should be avoided for variety.
+
+  quality:
+    critic_trainable: false
+    tags:
+      - id: low_resolution
+        label: Low resolution
+        description: Image resolution or sharpness is insufficient for output channel.
+      - id: poor_composition
+        label: Poor composition
+        description: Image composition is weak for use as a promotional background.
+
+label_mapping:
+  reject:
+    allowed_issue_tags:
+      - season_mismatch
+      - semantic_mismatch
+      - brand_tone_mismatch
+      - mood_mismatch
+      - text_region_conflict
+      - low_contrast
+      - too_busy_background
+      - visual_hierarchy_weak
+      - duplicate_or_too_similar
+      - already_used_in_recent_campaign
+      - low_resolution
+      - poor_composition
+
+  acceptable:
+    allowed_issue_tags:
+      - low_contrast
+      - visual_hierarchy_weak
+      - duplicate_or_too_similar
+
+  accept:
+    allowed_issue_tags: []
+
+  best:
+    allowed_issue_tags: []
+
+training_usage:
+  reranker_negative_signal:
+    uses_categories:
+      - semantic
+      - layout
+      - redundancy
+      - quality
+
+  critic_supervision:
+    uses_categories:
+      - layout
+    positive_targets:
+      - text_region_conflict
+      - low_contrast
+      - too_busy_background
+      - visual_hierarchy_weak
+
+  notes:
+    used_for_training: false
+    used_for_audit: true

@@ -1,0 +1,257 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: calibration_policy_v1
+description: >
+  Calibration and threshold policy for CAP Image Reranker v2.2.1.
+  No manually invented aesthetic constants are allowed as final pass/fail criteria.
+  Any threshold used for final pass/fail must come from empirical reference percentiles,
+  calibrated validation thresholds, human-labeled preference model output, or scoped
+  external standards. Otherwise it remains diagnostic-only.
+
+global_rule:
+  allowed_final_threshold_sources:
+    - empirical_reference_percentile
+    - calibrated_validation_threshold
+    - human_labeled_preference_model_output
+    - external_standard_explicitly_cited_and_scoped
+
+  disallowed:
+    - manually_invented_aesthetic_constant
+    - unexplained_magic_number
+    - unvalidated_model_score_cutoff
+
+  diagnostic_only_default: true
+
+policies:
+  layout_safety:
+    purpose: >
+      Layout safety features may influence review queue budget and model features,
+      but must not hard-reject candidates before validation.
+    candidate_features:
+      - required_region_safe_mean
+      - required_region_safe_min
+      - title_region_safe_score
+      - info_region_safe_score
+      - edge_density
+      - contrast
+      - brightness
+
+    target_label:
+      source: issue_tags_v1
+      positive:
+        - text_region_conflict
+        - low_contrast
+        - too_busy_background
+        - visual_hierarchy_weak
+
+    calibration_method:
+      preferred: calibrated_validation_threshold
+      validation_split: held_out_campaigns
+      metric: validation_campaign_f1
+      secondary_metrics:
+        - precision
+        - recall
+        - roc_auc_diagnostic
+        - average_precision_diagnostic
+
+    fallback:
+      method: empirical_reference_percentile
+      reference_population: accepted_or_best_pairs
+      usage: diagnostic_priority_adjustment_only
+
+    allowed_use_before_calibration:
+      - review_queue_budget_adjustment
+      - lightgbm_feature
+      - critic_sampling_signal
+
+    forbidden_use_before_calibration:
+      - final_pass_fail
+      - automatic_reject
+
+  duplicate_group:
+    purpose: >
+      Define duplicate or near-duplicate grouping without manually inventing similarity cutoffs.
+    candidate_features:
+      - parent_image_id
+      - augmentation_source
+      - dinov2_cosine_similarity
+      - perceptual_hash_similarity
+
+    target_label:
+      preferred_source: augmentation_manifest
+      positive: same_parent_image_id
+      negative: different_parent_image_id
+
+    calibration_method:
+      preferred: calibrated_validation_threshold
+      metric: precision_at_target_recall
+      target_recall: 0.95
+      validation_split: parent_image_disjoint
+
+    fallback:
+      method: empirical_reference_percentile
+      reference_population: known_augmentation_pairs
+      usage: duplicate_candidate_grouping_diagnostic
+
+    allowed_use_before_calibration:
+      - review_queue_duplicate_suppression_diagnostic
+      - near_duplicate_audit
+
+    forbidden_use_before_calibration:
+      - permanent_asset_deletion
+      - irreversible_duplicate_merge
+
+  uncertainty:
+    purpose: >
+      Select uncertain candidates for review queue sampling.
+      Uncertainty has no direct ground-truth threshold and must be treated as a percentile band.
+    candidate_features:
+      - diagnostic_model_score
+      - ranker_score
+      - classifier_probability_like_score
+
+    calibration_method:
+      preferred: empirical_score_percentile_band
+      metric: none
+      note: >
+        Uncertainty is not calibrated using F1, ROC-AUC, or AP.
+        It is a sampling band over the current score distribution.
+
+    default_band:
+      source: empirical_reference_percentile
+      reference_population: current_candidate_pool
+      lower_percentile: 40
+      upper_percentile: 60
+      status: diagnostic_only_sampling_default
+
+    allowed_use:
+      - review_queue_sampling
+
+    forbidden_use:
+      - pass_fail_decision
+      - probability_calibration_claim
+
+  clip_retrieval:
+    purpose: >
+      Use CLIP scores for retrieval and review queue buckets.
+      CLIP scores are similarity signals, not calibrated probabilities.
+    candidate_features:
+      - clip_positive_max_sim
+      - clip_positive_mean_sim
+      - clip_negative_max_sim
+      - clip_negative_mean_sim
+      - clip_margin
+      - clip_rank_percentile
+
+    calibration_method:
+      preferred: empirical_reference_percentile
+      reference_population: campaign_candidate_pool
+
+    allowed_use:
+      - retrieval_ranking
+      - review_queue_bucket_sampling
+      - lightgbm_feature
+
+    forbidden_use:
+      - final_acceptance_threshold_without_validation
+      - semantic_match_probability_claim
+
+  dinov2_anchor:
+    purpose: >
+      Use DINOv2 visual similarity features for expansion, clustering, duplicate handling,
+      and reranker features.
+    candidate_features:
+      - dinov2_campaign_pos_nn_sim
+      - dinov2_campaign_neg_nn_sim
+      - dinov2_campaign_margin
+      - dinov2_family_pos_nn_sim
+      - dinov2_family_neg_nn_sim
+      - dinov2_cluster_positive_rate_mid
+
+    calibration_method:
+      preferred: empirical_reference_percentile
+      reference_population: campaign_or_family_candidate_pool
+
+    missing_policy:
+      require_missing_flags: true
+      missing_features:
+        - dinov2_campaign_anchor_missing
+        - dinov2_family_anchor_missing
+      count_features:
+        - dinov2_campaign_pos_count
+        - dinov2_campaign_neg_count
+        - dinov2_family_support_count
+
+    allowed_use:
+      - visual_expansion
+      - cluster_diversity_sampling
+      - lightgbm_feature
+
+    forbidden_use:
+      - global_positive_centroid_final_decision
+      - cross_campaign_direct_score_comparison
+
+  lightgbm_reranker_score:
+    purpose: >
+      Use LightGBM classifier/ranker score as a diagnostic reranking signal until validation
+      on held-out campaigns is available.
+    candidate_scores:
+      - diagnostic_model_score
+      - lightgbm_classifier_score
+      - lightgbm_ranker_score
+
+    status_before_validation: diagnostic_only
+
+    validation_requirement:
+      split:
+        - train_campaigns
+        - validation_campaigns
+        - test_campaigns
+      leakage_blockers:
+        - parent_image_id
+        - duplicate_group_id
+        - augmentation_source
+      metrics:
+        - recall_at_k
+        - ndcg_at_k
+        - mrr
+        - pairwise_win_rate
+        - hard_negative_win_rate
+        - coverage_diversity
+        - duplicate_exposure_rate
+        - critic_conflict_rate
+
+    allowed_use_before_validation:
+      - review_queue_ranking
+      - bucket_sampling
+      - diagnostic_summary
+
+    forbidden_use_before_validation:
+      - production_pass_fail
+      - calibrated_probability_claim
+
+reporting_policy:
+  required_fields_in_summary:
+    - score_status
+    - threshold_policy
+    - calibration_status
+    - validation_split_policy
+    - leakage_policy
+    - diagnostic_only_warnings
+
+  required_warning_when_uncalibrated: >
+    All scores and thresholds are diagnostic_only until calibrated on held-out campaigns
+    with parent/duplicate leakage blocked.
+
+notes:
+  - >
+    Percentile values used for sampling allocation are not aesthetic pass/fail constants.
+    They are diagnostic sampling policies and must be reported as such.
+  - >
+    Any future hard threshold must cite the calibration source, validation data version,
+    metric, and effective date.

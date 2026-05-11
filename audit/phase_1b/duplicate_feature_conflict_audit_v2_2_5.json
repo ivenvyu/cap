@@ -1,0 +1,2031 @@
+{
+  "canonical_map_rows": 48,
+  "created_at": "2026-05-11T10:01:04.624003Z",
+  "duplicate_group_count": 24,
+  "event": "duplicate_canonicalization_v2_2_5_done",
+  "feature_conflict_count": 185,
+  "feature_conflict_counts_by_family": {
+    "diagnostic_numeric": 95,
+    "path_derived": 90
+  },
+  "feature_conflict_counts_by_feature": {
+    "dinov2_campaign_margin": 38,
+    "dinov2_campaign_neg_nn_sim": 26,
+    "dinov2_campaign_pos_nn_sim": 12,
+    "dinov2_family_margin": 19,
+    "path_has_architecture": 45,
+    "path_has_garden": 45
+  },
+  "feature_conflict_examples": [
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_0f37eb334a": [
+          "-0.5196309686"
+        ],
+        "raw_c3f434c77f": [
+          "0.3020074517"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.5196309686",
+        "0.3020074517"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_neg_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_0f37eb334a": [
+          "1.000000238"
+        ],
+        "raw_c3f434c77f": [
+          "0.1783618182"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.1783618182",
+        "1.000000238"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_0f37eb334a": [
+          "1"
+        ],
+        "raw_c3f434c77f": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_0f37eb334a": [
+          "0"
+        ],
+        "raw_c3f434c77f": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "0.3086273968"
+        ],
+        "raw_ea42a7592c": [
+          "0.6243943274"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.3086273968",
+        "0.6243943274"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_pos_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "0.6842331886"
+        ],
+        "raw_ea42a7592c": [
+          "1.000000119"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.6842331886",
+        "1.000000119"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "-0.3198307753"
+        ],
+        "raw_ea42a7592c": [
+          "-0.6355977058"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.3198307753",
+        "-0.6355977058"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "1"
+        ],
+        "raw_ea42a7592c": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "0"
+        ],
+        "raw_ea42a7592c": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "0.04396629333"
+        ],
+        "raw_b37dfe627b": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "0.04396629333"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "1"
+        ],
+        "raw_b37dfe627b": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "0"
+        ],
+        "raw_b37dfe627b": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_5ed5b2d6c4": [
+          "0.8143937141"
+        ],
+        "raw_9d0d132603": [
+          "0.5332327038"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.5332327038",
+        "0.8143937141"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_pos_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_5ed5b2d6c4": [
+          "1.000000119"
+        ],
+        "raw_9d0d132603": [
+          "0.7188391089"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.7188391089",
+        "1.000000119"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_5ed5b2d6c4": [
+          "0"
+        ],
+        "raw_9d0d132603": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_5ed5b2d6c4": [
+          "1"
+        ],
+        "raw_9d0d132603": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_572e8cc431": [
+          "0.1939848661"
+        ],
+        "raw_a820c309c8": [
+          "0.5485260487"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.1939848661",
+        "0.5485260487"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_pos_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_572e8cc431": [
+          "0.6454588175"
+        ],
+        "raw_a820c309c8": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.6454588175",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_572e8cc431": [
+          "-0.3679496348"
+        ],
+        "raw_a820c309c8": [
+          "-0.6957803667"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.3679496348",
+        "-0.6957803667"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_572e8cc431": [
+          "1"
+        ],
+        "raw_a820c309c8": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_572e8cc431": [
+          "0"
+        ],
+        "raw_a820c309c8": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_22d63fd86a": [
+          "0.4144824147"
+        ],
+        "raw_41179036b8": [
+          "0.6533504128"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.4144824147",
+        "0.6533504128"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_pos_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_22d63fd86a": [
+          "0.7611320019"
+        ],
+        "raw_41179036b8": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.7611320019",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_22d63fd86a": [
+          "1"
+        ],
+        "raw_41179036b8": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_22d63fd86a": [
+          "0"
+        ],
+        "raw_41179036b8": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_4e6c171e96": [
+          "0.09913182259"
+        ],
+        "raw_d3b6daf541": [
+          "0.7629861832"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.09913182259",
+        "0.7629861832"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_pos_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_4e6c171e96": [
+          "0.3361456394"
+        ],
+        "raw_d3b6daf541": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.3361456394",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_4e6c171e96": [
+          "-0.0466709733"
+        ],
+        "raw_d3b6daf541": [
+          "-0.7112622261"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.0466709733",
+        "-0.7112622261"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_4e6c171e96": [
+          "1"
+        ],
+        "raw_d3b6daf541": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_4e6c171e96": [
+          "0"
+        ],
+        "raw_d3b6daf541": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_61fc86118e": [
+          "0.3100865185"
+        ],
+        "raw_b9b0d9734b": [
+          "0.7424536049"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.3100865185",
+        "0.7424536049"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_pos_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_61fc86118e": [
+          "0.5676330328"
+        ],
+        "raw_b9b0d9734b": [
+          "1.000000119"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.5676330328",
+        "1.000000119"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_61fc86118e": [
+          "0"
+        ],
+        "raw_b9b0d9734b": [
+          "-0.4264634848"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.4264634848",
+        "0"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_61fc86118e": [
+          "1"
+        ],
+        "raw_b9b0d9734b": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_61fc86118e": [
+          "0"
+        ],
+        "raw_b9b0d9734b": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_681edda32e": [
+          "-0.6533504725"
+        ],
+        "raw_c2c0208981": [
+          "0.1399935782"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.6533504725",
+        "0.1399935782"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_neg_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_681edda32e": [
+          "1"
+        ],
+        "raw_c2c0208981": [
+          "0.2066559494"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.2066559494",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_681edda32e": [
+          "0"
+        ],
+        "raw_c2c0208981": [
+          "0.6440498829"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "0.6440498829"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_681edda32e": [
+          "1"
+        ],
+        "raw_c2c0208981": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_681edda32e": [
+          "0"
+        ],
+        "raw_c2c0208981": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "-0.02171045542"
+        ],
+        "raw_ea42a7592c": [
+          "-0.6573081613"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.02171045542",
+        "-0.6573081613"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_neg_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "0.3644024134"
+        ],
+        "raw_ea42a7592c": [
+          "1.000000119"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.3644024134",
+        "1.000000119"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "1"
+        ],
+        "raw_ea42a7592c": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_34da4bc897": [
+          "0"
+        ],
+        "raw_ea42a7592c": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "0.04396629333"
+        ],
+        "raw_b37dfe627b": [
+          "-0.6668065786"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.6668065786",
+        "0.04396629333"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_neg_nn_sim",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "0.2892272472"
+        ],
+        "raw_b37dfe627b": [
+          "1.000000119"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.2892272472",
+        "1.000000119"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_family_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "-0.04396629333"
+        ],
+        "raw_b37dfe627b": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "-0.04396629333",
+        "0"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_architecture",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "1"
+        ],
+        "raw_b37dfe627b": [
+          "0"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "feature_family": "path_derived",
+      "feature_name": "path_has_garden",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_19c9aa3ffa": [
+          "0"
+        ],
+        "raw_b37dfe627b": [
+          "1"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "feature_family": "diagnostic_numeric",
+      "feature_name": "dinov2_campaign_margin",
+      "interpretation": "동일 duplicate group 내부에서 feature 값이 다르다. 모델 입력 전에 canonical/group-level 처리 필요.",
+      "member_count": 2,
+      "member_value_signatures": {
+        "raw_5ed5b2d6c4": [
+          "0.3945422173"
+        ],
+        "raw_9d0d132603": [
+          "0.1133813262"
+        ]
+      },
+      "threshold_status": "diagnostic_warning_not_quality_threshold",
+      "unique_value_signatures": [
+        "0.1133813262",
+        "0.3945422173"
+      ]
+    }
+  ],
+  "inputs": {
+    "duplicate_groups": "data/ontology/duplicate_groups_v1.jsonl",
+    "feature_glob": "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/*.jsonl",
+    "manifest": "data/ontology/raw_image_manifest_v2_2_1.jsonl"
+  },
+  "metadata_conflict_examples": [
+    {
+      "canonical_image_id": "raw_bd98826b6e",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_004db23b5f5d",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "e7d422f19352fa83078b4fa590d97de3baa04213ab6070313d13064c3d9309e4"
+      ],
+      "filenames": [
+        "space7_4_3.jpg"
+      ],
+      "member_image_ids": [
+        "raw_bd98826b6e",
+        "raw_a1ad23ca7a"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_3.jpg",
+        "gallery/정원/몽몽미방/space7_4_3.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_3"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_e4033ce404",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_08c8d66882d2",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "3559b0e16eb1767441e54c16ecd22741afb3c2affeb358a65071a990a199c966"
+      ],
+      "filenames": [
+        "space7_4_2.jpg"
+      ],
+      "member_image_ids": [
+        "raw_e4033ce404",
+        "raw_8883bfdaec"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_2.jpg",
+        "gallery/정원/몽몽미방/space7_4_2.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_2"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_70729accac",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_0c34e0f8e4a7",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "c53bf6e967193666acda929af081ee997c4f5431e35a4f383f1c2f060207aba0"
+      ],
+      "filenames": [
+        "space7_4_7.jpg"
+      ],
+      "member_image_ids": [
+        "raw_70729accac",
+        "raw_3b4c5ad14b"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_7.jpg",
+        "gallery/정원/몽몽미방/space7_4_7.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_7"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_0f37eb334a",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "adea7d550f07e92290b15ee08bf0cb4a70a92176baa4761f3c2c55b62def8d01"
+      ],
+      "filenames": [
+        "space7_3_3.jpg"
+      ],
+      "member_image_ids": [
+        "raw_0f37eb334a",
+        "raw_c3f434c77f"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_3_3.jpg",
+        "gallery/정원/몽몽미방/space7_3_3.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_3_3"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_34da4bc897",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "09b98967840a78832488d94efcb99b4a90ccd4ec20b14a1e202c04fada6cbef8"
+      ],
+      "filenames": [
+        "space7_1_1.jpg"
+      ],
+      "member_image_ids": [
+        "raw_34da4bc897",
+        "raw_ea42a7592c"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_1_1.jpg",
+        "gallery/정원/몽몽미방/space7_1_1.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_1_1"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "e0427ef65fbf833e85243d7d28f1c8d21ac7ef47e2eaac5d222a66cb2d778a65"
+      ],
+      "filenames": [
+        "space7_4_1.jpg"
+      ],
+      "member_image_ids": [
+        "raw_19c9aa3ffa",
+        "raw_b37dfe627b"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_1.jpg",
+        "gallery/정원/몽몽미방/space7_4_1.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_1"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_6b174f2b03",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_4e8c6a6984f6",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "28b8a3fcc2926af574e848ca2591661c3d0cb6551cf0f471ee06198bcbe96314"
+      ],
+      "filenames": [
+        "space5_3_1.jpg"
+      ],
+      "member_image_ids": [
+        "raw_6b174f2b03",
+        "raw_54a74aeb35"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_3_1.jpg",
+        "gallery/정원/유원/space5_3_1.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_3_1"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_4b3c524f29",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_4ffacf24cb3a",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "b63771f8b833e8febf7e3a93229926e72d7a1da719a2dd74222e5f4c7c4850b7"
+      ],
+      "filenames": [
+        "space7_1_2.jpg"
+      ],
+      "member_image_ids": [
+        "raw_4b3c524f29",
+        "raw_cad8298a7b"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_1_2.jpg",
+        "gallery/정원/몽몽미방/space7_1_2.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_1_2"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_7f5320f89f",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_6bcf2fd25019",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "0790830d1835a5356c787de6aaf53e2ed9c4d85392428ea594c370b81d93cb65"
+      ],
+      "filenames": [
+        "space7_3_1.jpg"
+      ],
+      "member_image_ids": [
+        "raw_7f5320f89f",
+        "raw_e271fa38ea"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_3_1.jpg",
+        "gallery/정원/몽몽미방/space7_3_1.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_3_1"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_f60ec3a3b4",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_6d5800f28fea",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "bb1a958de426d1d711ab74d56465cff52e3fae7c84db4da7d6c886261a1d4c89"
+      ],
+      "filenames": [
+        "space5_4_4.jpg"
+      ],
+      "member_image_ids": [
+        "raw_f60ec3a3b4",
+        "raw_ab1479ebb7"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_4_4.jpg",
+        "gallery/정원/유원/space5_4_4.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_4_4"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_9d0d132603",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "7d90e69d73e7748915a6022a80c7579a0c3af96ce7352cfc7dfe817fbb93c41c"
+      ],
+      "filenames": [
+        "space5_4_1.jpg"
+      ],
+      "member_image_ids": [
+        "raw_9d0d132603",
+        "raw_5ed5b2d6c4"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_4_1.jpg",
+        "gallery/정원/유원/space5_4_1.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_4_1"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_a80ee2ac82",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_80ace11a46ca",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "1a5dfe8a7a07bda4d28499766d6e113ec1facc41398778ce6f82cdce8af90dde"
+      ],
+      "filenames": [
+        "space7_4_4.jpg"
+      ],
+      "member_image_ids": [
+        "raw_a80ee2ac82",
+        "raw_355f229fb9"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_4.jpg",
+        "gallery/정원/몽몽미방/space7_4_4.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_4"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_735aba25cc",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_b161a3d6a1ac",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "c5d5dddf18b0ce188d490fd2021e0ad5176bc11707af4eef6929a641cc46f517"
+      ],
+      "filenames": [
+        "space5_3_3.jpg"
+      ],
+      "member_image_ids": [
+        "raw_735aba25cc",
+        "raw_9023fae473"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_3_3.jpg",
+        "gallery/정원/유원/space5_3_3.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_3_3"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_572e8cc431",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "7bd5d8cb2b9d9ed39098f6e7c6b9a40d48ea7fe0586d4c94b4cd28dfd72751f5"
+      ],
+      "filenames": [
+        "space7_4_8.jpg"
+      ],
+      "member_image_ids": [
+        "raw_572e8cc431",
+        "raw_a820c309c8"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_8.jpg",
+        "gallery/정원/몽몽미방/space7_4_8.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_8"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_553035c3d0",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_c340834fafd6",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "b5bcb73026b31d9e4a593f57e83b9028be9583e8e4bf446fd37d56266d626da8"
+      ],
+      "filenames": [
+        "space5_1_3.jpg"
+      ],
+      "member_image_ids": [
+        "raw_553035c3d0",
+        "raw_6e478a1722"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_1_3.jpg",
+        "gallery/정원/유원/space5_1_3.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_1_3"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_22d63fd86a",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "c1f21e03b0c22cebb4413d3baf992f9cec6b3458735d6a5c2fb54f87abcaf5f3"
+      ],
+      "filenames": [
+        "space5_3_2.jpg"
+      ],
+      "member_image_ids": [
+        "raw_22d63fd86a",
+        "raw_41179036b8"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_3_2.jpg",
+        "gallery/정원/유원/space5_3_2.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_3_2"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_119374cda9",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_c9c754058b83",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "c9aa98f14c7fd477b3105d161d79519ccbcfce2596e8853eb8c5989d1b0ccc96"
+      ],
+      "filenames": [
+        "space5_2.jpg"
+      ],
+      "member_image_ids": [
+        "raw_119374cda9",
+        "raw_09572549a0"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_2.jpg",
+        "gallery/정원/유원/space5_2.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_2"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_79cf8a5201",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_cda0e98a8119",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "efaa5717e58ff9d85d3c8c2407279fb7aecc68d6911de33ccaf2ae2e242674d9"
+      ],
+      "filenames": [
+        "space5_4_2.jpg"
+      ],
+      "member_image_ids": [
+        "raw_79cf8a5201",
+        "raw_3375f5ca20"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/유원/space5_4_2.jpg",
+        "gallery/정원/유원/space5_4_2.jpg"
+      ],
+      "place_names": [
+        "유원"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space5_4_2"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_448aa545e9",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_d2a83a561c4b",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "d9a6198f8911127175fd65e062d7c3fe50092a128114a12ebc171eeb57b35b08"
+      ],
+      "filenames": [
+        "space7_4_6.jpg"
+      ],
+      "member_image_ids": [
+        "raw_448aa545e9",
+        "raw_4729f47a32"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_6.jpg",
+        "gallery/정원/몽몽미방/space7_4_6.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_6"
+      ],
+      "subject_names": []
+    },
+    {
+      "canonical_image_id": "raw_4e6c171e96",
+      "canonical_policy": "deterministic_sort_by_path_source_filename_image_id_v2_2_5",
+      "categories": [
+        "gallery"
+      ],
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "duplicate_group_size": 2,
+      "duplicate_has_architecture_source": true,
+      "duplicate_has_garden_source": true,
+      "duplicate_source_group_count": 2,
+      "exact_file_sha256_values": [
+        "feac0f72e9a9af735cf33fefe9a0dddc65e7b2a31e6f280549232d5eb19da51e"
+      ],
+      "filenames": [
+        "space7_4_5.jpg"
+      ],
+      "member_image_ids": [
+        "raw_4e6c171e96",
+        "raw_d3b6daf541"
+      ],
+      "metadata_conflict": true,
+      "metadata_conflict_flags": {
+        "category_conflict": false,
+        "exact_hash_conflict": false,
+        "filename_conflict": false,
+        "path_conflict": true,
+        "place_name_conflict": false,
+        "source_group_conflict": true,
+        "subject_name_conflict": false
+      },
+      "paths": [
+        "gallery/건축/몽몽미방/space7_4_5.jpg",
+        "gallery/정원/몽몽미방/space7_4_5.jpg"
+      ],
+      "place_names": [
+        "몽몽미방"
+      ],
+      "source_groups": [
+        "건축",
+        "정원"
+      ],
+      "stems": [
+        "space7_4_5"
+      ],
+      "subject_names": []
+    }
+  ],
+  "metadata_conflict_group_count": 24,
+  "non_claims": [
+    "duplicate canonicalization은 품질 threshold가 아니다.",
+    "이미지 accept/reject 판단으로 사용하지 않는다.",
+    "production model quality를 주장하지 않는다."
+  ],
+  "outputs": {
+    "audit": "audit/phase_1b/duplicate_feature_conflict_audit_v2_2_5.json",
+    "canonical_map": "data/ontology/duplicate_canonical_map_v2_2_5.jsonl",
+    "report": "audit/phase_1b/duplicate_canonicalization_report_v2_2_5.md"
+  },
+  "score_status": "diagnostic_only",
+  "threshold_status": "diagnostic_warning_not_quality_threshold"
+}

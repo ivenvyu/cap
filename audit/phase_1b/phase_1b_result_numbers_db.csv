@@ -1,0 +1,44 @@
+section,metric,value
+metadata,phase,phase_1b
+metadata,result_file,phase_1b_result_numbers_db
+metadata,db_role,operational_source_of_truth
+metadata,score_status,diagnostic_only
+metadata,threshold_status,no_calibrated_threshold
+metadata,candidate_support_explanation_status,deferred_from_phase_1b
+metadata,claim_level_diagnostic_support_status,executed
+db_counts,images,206
+db_counts,image_embeddings,412
+db_counts,image_duplicates,206
+db_counts,image_clusters,206
+db_counts,image_regions,3296
+db_counts,campaigns,6
+db_counts,retrieval_candidates,300
+db_counts,pair_features,300
+db_counts,review_events,180
+db_counts,training_snapshots,360
+db_counts,training_sets,2
+db_counts,training_set_items,240
+db_counts,tag_axes,7
+db_counts,tag_values,52
+phase1b_first_round,review_events,150
+phase1b_first_round,decision_label_counts,"{""accept"": 27, ""acceptable"": 24, ""reject"": 99}"
+phase1b_first_round,issue_tag_counts,"{""poor_composition"": 3, ""season_mismatch"": 56, ""semantic_mismatch"": 58, ""text_region_conflict"": 1}"
+phase1b_first_round,bucket_counts,"{""clip_high_model_low"": 60, ""cluster_diversity"": 40, ""layout_safe_coverage"": 30, ""random_coverage"": 5, ""uncertainty"": 15}"
+phase1b_first_round,campaign_counts,"{""phase1b_architecture_exhibition_visit"": 30, ""phase1b_autumn_garden_walk"": 30, ""phase1b_botanical_spring_program"": 30, ""phase1b_indoor_gallery_winter_art"": 30, ""phase1b_summer_garden_walk"": 30}"
+phase1b_filtered_training_sets,classifier_rows,120
+phase1b_filtered_training_sets,classifier_label_counts,"{""0"": 70, ""1"": 50}"
+phase1b_filtered_training_sets,ranker_rows,120
+phase1b_filtered_training_sets,ranker_label_counts,"{""0"": 70, ""1"": 24, ""2"": 26}"
+classifier_smoke_db,rows,120
+classifier_smoke_db,feature_count,33
+classifier_smoke_db,label_counts,"{""0"": 70, ""1"": 50}"
+classifier_smoke_db,out_of_fold_accuracy,0.5916666666666667
+classifier_smoke_db,out_of_fold_balanced_accuracy,0.5785714285714285
+classifier_smoke_db,out_of_fold_roc_auc,0.5977142857142856
+classifier_smoke_db,out_of_fold_average_precision,0.4792324459486294
+classifier_smoke_db,confusion_matrix,"[[46, 24], [25, 25]]"
+diagnostic_claim_support_db,support_level,claim_level
+diagnostic_claim_support_db,report_status,diagnostic_claim_support_execution_db_first
+diagnostic_claim_support_db,evaluation_counts,"{""diagnostic_supported"": 5}"
+diagnostic_claim_support_db,future_observations,15
+diagnostic_claim_support_db,claim_evaluation_status,"{""exclude_indoor_winter_from_smoke_training"": ""diagnostic_supported"", ""interpret_architecture_fold_as_campaign_shift"": ""diagnostic_supported"", ""monitor_ranker_label_boundary_stability"": ""diagnostic_supported"", ""prioritize_preview_renderer_v1"": ""diagnostic_supported"", ""reject_classifier_smoke_as_quality_claim"": ""diagnostic_supported""}"

@@ -1,0 +1,66 @@
+metadata:
+  spec_version: v2.2.1
+  phase: phase_1b
+  status: active
+  decision_log: docs/design_history/raw_pool_expansion_scope.md
+  superseded_by: null
+
+name: phase1b_training_filter_v1
+description: >
+  Phase 1b first-round 산출물에 대한 학습/평가용 필터 정책.
+  indoor/winter campaign은 raw image pool coverage gap을 보여주는 diagnostic campaign으로 보존하되,
+  classifier/ranker smoke training 및 evaluation claim에서는 제외한다.
+
+score_status: diagnostic_only
+
+source_artifacts:
+  review_events_cumulative: data/review/phase1b/review_events_phase1b_v1.jsonl
+  classifier_training_cumulative: data/review/phase1b/training_snapshot_phase1b_classifier_v1.jsonl
+  ranker_training_cumulative: data/review/phase1b/training_snapshot_phase1b_ranker_v1.jsonl
+  phase1b_audit_report: audit/phase_1b/phase_1b_first_round_report.json
+
+included_campaigns:
+  - phase1b_summer_garden_walk
+  - phase1b_autumn_garden_walk
+  - phase1b_architecture_exhibition_visit
+  - phase1b_botanical_spring_program
+
+excluded_campaigns:
+  phase1b_indoor_gallery_winter_art:
+    role: coverage_gap_diagnostic
+    exclusion_scope:
+      - classifier_smoke_training
+      - ranker_smoke_training
+      - evaluation_claims
+    retained_for:
+      - audit
+      - raw_pool_expansion_evidence
+      - future_reactivation_after_pool_expansion
+    reason: >
+      이 campaign은 30개 review 후보 중 29개가 reject되었다.
+      이 결과는 모델 품질 실패가 아니라 현재 raw image pool에
+      실내/겨울/gallery 계열 이미지가 부족하다는 coverage gap evidence로 해석한다.
+
+expected_filtered_counts:
+  review_events: 120
+  classifier_training_rows: 120
+  ranker_training_rows: 120
+
+expected_filtered_label_counts:
+  review_event_decision_labels:
+    reject: 70
+    accept: 26
+    acceptable: 24
+  classifier_labels:
+    "0": 70
+    "1": 50
+  ranker_labels:
+    "0": 70
+    "1": 24
+    "2": 26
+
+non_claims:
+  - 이 filtered set은 production-quality training set이 아니다.
+  - 이 filtered set은 calibrated accept/reject threshold를 만들지 않는다.
+  - 이 filtered set은 ranker generalization 성능을 증명하지 않는다.
+  - 제외된 campaign은 삭제하지 않는다. raw pool expansion을 위한 diagnostic evidence로 보존한다.

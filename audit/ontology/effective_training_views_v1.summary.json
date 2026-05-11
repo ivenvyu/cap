@@ -1,0 +1,569 @@
+{
+  "db": "data/db/cap_reranker_ontology.db",
+  "effective_training_set_items": 224,
+  "effective_training_set_items_by_group": [
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 10,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 11,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 9,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 6,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 3,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 2,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 8,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 18,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 7,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 4,
+      "snapshot_kind": "classifier",
+      "training_set_id": "phase1b_filtered_classifier_v1"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 10,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 9,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 11,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 3,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 6,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 8,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 2,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 18,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 4,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 7,
+      "snapshot_kind": "ranker",
+      "training_set_id": "phase1b_filtered_ranker_v1"
+    }
+  ],
+  "effective_training_snapshots": 342,
+  "effective_training_snapshots_by_group": [
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 12,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1a_v1_classifier"
+    },
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 10,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1a_v1_classifier"
+    },
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 7,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1a_v1_classifier"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 10,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_architecture_exhibition_visit_classifier"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 11,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_architecture_exhibition_visit_classifier"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 9,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_architecture_exhibition_visit_classifier"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_autumn_garden_walk_classifier"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 6,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_autumn_garden_walk_classifier"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 3,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_autumn_garden_walk_classifier"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_botanical_spring_program_classifier"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 2,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_botanical_spring_program_classifier"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 8,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_botanical_spring_program_classifier"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 29,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_indoor_gallery_winter_art_classifier"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 1,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_indoor_gallery_winter_art_classifier"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 18,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_summer_garden_walk_classifier"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "accept",
+      "label": 1,
+      "n": 7,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_summer_garden_walk_classifier"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 4,
+      "snapshot_kind": "classifier",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_summer_garden_walk_classifier"
+    },
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 12,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1a_v1_ranker"
+    },
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 7,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1a_v1_ranker"
+    },
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 10,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1a_v1_ranker"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 10,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_architecture_exhibition_visit_ranker"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 9,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_architecture_exhibition_visit_ranker"
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 11,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_architecture_exhibition_visit_ranker"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_autumn_garden_walk_ranker"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 3,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_autumn_garden_walk_ranker"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 6,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_autumn_garden_walk_ranker"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 17,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_botanical_spring_program_ranker"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 8,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_botanical_spring_program_ranker"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 2,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_botanical_spring_program_ranker"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 29,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_indoor_gallery_winter_art_ranker"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 1,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_indoor_gallery_winter_art_ranker"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "reject",
+      "label": 0,
+      "n": 18,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_summer_garden_walk_ranker"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "acceptable",
+      "label": 1,
+      "n": 4,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_summer_garden_walk_ranker"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "accept",
+      "label": 2,
+      "n": 7,
+      "snapshot_kind": "ranker",
+      "snapshot_version": "train_labels_phase1b_v1__phase1b_summer_garden_walk_ranker"
+    }
+  ],
+  "event": "done",
+  "excluded_training_items_by_campaign_subject": [
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "산수국",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "참나리",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 4
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "산수국",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 4
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "참나리",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    }
+  ],
+  "excluded_training_set_items": 16,
+  "excluded_training_snapshots": 18,
+  "excluded_training_snapshots_by_campaign_subject": [
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "산수국",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "excluded_subject_name": "참나리",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 4
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "산수국",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 4
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "excluded_subject_name": "참나리",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "excluded_subject_name": "진달래",
+      "exclusion_reason": "flower_not_in_requested_season",
+      "n": 2
+    }
+  ],
+  "filter_run_id": "flower_season_exclusion_filter_v1",
+  "interpretation": "Effective training views exclude campaign-image pairs removed by flower season exclusion. training_set_items are resolved through training_snapshots because they do not store campaign_id/image_id directly. This is not a calibrated model-quality threshold.",
+  "score_status": "diagnostic_only",
+  "source_training_set_items": 240,
+  "source_training_snapshots": 360,
+  "views": [
+    "v_effective_training_set_items_v1",
+    "v_effective_training_snapshots_v1",
+    "v_training_set_items_excluded_by_flower_season_v1",
+    "v_training_snapshots_excluded_by_flower_season_v1"
+  ]
+}

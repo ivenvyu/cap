@@ -1,0 +1,42 @@
+section,metric,value
+metadata,phase,phase_1b
+metadata,result_file,phase_1b_result_numbers
+metadata,score_status,diagnostic_only
+metadata,threshold_status,no_calibrated_threshold
+metadata,candidate_support_explanation_status,deferred_from_phase_1b
+metadata,claim_level_diagnostic_support_status,executed
+first_round,campaign_count,5
+first_round,campaign_family_count,4
+first_round,retrieval_rows_total,250
+first_round,pair_feature_snapshot_rows_total,250
+first_round,review_queue_rows_total,150
+first_round,review_event_rows_total,150
+first_round,classifier_training_rows_total,150
+first_round,ranker_training_rows_total,150
+first_round,decision_label_counts,"{""accept"": 27, ""acceptable"": 24, ""reject"": 99}"
+first_round,issue_tag_counts,"{""poor_composition"": 3, ""season_mismatch"": 56, ""semantic_mismatch"": 58, ""text_region_conflict"": 1}"
+first_round,bucket_counts,"{""clip_high_model_low"": 60, ""cluster_diversity"": 40, ""layout_safe_coverage"": 30, ""random_coverage"": 5, ""uncertainty"": 15}"
+filtered_training_set,review_events_filtered,120
+filtered_training_set,classifier_training_filtered,120
+filtered_training_set,ranker_training_filtered,120
+filtered_training_set,review_event_decision_labels,"{""accept"": 26, ""acceptable"": 24, ""reject"": 70}"
+filtered_training_set,classifier_labels,"{""0"": 70, ""1"": 50}"
+filtered_training_set,ranker_labels,"{""0"": 70, ""1"": 24, ""2"": 26}"
+filtered_training_set,campaign_counts,"{""phase1b_architecture_exhibition_visit"": 30, ""phase1b_autumn_garden_walk"": 30, ""phase1b_botanical_spring_program"": 30, ""phase1b_summer_garden_walk"": 30}"
+filtered_training_set,issue_tag_counts,"{""poor_composition"": 3, ""season_mismatch"": 31, ""semantic_mismatch"": 37, ""text_region_conflict"": 1}"
+filtered_training_set,excluded_campaigns,"[""phase1b_indoor_gallery_winter_art""]"
+classifier_smoke,rows,120
+classifier_smoke,campaign_count,4
+classifier_smoke,feature_count,33
+classifier_smoke,label_counts,"{""0"": 70, ""1"": 50}"
+classifier_smoke,out_of_fold_accuracy,0.5916666666666667
+classifier_smoke,out_of_fold_balanced_accuracy,0.5785714285714285
+classifier_smoke,out_of_fold_roc_auc,0.5977142857142856
+classifier_smoke,out_of_fold_average_precision,0.4792324459486294
+classifier_smoke,confusion_matrix,"[[46, 24], [25, 25]]"
+classifier_smoke,fold_metrics,"{""phase1b_architecture_exhibition_visit"": {""average_precision"": 0.5410305336928368, ""balanced_accuracy"": 0.35, ""roc_auc"": 0.25999999999999995, ""test_label_counts"": {""0"": 10, ""1"": 20}, ""test_n"": 30}, ""phase1b_autumn_garden_walk"": {""average_precision"": 0.5285959076357994, ""balanced_accuracy"": 0.6349206349206349, ""roc_auc"": 0.6190476190476191, ""test_label_counts"": {""0"": 21, ""1"": 9}, ""test_n"": 30}, ""phase1b_botanical_spring_program"": {""average_precision"": 0.49353922860316723, ""balanced_accuracy"": 0.6, ""roc_auc"": 0.615, ""test_label_counts"": {""0"": 20, ""1"": 10}, ""test_n"": 30}, ""phase1b_summer_garden_walk"": {""average_precision"": 0.5703172644349115, ""balanced_accuracy"": 0.6220095693779905, ""roc_auc"": 0.7129186602870814, ""test_label_counts"": {""0"": 19, ""1"": 11}, ""test_n"": 30}}"
+diagnostic_claim_support,support_level,claim_level
+diagnostic_claim_support,report_status,diagnostic_claim_support_execution
+diagnostic_claim_support,evaluation_counts,"{""diagnostic_supported"": 4}"
+diagnostic_claim_support,future_observations,12
+diagnostic_claim_support,claim_evaluation_status,"{""exclude_indoor_winter_from_smoke_training"": ""diagnostic_supported"", ""interpret_architecture_fold_as_campaign_shift"": ""diagnostic_supported"", ""prioritize_preview_renderer_v1"": ""diagnostic_supported"", ""reject_classifier_smoke_as_quality_claim"": ""diagnostic_supported""}"

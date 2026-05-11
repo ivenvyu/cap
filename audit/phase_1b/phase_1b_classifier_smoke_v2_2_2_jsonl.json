@@ -1,0 +1,817 @@
+{
+  "dataset": {
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 30,
+      "phase1b_autumn_garden_walk": 30,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_summer_garden_walk": 30
+    },
+    "configured_feature_count": 42,
+    "decision_label_counts": {
+      "accept": 26,
+      "acceptable": 24,
+      "reject": 70
+    },
+    "label_counts": {
+      "0": 70,
+      "1": 50
+    },
+    "rows": 120,
+    "used_feature_columns": [
+      "clip_positive_max_sim",
+      "clip_positive_mean_sim",
+      "clip_negative_max_sim",
+      "clip_negative_mean_sim",
+      "clip_margin",
+      "clip_rank_percentile",
+      "dinov2_campaign_pos_nn_sim",
+      "dinov2_campaign_neg_nn_sim",
+      "dinov2_campaign_margin",
+      "dinov2_campaign_pos_count",
+      "dinov2_campaign_neg_count",
+      "dinov2_family_pos_nn_sim",
+      "dinov2_family_neg_nn_sim",
+      "dinov2_family_margin",
+      "dinov2_family_support_count",
+      "dinov2_cluster_positive_rate_coarse",
+      "dinov2_cluster_positive_rate_mid",
+      "dinov2_cluster_positive_rate_fine",
+      "dinov2_cluster_review_count_coarse",
+      "dinov2_cluster_review_count_mid",
+      "dinov2_cluster_review_count_fine",
+      "dinov2_duplicate_group_seen",
+      "required_region_safe_mean",
+      "required_region_safe_min",
+      "title_region_safe_score",
+      "info_region_safe_score",
+      "edge_density",
+      "contrast",
+      "brightness",
+      "saturation",
+      "image_category_gallery",
+      "image_category_tree",
+      "image_category_flower",
+      "path_has_architecture",
+      "path_has_garden",
+      "campaign_is_summer",
+      "campaign_is_walking_program",
+      "campaign_is_garden"
+    ],
+    "used_feature_count": 38
+  },
+  "feature_diagnostics": [
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "clip_positive_max_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 94,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "clip_positive_mean_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 120,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "clip_negative_max_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 114,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "clip_negative_mean_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 120,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "clip_margin",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 117,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "clip_rank_percentile",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 65,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_campaign_pos_nn_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 97,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_campaign_neg_nn_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 91,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_campaign_margin",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 118,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_campaign_pos_count",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 6,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_campaign_neg_count",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 6,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_campaign_anchor_missing",
+      "is_constant_non_null": true,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 1,
+      "used_in_smoke_training": false
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_family_pos_nn_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 76,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_family_neg_nn_sim",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 73,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_family_margin",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 71,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_family_support_count",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 12,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_family_anchor_missing",
+      "is_constant_non_null": true,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 1,
+      "used_in_smoke_training": false
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_cluster_positive_rate_coarse",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 29,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_cluster_positive_rate_mid",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 62,
+      "numeric_null_count": 58,
+      "numeric_null_rate": 0.48333333333333334,
+      "row_count": 120,
+      "unique_non_null_count": 13,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_cluster_positive_rate_fine",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 2,
+      "numeric_null_count": 118,
+      "numeric_null_rate": 0.9833333333333333,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_cluster_review_count_coarse",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 20,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_cluster_review_count_mid",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 12,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_cluster_review_count_fine",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_when_non_null",
+      "diagnostic_only": true,
+      "feature": "dinov2_duplicate_group_seen",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "required_region_safe_mean",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 65,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "required_region_safe_min",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 54,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "title_region_safe_score",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 65,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "info_region_safe_score",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 60,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "edge_density",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 69,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "contrast",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 69,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "brightness",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 69,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic",
+      "diagnostic_only": true,
+      "feature": "saturation",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 69,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "image_season_unknown",
+      "is_constant_non_null": true,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 1,
+      "used_in_smoke_training": false
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "image_category_gallery",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "image_category_tree",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "image_category_flower",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "image_category_course",
+      "is_constant_non_null": true,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 1,
+      "used_in_smoke_training": false
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "path_has_architecture",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "path_has_garden",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "campaign_is_summer",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "campaign_is_walking_program",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    },
+    {
+      "configured_training_action": "active_diagnostic_low_priority",
+      "diagnostic_only": true,
+      "feature": "campaign_is_garden",
+      "is_constant_non_null": false,
+      "numeric_non_null_count": 120,
+      "numeric_null_count": 0,
+      "numeric_null_rate": 0.0,
+      "row_count": 120,
+      "unique_non_null_count": 2,
+      "used_in_smoke_training": true
+    }
+  ],
+  "folds": [
+    {
+      "balanced_accuracy": 0.7511961722488039,
+      "fold": 1,
+      "held_out_campaigns": [
+        "phase1b_summer_garden_walk"
+      ],
+      "labels": {
+        "0": 19,
+        "1": 11
+      },
+      "roc_auc": 0.8803827751196172,
+      "test_n": 30
+    },
+    {
+      "balanced_accuracy": 0.6,
+      "fold": 2,
+      "held_out_campaigns": [
+        "phase1b_botanical_spring_program"
+      ],
+      "labels": {
+        "0": 20,
+        "1": 10
+      },
+      "roc_auc": 0.705,
+      "test_n": 30
+    },
+    {
+      "balanced_accuracy": 0.6666666666666666,
+      "fold": 3,
+      "held_out_campaigns": [
+        "phase1b_autumn_garden_walk"
+      ],
+      "labels": {
+        "0": 21,
+        "1": 9
+      },
+      "roc_auc": 0.7089947089947091,
+      "test_n": 30
+    },
+    {
+      "balanced_accuracy": 0.5,
+      "fold": 4,
+      "held_out_campaigns": [
+        "phase1b_architecture_exhibition_visit"
+      ],
+      "labels": {
+        "0": 10,
+        "1": 20
+      },
+      "roc_auc": 0.99,
+      "test_n": 30
+    }
+  ],
+  "input_policy": {
+    "excluded_exact_features": [
+      "dinov2_cluster_id_coarse",
+      "dinov2_cluster_id_fine",
+      "dinov2_cluster_id_mid"
+    ],
+    "excluded_feature_groups": [
+      "critic"
+    ],
+    "feature_profile": "configs/feature_profile_v2_2_2.yaml",
+    "feature_selection": "numeric_non_null_and_non_constant_diagnostic_only",
+    "feature_snapshots_glob": "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/*.jsonl",
+    "interpretation": "Diagnostic smoke model only. Do not report as calibrated production reranker performance.",
+    "training_snapshots": "data/review/phase1b/v2_2_2/training_snapshot_phase1b_classifier_v2_2_2.jsonl"
+  },
+  "model_family": "sklearn_logistic_regression_smoke",
+  "out_of_fold_metrics": {
+    "accuracy": 0.575,
+    "average_precision": 0.5427765141122584,
+    "balanced_accuracy": 0.5557142857142857,
+    "confusion_matrix": [
+      [
+        47,
+        23
+      ],
+      [
+        28,
+        22
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "0",
+      "1"
+    ],
+    "diagnostic_threshold": 0.5,
+    "label_counts": {
+      "0": 70,
+      "1": 50
+    },
+    "n": 120,
+    "per_class": {
+      "0": {
+        "f1-score": 0.6482758620689655,
+        "precision": 0.6266666666666667,
+        "recall": 0.6714285714285714,
+        "support": 70.0
+      },
+      "1": {
+        "f1-score": 0.4631578947368421,
+        "precision": 0.4888888888888889,
+        "recall": 0.44,
+        "support": 50.0
+      },
+      "accuracy": 0.575,
+      "macro avg": {
+        "f1-score": 0.5557168784029038,
+        "precision": 0.5577777777777778,
+        "recall": 0.5557142857142857,
+        "support": 120.0
+      },
+      "weighted avg": {
+        "f1-score": 0.5711433756805808,
+        "precision": 0.5692592592592592,
+        "recall": 0.575,
+        "support": 120.0
+      }
+    },
+    "roc_auc": 0.534,
+    "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+  },
+  "report_status": "classifier_smoke_training_diagnostic_v2_2_2_jsonl",
+  "score_status": "diagnostic_only",
+  "threshold_status": "no_calibrated_threshold",
+  "top_coefficients": [
+    {
+      "coefficient": 1.0451999723053158,
+      "feature": "dinov2_campaign_margin"
+    },
+    {
+      "coefficient": 0.895142827204787,
+      "feature": "clip_negative_max_sim"
+    },
+    {
+      "coefficient": -0.8054163115444974,
+      "feature": "dinov2_campaign_neg_nn_sim"
+    },
+    {
+      "coefficient": 0.7855842263920232,
+      "feature": "dinov2_family_support_count"
+    },
+    {
+      "coefficient": -0.7257699490114234,
+      "feature": "image_category_flower"
+    },
+    {
+      "coefficient": 0.7128352946514476,
+      "feature": "clip_positive_mean_sim"
+    },
+    {
+      "coefficient": 0.6790549248227787,
+      "feature": "clip_positive_max_sim"
+    },
+    {
+      "coefficient": -0.6708423464210989,
+      "feature": "campaign_is_walking_program"
+    },
+    {
+      "coefficient": -0.6708423464210989,
+      "feature": "campaign_is_garden"
+    },
+    {
+      "coefficient": 0.6245778941391086,
+      "feature": "title_region_safe_score"
+    },
+    {
+      "coefficient": 0.619030943137496,
+      "feature": "dinov2_campaign_pos_nn_sim"
+    },
+    {
+      "coefficient": 0.5962668958698746,
+      "feature": "dinov2_cluster_review_count_mid"
+    },
+    {
+      "coefficient": 0.5277429013521499,
+      "feature": "edge_density"
+    },
+    {
+      "coefficient": 0.5192727605591175,
+      "feature": "image_category_gallery"
+    },
+    {
+      "coefficient": -0.47994056986275174,
+      "feature": "clip_negative_mean_sim"
+    },
+    {
+      "coefficient": 0.4749043243873414,
+      "feature": "path_has_architecture"
+    },
+    {
+      "coefficient": -0.4706455719187934,
+      "feature": "dinov2_cluster_positive_rate_coarse"
+    },
+    {
+      "coefficient": 0.39762655348113907,
+      "feature": "dinov2_campaign_neg_count"
+    },
+    {
+      "coefficient": -0.39762655348113835,
+      "feature": "dinov2_campaign_pos_count"
+    },
+    {
+      "coefficient": 0.3961259261009013,
+      "feature": "image_category_tree"
+    },
+    {
+      "coefficient": -0.38272989782133526,
+      "feature": "dinov2_family_margin"
+    },
+    {
+      "coefficient": -0.354205373877578,
+      "feature": "dinov2_cluster_positive_rate_mid"
+    },
+    {
+      "coefficient": -0.35135549521987547,
+      "feature": "dinov2_family_pos_nn_sim"
+    },
+    {
+      "coefficient": 0.28166835983412775,
+      "feature": "required_region_safe_mean"
+    },
+    {
+      "coefficient": -0.2510825226307669,
+      "feature": "saturation"
+    },
+    {
+      "coefficient": -0.24391589259901406,
+      "feature": "clip_rank_percentile"
+    },
+    {
+      "coefficient": -0.2283064434173758,
+      "feature": "dinov2_cluster_positive_rate_fine"
+    },
+    {
+      "coefficient": 0.18470046305031132,
+      "feature": "brightness"
+    },
+    {
+      "coefficient": 0.17731676672628152,
+      "feature": "dinov2_cluster_review_count_coarse"
+    },
+    {
+      "coefficient": -0.16196870775002692,
+      "feature": "info_region_safe_score"
+    }
+  ]
+}

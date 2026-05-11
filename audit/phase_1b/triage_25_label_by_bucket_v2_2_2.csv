@@ -1,0 +1,6 @@
+﻿bucket,n,positive,reject,positive_rate_diagnostic,reject_rate_diagnostic,decision_counts,issue_tag_counts
+clip_high_model_low,5,3,2,0.6,0.4,"{""accept"": 3, ""reject"": 2}","{""semantic_mismatch"": 2, ""season_mismatch"": 1}"
+dinov2_high_model_low,5,2,3,0.4,0.6,"{""reject"": 3, ""acceptable"": 1, ""best"": 1}","{""semantic_mismatch"": 2, ""season_mismatch"": 1}"
+model_high_clip_negative_high,5,4,1,0.8,0.2,"{""accept"": 2, ""acceptable"": 2, ""reject"": 1}","{""too_busy_background"": 1, ""semantic_mismatch"": 1}"
+model_top_diagnostic,5,3,2,0.6,0.4,"{""accept"": 1, ""best"": 2, ""reject"": 2}","{""semantic_mismatch"": 1, ""season_mismatch"": 1}"
+random_control,5,4,1,0.8,0.2,"{""acceptable"": 3, ""accept"": 1, ""reject"": 1}","{""semantic_mismatch"": 1, ""low_resolution"": 1, ""brand_tone_mismatch"": 1}"

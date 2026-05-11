@@ -1,0 +1,233 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: prompt_template_bank_governance_v1
+description: >
+  Governance policy for prompt_template_bank_v1.
+  This policy defines ownership, versioning, fallback behavior, audit logging,
+  and image-anchor query handling for Sayuwon-specific proper nouns and spaces.
+
+governed_file: configs/prompt_template_bank_v1.yaml
+prompt_bank_version: prompt_template_bank_v1
+
+ownership:
+  primary_owner_role: domain_ml_owner
+  required_competence:
+    - understands_sayuwon_domain_language
+    - understands_clip_retrieval_behavior
+    - understands_campaign_metadata_schema
+  review_sources:
+    - retrieval_quality_audit
+    - human_review_events
+    - missed_positive_analysis
+    - hard_negative_analysis
+    - campaign_owner_feedback
+
+versioning:
+  current_version: prompt_template_bank_v1
+
+  version_bump_rules:
+    add_new_prompt_for_existing_combination:
+      bump_type: minor
+      example: prompt_template_bank_v1_1
+      preserve_old_results: true
+
+    add_new_metadata_combination:
+      bump_type: minor
+      example: prompt_template_bank_v1_1
+      preserve_old_results: true
+
+    change_existing_prompt_semantics:
+      bump_type: major
+      example: prompt_template_bank_v2
+      preserve_old_results: true
+      rationale: >
+        Changing existing prompt semantics can change retrieval behavior for old campaigns.
+        Old feature snapshots must preserve the original prompt bank version.
+
+    remove_existing_prompt:
+      bump_type: major
+      preserve_old_results: true
+
+  immutable_retrieval_records:
+    required_fields:
+      - prompt_bank_version
+      - positive_prompts_used
+      - negative_prompts_used
+      - campaign_id
+      - retrieval_batch_id
+      - created_at
+
+fallback_for_missing_combinations:
+  enabled: true
+  method: nearest_neighbor_on_metadata
+  log_event: missing_combination_used_fallback
+
+  metadata_similarity_fields:
+    priority_order:
+      - purpose_type
+      - space_type
+      - season
+      - mood_tags
+
+  fallback_order:
+    - exact_purpose_space_ignore_season
+    - exact_space_season_ignore_purpose
+    - exact_space_only
+    - generic_by_space_type
+    - generic_global
+
+  required_audit_fields:
+    - campaign_id
+    - missing_purpose_type
+    - missing_space_type
+    - missing_season
+    - fallback_level_used
+    - fallback_prompts_used
+    - prompt_bank_version
+
+  follow_up_action:
+    add_to_prompt_bank_backlog: true
+    backlog_reason: missing_metadata_combination
+
+retrieval_quality_audit:
+  enabled: true
+
+  audit_signals:
+    - clip_high_model_low_accept_rate
+    - clip_high_model_low_reject_rate
+    - model_high_clip_negative_high_reject_rate
+    - human_notes_semantic_mismatch_rate
+    - missed_positive_from_random_or_cluster_bucket
+    - campaign_owner_manual_feedback
+
+  audit_outputs:
+    - prompt_combination_quality_report
+    - high_negative_prompt_false_positive_report
+    - missing_combination_backlog
+    - proper_noun_anchor_backlog
+
+  caution: >
+    Prompt audit metrics are diagnostic_only until evaluated on held-out campaigns.
+    Do not overfit prompt templates to one campaign.
+
+korean_proper_noun_handling:
+  enabled: true
+  method: image_anchor_query
+  rationale: >
+    Sayuwon-specific place names may not be meaningful to CLIP as text.
+    For such names, use representative images of the place as visual anchors.
+
+  examples:
+    - 풍설기천년
+    - 오랑오랑
+    - 몽몽미방
+    - 별유동천
+    - 소요헌
+    - 와사
+    - 유원
+    - 현암
+    - 명정
+
+  trigger_conditions:
+    - campaign_metadata_contains_place_name
+    - place_name_in_sayuwon_proper_noun_registry
+    - text_prompt_retrieval_quality_low
+    - campaign_owner_requests_specific_place
+
+  representative_image_set:
+    required: true
+    source_options:
+      - marketing_team_curated_representatives
+      - existing_raw_gallery_parent_images
+      - accepted_images_from_past_campaigns
+    minimum_representatives_per_place:
+      status: diagnostic_only
+      note: >
+        The minimum count must not be treated as final quality threshold.
+        If too few anchors exist, mark anchor coverage as low and use fallback prompts.
+
+  image_anchor_query_features:
+    - clip_image_anchor_max_sim
+    - clip_image_anchor_mean_sim
+    - clip_image_anchor_rank_percentile
+    - image_anchor_place_match_flag
+    - image_anchor_coverage_count
+
+  fallback_when_no_representative_images:
+    - use_prompt_template_bank_fallback
+    - log_proper_noun_anchor_missing
+    - add_to_representative_image_backlog
+
+  downstream_usage:
+    allowed:
+      - retrieval_ranking
+      - review_queue_bucket_sampling
+      - lightgbm_feature
+    forbidden:
+      - final_place_match_pass_fail_without_validation
+      - automatic_accept
+
+prompt_editing_policy:
+  allowed_editors:
+    - domain_ml_owner
+
+  required_before_edit:
+    - inspect_retrieval_quality_audit
+    - inspect_human_review_examples
+    - check_held_out_campaign_effect_if_available
+
+  required_after_edit:
+    - bump_prompt_bank_version
+    - regenerate_prompt_bank_manifest
+    - preserve_old_retrieval_records
+    - run_phase_1a_or_retrieval_dry_run
+
+  prohibited:
+    - editing_prompts_to_fix_one_single_candidate_without_audit
+    - deleting_old_prompt_versions
+    - changing_prompt_semantics_without_version_bump
+
+manifest:
+  required_manifest_path: data/retrieval/prompt_bank_manifest_v1.json
+  required_fields:
+    - prompt_bank_version
+    - governed_file
+    - created_at
+    - hash
+    - num_positive_templates
+    - num_negative_templates
+    - supported_purpose_types
+    - supported_space_types
+    - supported_seasons
+    - supported_mood_tags
+
+failure_policy:
+  missing_prompt_combination:
+    action: use_fallback_and_log
+    severity: warning
+
+  missing_proper_noun_anchor:
+    action: use_text_prompt_fallback_and_log
+    severity: warning
+
+  prompt_bank_version_missing_in_retrieval_record:
+    action: reject_retrieval_record
+    severity: error
+
+  edited_without_version_bump:
+    action: reject_prompt_bank_release
+    severity: error
+
+notes:
+  - >
+    Prompt template bank is a retrieval component, not a final aesthetic rule.
+  - >
+    Image-anchor query is the preferred route for Sayuwon-specific place names
+    that CLIP text prompts cannot represent reliably.
+  - >
+    All retrieval quality claims remain diagnostic_only until validated on held-out campaigns.

@@ -1,0 +1,144 @@
+policy_id: seasonal_prompt_cue_policy_v1
+status: active
+phase: phase_1b
+score_status: diagnostic_only
+threshold_status: no_calibrated_threshold
+
+purpose:
+  - map campaign seasonal language to visual retrieval cues
+  - avoid treating weak spring/summer cues as permanent temporal ontology labels
+  - reserve image_tag_assertions for visually strong or human-confirmed cues
+
+core_policy:
+  winter:
+    interpretation: "홍보물에서 겨울색이 강하게 보이는 이미지"
+    positive_visual_cues:
+      - snowy_winter_visual
+    excluded_visual_cues:
+      - bare_tree
+      - dry_branch
+      - gray_tone_only
+      - cold_atmosphere_only
+    ontology_write_policy:
+      temporal_axis:
+        allowed_tags:
+          - winter
+        condition: snow_or_snow_covered_scene_visible
+      weather_light_axis:
+        allowed_tags:
+          - snowy
+        condition: snow_visible
+
+  autumn:
+    interpretation: "홍보물에서 가을색이 강하게 보이는 이미지"
+    positive_visual_cues:
+      - autumn_foliage_visual
+    ontology_write_policy:
+      temporal_axis:
+        allowed_tags:
+          - autumn
+        condition: red_yellow_foliage_or_fallen_leaves_visible
+
+  spring_summer:
+    interpretation: "봄/여름은 촬영 계절 확정이 아니라 초록 식물감 retrieval cue로 처리"
+    positive_visual_cues:
+      - green_lush_vegetation
+      - flower_plant_bloom_visual
+    ontology_write_policy:
+      temporal_axis:
+        allowed_tags:
+          - season_unknown
+        condition: default_for_green_or_flower_without_external_botanical_evidence
+
+visual_cues:
+  snowy_winter_visual:
+    cue_group: winter
+    cue_type: strong_seasonal_retrieval_cue
+    prompts:
+      - "a snowy garden landscape"
+      - "a garden path covered with snow"
+      - "snow-covered trees in a quiet garden"
+      - "a white winter garden scene"
+    ontology_write_allowed_if_human_verified: true
+    verified_ontology_tags:
+      temporal_axis:
+        - winter
+      weather_light_axis:
+        - snowy
+
+  autumn_foliage_visual:
+    cue_group: autumn
+    cue_type: strong_seasonal_retrieval_cue
+    prompts:
+      - "a garden with red and yellow autumn leaves"
+      - "a forest path with fall foliage"
+      - "fallen leaves on a garden path"
+      - "orange and brown autumn foliage"
+    ontology_write_allowed_if_human_verified: true
+    verified_ontology_tags:
+      temporal_axis:
+        - autumn
+
+  green_lush_vegetation:
+    cue_group: spring_summer
+    cue_type: retrieval_only_visual_cue
+    prompts:
+      - "lush green leaves in a garden"
+      - "dense green foliage"
+      - "a bright green garden path"
+      - "fresh green vegetation"
+    ontology_write_allowed_if_human_verified: false
+    verified_ontology_tags:
+      temporal_axis:
+        - season_unknown
+
+  flower_plant_bloom_visual:
+    cue_group: spring_summer
+    cue_type: retrieval_only_visual_cue
+    prompts:
+      - "bright flowers in a garden"
+      - "flowering plants in a garden"
+      - "a close-up photo of garden flowers"
+      - "fresh blooming plants"
+    ontology_write_allowed_if_human_verified: false
+    verified_ontology_tags:
+      temporal_axis:
+        - season_unknown
+
+  foggy_visual:
+    cue_group: weather
+    cue_type: strong_weather_retrieval_cue
+    prompts:
+      - "a foggy forest path"
+      - "a misty garden landscape"
+      - "trees in heavy mist"
+      - "a quiet garden covered in fog"
+    ontology_write_allowed_if_human_verified: true
+    verified_ontology_tags:
+      weather_light_axis:
+        - foggy
+
+campaign_season_mapping:
+  winter:
+    preferred_cues:
+      - snowy_winter_visual
+
+  autumn:
+    preferred_cues:
+      - autumn_foliage_visual
+
+  spring:
+    preferred_cues:
+      - green_lush_vegetation
+      - flower_plant_bloom_visual
+
+  summer:
+    preferred_cues:
+      - green_lush_vegetation
+
+non_claims:
+  - does not infer actual shooting season
+  - does not assign spring or summer temporal labels from green foliage alone
+  - does not use bare trees as winter positive cue
+  - does not create calibrated thresholds
+  - does not create image_tag_assertions without image evidence or human verification

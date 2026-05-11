@@ -1,0 +1,169 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: training_snapshot_aggregation_v1
+description: >
+  Aggregation policy for converting immutable ReviewEvent logs into
+  classifier, ranker, and critic training snapshots.
+
+aggregation_unit:
+  primary_key:
+    - pair_id
+    - layout_spec_id
+    - preview_renderer_version
+  rationale: >
+    The same campaign-image pair may receive different valid labels under
+    different layout specs or preview renderer versions. These contexts must
+    not be collapsed into a single label.
+
+same_annotator_overwrite:
+  method: most_recent
+  timestamp_field: timestamp
+
+multi_annotator_aggregation:
+  method: majority_vote_with_tie_break
+  tie_break: most_recent
+  log_disagreement: true
+  disagreement_output_field: disagreement
+
+classifier_label_mapping:
+  policy_name: classifier_binary_v1
+  mapping:
+    reject: 0
+    acceptable: 1
+    accept: 1
+    best: 1
+  excluded:
+    - pending
+    - skip
+
+ranker_label_mapping:
+  policy_name: ranker_relevance_v1
+  mapping:
+    reject: 0
+    acceptable: 1
+    accept: 2
+    best: 3
+  group_id: campaign_id
+  excluded:
+    - pending
+    - skip
+  note: >
+    Ranker labels are only meaningful within the same campaign group.
+    Cross-campaign ranker scores must not be directly compared.
+
+critic_label_mapping:
+  policy_name: critic_layout_binary_v1
+  positive_issue_tags:
+    - text_region_conflict
+    - low_contrast
+    - too_busy_background
+    - visual_hierarchy_weak
+  negative_decisions:
+    - acceptable
+    - accept
+    - best
+  excluded_if_issue_tags:
+    - season_mismatch
+    - semantic_mismatch
+    - brand_tone_mismatch
+    - mood_mismatch
+    - duplicate_or_too_similar
+    - already_used_in_recent_campaign
+    - low_resolution
+    - poor_composition
+
+minimum_annotators_for_inclusion:
+  classifier_snapshot: 1
+  ranker_snapshot: 1
+  critic_snapshot: 1
+
+disagreement_policy:
+  classifier_snapshot:
+    action: include_with_disagreement_flag
+    excluded_if_positive_negative_conflict: false
+
+  ranker_snapshot:
+    action: include_with_disagreement_flag
+    excluded_if_positive_negative_conflict: false
+
+  critic_snapshot:
+    action: exclude_if_layout_label_disagreement
+
+conflict_types:
+  positive_negative_conflict:
+    definition: >
+      At least one effective label is reject and at least one effective label is
+      acceptable, accept, or best for the same aggregation unit.
+
+  accept_acceptable_conflict:
+    definition: >
+      Labels differ only among acceptable, accept, and best.
+    training_effect:
+      classifier: not_a_conflict
+      ranker: relevance_difference
+      critic: not_a_layout_conflict
+
+  layout_issue_conflict:
+    definition: >
+      Annotators disagree on critic-trainable layout issue tags.
+    critic_training_effect: exclude
+
+snapshot_row_requirements:
+  required_fields:
+    - training_snapshot_id
+    - snapshot_version
+    - created_at
+    - snapshot_kind
+    - label_policy
+    - aggregation_policy
+    - source_review_event_ids
+    - pair_id
+    - campaign_id
+    - image_id
+    - feature_snapshot_id
+    - label
+    - label_status
+    - decision_label
+    - issue_tags
+
+feature_snapshot_policy:
+  require_feature_snapshot_id: true
+  require_snapshot_exists: true
+  source_schema: schemas/pair_feature_snapshot.schema.json
+
+validation:
+  output_schema: schemas/training_snapshot.schema.json
+  schema_validation_required: true
+
+failure_policy:
+  missing_feature_snapshot:
+    action: exclude_row
+    severity: error
+
+  unresolved_label_conflict:
+    action: exclude_row_and_log
+    severity: warning
+
+  invalid_issue_tag:
+    action: reject_snapshot_build
+    severity: error
+
+  invalid_decision_label:
+    action: reject_snapshot_build
+    severity: error
+
+notes:
+  - >
+    ReviewEvent is an immutable raw decision log. TrainingSnapshot is a derived
+    training view over that log.
+  - >
+    Classifier and ranker snapshots must be written separately because their
+    label semantics differ.
+  - >
+    Critic snapshots must only use layout-related issue tags from the closed
+    issue_tags_v1 vocabulary.

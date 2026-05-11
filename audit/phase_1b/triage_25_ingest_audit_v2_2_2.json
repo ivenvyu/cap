@@ -1,0 +1,141 @@
+{
+  "by_bucket": {
+    "clip_high_model_low": {
+      "decision_counts": {
+        "accept": 3,
+        "reject": 2
+      },
+      "n": 5,
+      "positive": 3,
+      "positive_rate_diagnostic": 0.6,
+      "reject": 2
+    },
+    "dinov2_high_model_low": {
+      "decision_counts": {
+        "acceptable": 1,
+        "best": 1,
+        "reject": 3
+      },
+      "n": 5,
+      "positive": 2,
+      "positive_rate_diagnostic": 0.4,
+      "reject": 3
+    },
+    "model_high_clip_negative_high": {
+      "decision_counts": {
+        "accept": 2,
+        "acceptable": 2,
+        "reject": 1
+      },
+      "n": 5,
+      "positive": 4,
+      "positive_rate_diagnostic": 0.8,
+      "reject": 1
+    },
+    "model_top_diagnostic": {
+      "decision_counts": {
+        "accept": 1,
+        "best": 2,
+        "reject": 2
+      },
+      "n": 5,
+      "positive": 3,
+      "positive_rate_diagnostic": 0.6,
+      "reject": 2
+    },
+    "random_control": {
+      "decision_counts": {
+        "accept": 1,
+        "acceptable": 3,
+        "reject": 1
+      },
+      "n": 5,
+      "positive": 4,
+      "positive_rate_diagnostic": 0.8,
+      "reject": 1
+    }
+  },
+  "by_campaign": {
+    "phase1b_architecture_exhibition_visit": {
+      "decision_counts": {
+        "accept": 3,
+        "acceptable": 1,
+        "reject": 1
+      },
+      "n": 5,
+      "positive": 4,
+      "positive_rate_diagnostic": 0.8,
+      "reject": 1
+    },
+    "phase1b_autumn_garden_walk": {
+      "decision_counts": {
+        "accept": 2,
+        "acceptable": 1,
+        "best": 1,
+        "reject": 1
+      },
+      "n": 5,
+      "positive": 4,
+      "positive_rate_diagnostic": 0.8,
+      "reject": 1
+    },
+    "phase1b_botanical_spring_program": {
+      "decision_counts": {
+        "accept": 1,
+        "acceptable": 2,
+        "best": 1,
+        "reject": 1
+      },
+      "n": 5,
+      "positive": 4,
+      "positive_rate_diagnostic": 0.8,
+      "reject": 1
+    },
+    "phase1b_indoor_gallery_winter_art": {
+      "decision_counts": {
+        "acceptable": 1,
+        "reject": 4
+      },
+      "n": 5,
+      "positive": 1,
+      "positive_rate_diagnostic": 0.2,
+      "reject": 4
+    },
+    "phase1b_summer_garden_walk": {
+      "decision_counts": {
+        "accept": 1,
+        "acceptable": 1,
+        "best": 1,
+        "reject": 2
+      },
+      "n": 5,
+      "positive": 3,
+      "positive_rate_diagnostic": 0.6,
+      "reject": 2
+    }
+  },
+  "classifier_out": "data/review/phase1b/v2_2_2/triage/training_snapshot_classifier_v2_2_2_triage_25.jsonl",
+  "decision_counts": {
+    "accept": 7,
+    "acceptable": 6,
+    "best": 3,
+    "reject": 9
+  },
+  "event": "triage_25_ingest_done",
+  "interpretation": "Triage labels only. Do not treat as final performance evaluation.",
+  "issue_tag_counts": {
+    "brand_tone_mismatch": 1,
+    "low_resolution": 1,
+    "season_mismatch": 3,
+    "semantic_mismatch": 7,
+    "too_busy_background": 1
+  },
+  "ranker_out": "data/review/phase1b/v2_2_2/triage/training_snapshot_ranker_v2_2_2_triage_25.jsonl",
+  "review_events": 25,
+  "review_events_out": "data/review/phase1b/v2_2_2/triage/review_events_v2_2_2_triage_25.jsonl",
+  "rows_in": 25,
+  "score_status": "diagnostic_only",
+  "skipped": [],
+  "source": "data/review/phase1b/v2_2_2/triage/review_queue_v2_2_2_triage_25.labeled.csv",
+  "threshold_status": "no_calibrated_threshold"
+}

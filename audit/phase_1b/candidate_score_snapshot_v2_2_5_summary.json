@@ -1,0 +1,100 @@
+{
+  "campaign_count": 5,
+  "event": "done",
+  "feature_columns": [
+    "clip_positive_max_sim",
+    "clip_positive_mean_sim",
+    "clip_negative_max_sim",
+    "clip_negative_mean_sim",
+    "clip_margin",
+    "clip_rank_percentile",
+    "dinov2_campaign_pos_nn_sim",
+    "dinov2_campaign_neg_nn_sim",
+    "dinov2_campaign_margin",
+    "dinov2_campaign_pos_count",
+    "dinov2_campaign_neg_count",
+    "dinov2_family_pos_nn_sim",
+    "dinov2_family_neg_nn_sim",
+    "dinov2_family_margin",
+    "dinov2_family_support_count",
+    "dinov2_cluster_positive_rate_coarse",
+    "dinov2_cluster_positive_rate_mid",
+    "dinov2_cluster_positive_rate_fine",
+    "dinov2_cluster_review_count_coarse",
+    "dinov2_cluster_review_count_mid",
+    "dinov2_cluster_review_count_fine",
+    "dinov2_duplicate_group_seen",
+    "required_region_safe_mean",
+    "required_region_safe_min",
+    "title_region_safe_score",
+    "info_region_safe_score",
+    "edge_density",
+    "contrast",
+    "brightness",
+    "saturation",
+    "image_category_gallery",
+    "image_category_tree",
+    "image_category_flower",
+    "path_has_architecture",
+    "path_has_garden",
+    "campaign_is_summer",
+    "campaign_is_walking_program",
+    "campaign_is_garden",
+    "duplicate_group_size",
+    "duplicate_is_member",
+    "duplicate_is_canonical",
+    "duplicate_metadata_conflict",
+    "duplicate_source_group_count",
+    "duplicate_has_architecture_source",
+    "duplicate_has_garden_source"
+  ],
+  "feature_glob": "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/*.jsonl",
+  "model": "models/phase1b_smoke/classifier_smoke_model_v2_2_5.joblib",
+  "model_id": "classifier_smoke_v2_2_5",
+  "non_claims": [
+    "diagnostic_accept_score는 calibrated probability가 아니다.",
+    "campaign 간 score를 직접 비교하지 않는다.",
+    "pass/fail threshold로 사용하지 않는다."
+  ],
+  "rows": 250,
+  "score_snapshot_out": "data/retrieval/phase1b/v2_2_5/candidate_score_snapshot_v2_2_5.jsonl",
+  "score_status": "diagnostic_only",
+  "summary_by_campaign": [
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "count": 50,
+      "max": 0.9914950641901527,
+      "median": 0.7894224967098715,
+      "min": 0.001601953730611084
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "count": 50,
+      "max": 0.9552160970474983,
+      "median": 0.2759617247115219,
+      "min": 0.00034410472973313224
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "count": 50,
+      "max": 0.9991713901509384,
+      "median": 0.2901663653258087,
+      "min": 0.0005366013977326538
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "count": 50,
+      "max": 0.9916634659166796,
+      "median": 0.6719014646732908,
+      "min": 0.0006553400388144566
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "count": 50,
+      "max": 0.995954485468422,
+      "median": 0.1819552818257502,
+      "min": 0.0004546698554206287
+    }
+  ],
+  "threshold_status": "no_calibrated_threshold"
+}

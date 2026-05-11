@@ -1,0 +1,193 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: critic_preview_renderer_v1
+description: >
+  Minimal preview renderer policy for Visual Critic label collection.
+  v1 intentionally renders only layout boxes over the raw image to avoid
+  contaminating critic labels with Korean font rendering, text reflow, or
+  final-export styling failures.
+
+renderer_version: critic_preview_renderer_v1
+renderer_level: box_overlay_placeholder
+
+purpose:
+  primary: >
+    Help human reviewers judge whether title/info text regions collide with
+    visually busy or important image content.
+  not_intended_for:
+    - final_visual_quality_judgment
+    - final_pptx_export_validation
+    - Korean typography evaluation
+    - final_gradient_overlay_evaluation
+
+inputs:
+  required:
+    - raw_image_path
+    - layout_spec_id
+    - canvas_width
+    - canvas_height
+    - text_box_specs
+  optional:
+    - campaign_id
+    - pair_id
+    - title_text
+    - subtitle_text
+    - date_text
+    - place_text
+
+text_box_roles:
+  allowed:
+    - brand
+    - title
+    - subtitle
+    - date
+    - place
+    - body
+    - cta
+    - logo
+
+rendering_components:
+  include:
+    - raw_image
+    - canvas_boundary
+    - title_box_rectangle
+    - info_box_rectangle
+    - optional_role_box_rectangles
+    - translucent_box_fill
+    - role_label_placeholders
+
+  exclude:
+    - Korean text rendering
+    - full line wrapping
+    - font fallback
+    - kerning
+    - final gradient overlay
+    - final color palette
+    - PPTX export fidelity
+    - Canva object fidelity
+
+placeholder_text:
+  title: TITLE
+  subtitle: SUBTITLE
+  date: DATE
+  place: PLACE
+  brand: BRAND
+  body: BODY
+  cta: CTA
+  logo: LOGO
+
+visual_encoding:
+  note: >
+    Specific colors, alpha values, and line widths are implementation choices
+    and must not become aesthetic pass/fail thresholds.
+  required_properties:
+    - boxes_must_be_visible
+    - role_labels_must_be_readable
+    - raw_image_must_remain_visible
+    - canvas_boundary_must_be_visible
+
+outputs:
+  required:
+    - preview_path
+    - preview_renderer_version
+    - layout_spec_id
+    - rendered_box_metadata
+  preview_format:
+    preferred: png
+    allowed:
+      - png
+      - jpg
+
+rendered_box_metadata_fields:
+  - role
+  - x
+  - y
+  - width
+  - height
+  - coordinate_system
+  - canvas_width
+  - canvas_height
+
+critic_label_targets:
+  trainable_issue_tags:
+    - text_region_conflict
+    - low_contrast
+    - too_busy_background
+    - visual_hierarchy_weak
+
+  primary_v1_focus:
+    - text_region_conflict
+    - too_busy_background
+
+  caution:
+    - >
+      low_contrast labels from v1 previews are diagnostic only because real text
+      color and overlay rendering are not yet included.
+    - >
+      visual_hierarchy_weak labels from v1 previews are usable only as weak labels
+      because typography and final overlay are excluded.
+
+review_item_requirements:
+  must_show:
+    - raw_image
+    - preview_image
+    - campaign_summary
+    - layout_spec_summary
+    - source_bucket
+    - feature_snapshot_id
+
+  reviewer_decision_fields:
+    - decision
+    - issue_tags
+    - notes
+
+v2_upgrade_path:
+  next_renderer_version: critic_preview_renderer_v2
+  prerequisite:
+    - renderer_v1_review_flow_stable
+    - font_rendering_issues_isolated
+    - box_overlay_labels_consistent
+    - critic_v0_training_data_collected
+
+  v2_additions:
+    - Korean text rendering
+    - line wrapping
+    - overlay gradient
+    - role-specific font size
+    - final-ish title/subtitle/date/place rendering
+
+failure_policy:
+  missing_raw_image:
+    action: skip_preview_and_log_error
+    severity: error
+
+  missing_layout_spec:
+    action: skip_preview_and_log_error
+    severity: error
+
+  invalid_box_coordinates:
+    action: reject_preview_generation
+    severity: error
+
+  preview_render_failed:
+    action: exclude_from_critic_review_queue
+    severity: warning
+
+  font_missing:
+    action: not_applicable_in_v1
+    severity: info
+
+notes:
+  - >
+    v1 preview is deliberately minimal. It is not expected to look like a final
+    poster. Its goal is to collect stable critic labels about spatial conflict.
+  - >
+    Do not use v1 preview labels as final visual-quality judgments.
+  - >
+    Any final export, Canva fidelity, or PPTX validation belongs to a later
+    renderer/exporter QA stage.

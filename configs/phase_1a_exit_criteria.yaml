@@ -1,0 +1,283 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: phase_1a_exit_criteria
+description: >
+  Exit criteria for Phase 1a dry run.
+  Phase 1a verifies that the v2.2.1 embedding-first reranker pipeline works
+  end-to-end on the currently available small raw gallery.
+  Phase 1a does not validate model quality or production performance.
+
+phase:
+  id: phase_1a
+  name: small_gallery_embedding_index_dry_run
+  scope: current_available_raw_gallery
+  purpose: >
+    Verify schemas, embedding extraction, feature snapshot generation,
+    retrieval, duplicate/cluster assignment, and cold_start review queue
+    generation before moving to larger image pools.
+
+non_goals:
+  - prove_reranker_quality
+  - claim_production_performance
+  - calibrate_final_thresholds
+  - train_final_ranker
+  - validate_visual_critic
+  - validate_final_pptx_or_canva_export
+
+entry_requirements:
+  required_files:
+    - configs/issue_tags_v1.yaml
+    - configs/review_queue_policy_v2_2.yaml
+    - configs/calibration_policy_v1.yaml
+    - configs/prompt_template_bank_v1.yaml
+    - configs/prompt_template_bank_governance_v1.yaml
+    - configs/critic_preview_renderer_v1.yaml
+    - configs/pair_feature_snapshot_storage_v1.yaml
+    - configs/training_snapshot_aggregation_v1.yaml
+    - schemas/review_event.schema.json
+    - schemas/pair_feature_snapshot.schema.json
+    - schemas/training_snapshot.schema.json
+    - docs/design_history/v2_2_1_freeze.md
+
+  required_repo_cleanup:
+    - raw_gallery_path_resolved
+    - reranker_v1_1_antileak_marked_deprecated
+    - toy_active_learning_loop_marked_smoke_test_or_archived
+
+pipeline_completeness:
+  clip_image_embedding:
+    required: true
+    auto_check: true
+    expected_artifacts:
+      - data/embeddings/clip_image_embeddings.npy
+      - data/embeddings/clip_image_index.csv
+    success_condition: >
+      CLIP image embeddings are produced for all images included in the Phase 1a raw gallery.
+    quality_claim_allowed: false
+
+  dinov2_image_embedding:
+    required: true
+    auto_check: true
+    expected_artifacts:
+      - data/embeddings/dinov2_image_embeddings.npy
+      - data/embeddings/dinov2_image_index.csv
+    success_condition: >
+      DINOv2 image embeddings are produced for all images included in the Phase 1a raw gallery.
+    quality_claim_allowed: false
+
+  duplicate_group_assignment:
+    required: true
+    auto_check: true
+    expected_artifacts:
+      - data/ontology/duplicate_groups_v1.jsonl
+    success_condition: >
+      Every Phase 1a image receives a duplicate_group_id.
+      Thresholds, if any, must follow calibration_policy_v1 or remain diagnostic_only.
+    quality_claim_allowed: false
+
+  dinov2_cluster_assignment:
+    required: true
+    auto_check: true
+    expected_artifacts:
+      - data/ontology/dinov2_clusters_v1.jsonl
+    success_condition: >
+      Every Phase 1a image receives coarse, mid, and fine cluster ids.
+      Cluster ids are operational grouping features, not final quality judgments.
+    quality_claim_allowed: false
+
+  region_safety_map:
+    required: true
+    auto_check: true
+    expected_artifacts:
+      - data/ontology/region_safety_maps_v1.jsonl
+    success_condition: >
+      Region safety features are computed for all Phase 1a images.
+      They remain diagnostic_only unless calibrated under calibration_policy_v1.
+    quality_claim_allowed: false
+
+retrieval_dry_run:
+  prompt_generation:
+    required: true
+    auto_check: true
+    config_source: configs/prompt_template_bank_v1.yaml
+    success_condition: >
+      At least one campaign metadata record produces non-empty positive and negative
+      CLIP prompt sets.
+    quality_claim_allowed: false
+
+  clip_retrieval:
+    required: true
+    auto_check: true
+    success_condition: >
+      CLIP retrieval returns candidate images for at least one campaign.
+      Scores are similarity signals, not calibrated probabilities.
+    quality_claim_allowed: false
+
+  dinov2_expansion_or_cluster_fallback:
+    required: true
+    auto_check: true
+    success_condition: >
+      DINOv2 expansion returns candidates when visual anchors exist, or cluster_diversity
+      fallback returns candidates when anchors are missing.
+    quality_claim_allowed: false
+
+  pair_feature_snapshot_generation:
+    required: true
+    auto_check: true
+    expected_artifacts:
+      - data/feature_snapshots/v2_2_1/
+    schema: schemas/pair_feature_snapshot.schema.json
+    success_condition: >
+      PairFeatureSnapshot JSONL rows are generated and pass schema validation.
+    quality_claim_allowed: false
+
+  cold_start_review_queue_generation:
+    required: true
+    auto_check: true
+    config_source: configs/review_queue_policy_v2_2.yaml
+    success_condition: >
+      A cold_start review queue is generated using bucket policy and contains
+      feature_snapshot_id for each candidate row.
+    quality_claim_allowed: false
+
+schema_validity:
+  issue_tags_vocabulary_loads:
+    required: true
+    auto_check: true
+    source: configs/issue_tags_v1.yaml
+
+  sample_review_event_schema_validation:
+    required: true
+    auto_check: true
+    schema: schemas/review_event.schema.json
+    success_condition: >
+      At least one sample ReviewEvent generated from the dry run passes schema validation.
+
+  sample_pair_feature_snapshot_schema_validation:
+    required: true
+    auto_check: true
+    schema: schemas/pair_feature_snapshot.schema.json
+    success_condition: >
+      At least one sample PairFeatureSnapshot passes schema validation.
+
+  sample_training_snapshot_schema_validation:
+    required: true
+    auto_check: true
+    schema: schemas/training_snapshot.schema.json
+    success_condition: >
+      At least one sample TrainingSnapshot row can be produced from a sample ReviewEvent
+      and passes schema validation.
+
+review_event_flow:
+  required: true
+  auto_check: true
+  success_condition: >
+    A sample review row can be converted into ReviewEvent format with:
+    pair_id, campaign_id, image_id, source_bucket, decision, issue_tags,
+    feature_snapshot_id, and model_score_at_review.
+  required_context_fields:
+    - queue_version
+    - queue_stage
+    - source_bucket
+    - preview_renderer_version
+    - layout_spec_id
+
+feature_snapshot_linkage:
+  required: true
+  auto_check: true
+  success_condition: >
+    ReviewEvent.feature_snapshot_id resolves to exactly one immutable PairFeatureSnapshot row.
+  failure_policy:
+    missing_snapshot: phase_1a_fail
+    duplicate_snapshot_id: phase_1a_fail
+
+not_required_for_exit:
+  model_quality_metric:
+    required: false
+    reason: >
+      Phase 1a uses a small gallery and is not a validation campaign benchmark.
+
+  visual_critic_training:
+    required: false
+    reason: >
+      Visual Critic is Phase 4. Phase 1a only needs critic preview policy to exist.
+
+  calibrated_thresholds:
+    required: false
+    reason: >
+      Calibration requires held-out campaigns and enough human review data.
+      Phase 1a may only use diagnostic or empirical sampling policies.
+
+  ranker_training:
+    required: false
+    reason: >
+      LGBMRanker transition is Phase 5 and requires sufficient reviewed pairs and
+      held-out campaigns.
+
+  final_export_quality:
+    required: false
+    reason: >
+      Final PPTX/Canva fidelity is outside the Phase 1a reranker dry run.
+
+exit_decision:
+  all_required_auto_checks_must_pass: true
+  manual_review_required: true
+  manual_review_items:
+    - inspect_generated_review_queue_columns
+    - inspect_sample_feature_snapshot_jsonl
+    - inspect_sample_review_event_json
+    - inspect_prompt_generation_for_one_campaign
+    - inspect_duplicate_and_cluster_artifacts
+
+  allowed_exit_statuses:
+    - pass_to_phase_1b
+    - pass_with_diagnostic_warnings
+    - fail_and_retry_phase_1a
+
+  pass_with_diagnostic_warnings_allowed_when:
+    - model_scores_uncalibrated
+    - visual_quality_not_validated
+    - duplicate_threshold_diagnostic_only
+    - small_gallery_not_representative
+
+  fail_conditions:
+    - required_schema_file_missing
+    - issue_tags_vocabulary_invalid
+    - embedding_extraction_fails
+    - pair_feature_snapshot_schema_invalid
+    - review_event_schema_invalid
+    - feature_snapshot_id_unresolvable
+    - cold_start_review_queue_not_generated
+
+reporting:
+  required_report_path: audit/phase_1a/phase_1a_exit_report.json
+  required_report_fields:
+    - spec_version
+    - run_id
+    - created_at
+    - raw_gallery_count
+    - clip_embedding_count
+    - dinov2_embedding_count
+    - duplicate_group_count
+    - cluster_version
+    - region_safety_count
+    - review_queue_row_count
+    - sample_review_event_valid
+    - sample_feature_snapshot_valid
+    - sample_training_snapshot_valid
+    - exit_status
+    - diagnostic_warnings
+
+notes:
+  - >
+    Phase 1a is a pipeline verification stage, not a model-performance stage.
+  - >
+    Any metric produced in Phase 1a must be marked diagnostic_only.
+  - >
+    Additional critique/design revision should resume only after Phase 1a produces
+    concrete artifacts and logs.

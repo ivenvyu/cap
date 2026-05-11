@@ -1,0 +1,96 @@
+{
+  "campaign_count": 5,
+  "event": "done",
+  "feature_columns": [
+    "clip_positive_max_sim",
+    "clip_positive_mean_sim",
+    "clip_negative_max_sim",
+    "clip_negative_mean_sim",
+    "clip_margin",
+    "clip_rank_percentile",
+    "dinov2_campaign_pos_nn_sim",
+    "dinov2_campaign_neg_nn_sim",
+    "dinov2_campaign_margin",
+    "dinov2_campaign_pos_count",
+    "dinov2_campaign_neg_count",
+    "dinov2_family_pos_nn_sim",
+    "dinov2_family_neg_nn_sim",
+    "dinov2_family_margin",
+    "dinov2_family_support_count",
+    "dinov2_cluster_positive_rate_coarse",
+    "dinov2_cluster_positive_rate_mid",
+    "dinov2_cluster_positive_rate_fine",
+    "dinov2_cluster_review_count_coarse",
+    "dinov2_cluster_review_count_mid",
+    "dinov2_cluster_review_count_fine",
+    "dinov2_duplicate_group_seen",
+    "required_region_safe_mean",
+    "required_region_safe_min",
+    "title_region_safe_score",
+    "info_region_safe_score",
+    "edge_density",
+    "contrast",
+    "brightness",
+    "saturation",
+    "image_category_gallery",
+    "image_category_tree",
+    "image_category_flower",
+    "path_has_architecture",
+    "path_has_garden",
+    "campaign_is_summer",
+    "campaign_is_walking_program",
+    "campaign_is_garden"
+  ],
+  "feature_snapshot_files": [
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_architecture_exhibition_visit.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_autumn_garden_walk.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_botanical_spring_program.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_indoor_gallery_winter_art.jsonl",
+    "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/pair_feature_snapshots__phase1b_summer_garden_walk.jsonl"
+  ],
+  "feature_snapshots_glob": "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/*.jsonl",
+  "model": "models/phase1b_smoke/classifier_smoke_model_v2_2_2.joblib",
+  "model_id": "classifier_smoke_v2_2_2",
+  "rows": 250,
+  "score_snapshot_out": "data/retrieval/phase1b/v2_2_2/candidate_score_snapshot_v2_2_2.jsonl",
+  "score_status": "diagnostic_only",
+  "score_summary_by_campaign": [
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "count": 50,
+      "max": 0.9990590891928869,
+      "median": 0.8605186129745517,
+      "min": 0.021678761438024618
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "count": 50,
+      "max": 0.9908997018509237,
+      "median": 0.15543826924783785,
+      "min": 7.291358340627792e-05
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "count": 50,
+      "max": 0.9994941524241222,
+      "median": 0.30629880579942304,
+      "min": 0.0019018966297786348
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "count": 50,
+      "max": 0.9975375155523881,
+      "median": 0.6840920498242768,
+      "min": 0.012148782291720428
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "count": 50,
+      "max": 0.9991561676685543,
+      "median": 0.2197818657287641,
+      "min": 0.00010849077564460962
+    }
+  ],
+  "threshold_status": "no_calibrated_threshold",
+  "top_csv_out": "audit/phase_1b/candidate_score_snapshot_v2_2_2_top_by_campaign.csv"
+}

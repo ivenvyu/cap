@@ -1,0 +1,220 @@
+{
+  "db": "data/db/cap_reranker_ontology.db",
+  "event": "done",
+  "outputs": {
+    "pipeline_summary": "audit/ontology/phase1b_effective_retrieval_pipeline_run_v1.summary.json",
+    "query_smoke_report": "audit/ontology/ontology_effective_search_index_query_smoke_v1.summary.json",
+    "search_index": "data/search/ontology_effective_search_index_v1.jsonl"
+  },
+  "pipeline": "phase1b_effective_retrieval_pipeline_v1",
+  "steps": [
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/build_ontology_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:40.860711Z",
+      "started_at": "2026-05-11T03:02:40.724783Z",
+      "step": "ontology DB 생성"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/validate_ontology_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:40.881307Z",
+      "started_at": "2026-05-11T03:02:40.860759Z",
+      "step": "ontology DB 기본 검증"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/build_cluster_label_queue_from_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--cluster-level",
+        "coarse"
+      ],
+      "finished_at": "2026-05-11T03:02:41.678232Z",
+      "started_at": "2026-05-11T03:02:40.881355Z",
+      "step": "cluster label queue 생성"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/ingest_cluster_tag_labels_to_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--label-csv",
+        "annotations/ontology/cluster_label_queue__coarse.reviewed_v1.csv"
+      ],
+      "finished_at": "2026-05-11T03:02:41.702407Z",
+      "started_at": "2026-05-11T03:02:41.678286Z",
+      "step": "검토 완료 cluster tag ingest"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/propagate_cluster_tags_to_images.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--cluster-level",
+        "coarse"
+      ],
+      "finished_at": "2026-05-11T03:02:41.731729Z",
+      "started_at": "2026-05-11T03:02:41.702445Z",
+      "step": "cluster tag를 image tag로 전파"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/validate_ontology_tag_assertions.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--cluster-level",
+        "coarse",
+        "--min-cluster-tag-assertions",
+        "1",
+        "--min-image-tag-assertions",
+        "1"
+      ],
+      "finished_at": "2026-05-11T03:02:41.782309Z",
+      "started_at": "2026-05-11T03:02:41.731767Z",
+      "step": "ontology tag assertion 검증"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/ingest_sayuwon_plant_bloom_priors_to_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--knowledge",
+        "configs/domain_knowledge/sayuwon_entity_knowledge_v1.json"
+      ],
+      "finished_at": "2026-05-11T03:02:41.803351Z",
+      "started_at": "2026-05-11T03:02:41.782355Z",
+      "step": "사유원 식물 개화시기 prior ingest"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/ingest_seasonal_prompt_cue_policy_to_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--policy",
+        "configs/seasonal_prompt_cue_policy_v1.yaml"
+      ],
+      "finished_at": "2026-05-11T03:02:41.832443Z",
+      "started_at": "2026-05-11T03:02:41.803395Z",
+      "step": "계절 visual cue policy ingest"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/score_campaign_visual_cues_from_clip.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db",
+        "--policy-id",
+        "seasonal_prompt_cue_policy_v1",
+        "--text-model",
+        "openai/clip-vit-base-patch32"
+      ],
+      "finished_at": "2026-05-11T03:02:48.463936Z",
+      "started_at": "2026-05-11T03:02:41.832484Z",
+      "step": "CLIP visual cue score 계산"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/score_botanical_bloom_season_priors_from_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.508758Z",
+      "started_at": "2026-05-11T03:02:48.464049Z",
+      "step": "식물 개화시기 campaign prior 계산"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/build_flower_season_exclusions_from_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.531583Z",
+      "started_at": "2026-05-11T03:02:48.508811Z",
+      "step": "꽃 계절 불일치 exclusion 생성"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/apply_flower_season_exclusions_to_retrieval_candidates.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.562237Z",
+      "started_at": "2026-05-11T03:02:48.531637Z",
+      "step": "retrieval 후보에 flower-season exclusion 적용"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/build_effective_retrieval_views_from_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.587994Z",
+      "started_at": "2026-05-11T03:02:48.562285Z",
+      "step": "effective retrieval view 생성"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/build_effective_training_views_from_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.621302Z",
+      "started_at": "2026-05-11T03:02:48.588044Z",
+      "step": "effective training view 생성"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/export_ontology_effective_search_index_from_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.655160Z",
+      "started_at": "2026-05-11T03:02:48.621356Z",
+      "step": "ontology effective search index export"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/query_smoke_ontology_effective_search_index.py",
+        "--index",
+        "data/search/ontology_effective_search_index_v1.jsonl"
+      ],
+      "finished_at": "2026-05-11T03:02:48.677935Z",
+      "started_at": "2026-05-11T03:02:48.655208Z",
+      "step": "effective search index query smoke test"
+    },
+    {
+      "cmd": [
+        "/Users/ksc/miniconda3/envs/cap_embed/bin/python",
+        "scripts/validate_ontology_db.py",
+        "--db",
+        "data/db/cap_reranker_ontology.db"
+      ],
+      "finished_at": "2026-05-11T03:02:48.699847Z",
+      "started_at": "2026-05-11T03:02:48.677989Z",
+      "step": "최종 ontology DB 검증"
+    }
+  ],
+  "해석": "Phase 1b effective retrieval 상태를 DB 기준으로 재현하는 실행 runner다."
+}

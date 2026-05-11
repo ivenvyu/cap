@@ -1,0 +1,68 @@
+metadata:
+  spec_version: v2.2.3
+  status: active
+  purpose: >
+    v2.2.2 triage-25 결과를 반영해 review queue bucket 의미를 정리한다.
+    이 정책은 diagnostic review sampling 정책이며, 최종 품질 threshold가 아니다.
+
+score_status: diagnostic_only
+threshold_status: no_calibrated_threshold
+
+global_rules:
+  top_n_only_queue_allowed: false
+  compare_scores_across_campaigns: false
+  use_as_accept_reject_threshold: false
+  require_campaign_review_brief: true
+
+campaign_policy:
+  phase1b_indoor_gallery_winter_art:
+    campaign_status: coverage_gap_diagnostic
+    exclude_from_model_quality_claims: true
+    use_for_coverage_gap_report: true
+    use_for_training: false
+
+buckets:
+  model_top_diagnostic:
+    purpose: "campaign 내부 diagnostic model 상위 후보를 제한적으로 점검한다."
+    interpretation: "final quality score가 아니다."
+    keep: true
+    max_role: "limited"
+
+  clip_high_model_low:
+    purpose: "CLIP은 높게 봤지만 diagnostic model이 낮게 본 후보를 점검한다."
+    interpretation: "모델이 놓친 semantic positive 후보를 찾기 위한 discovery bucket."
+    keep: true
+
+  dinov2_high_model_low:
+    purpose: "DINOv2 visual-anchor는 높지만 diagnostic model이 낮게 본 후보를 점검한다."
+    interpretation: "시각 유사성과 campaign 적합성의 차이를 관찰하는 discovery bucket."
+    keep: true
+
+  prompt_conflict_audit:
+    legacy_aliases:
+      - model_high_clip_negative_high
+    purpose: "모델 점수는 높지만 negative prompt와도 가까운 후보를 점검한다."
+    interpretation: "hard negative라고 전제하지 않는다. negative prompt 품질을 점검하는 audit bucket이다."
+    keep: true
+
+  cluster_diversity:
+    purpose: "DINOv2 cluster 다양성을 확보한다."
+    interpretation: "coverage 확인용 bucket."
+    keep: true
+
+  layout_safe_coverage:
+    purpose: "layout-safe로 보이는 후보를 점검한다."
+    interpretation: "layout/preview 판단 데이터 확보용 bucket."
+    keep: true
+
+  random_control:
+    purpose: "retrieval candidate pool 내부 blind spot을 점검한다."
+    interpretation: "모델이 과하게 걸러낸 후보가 있는지 확인한다."
+    keep: true
+
+non_claims:
+  - "calibrated accept/reject threshold를 만들지 않는다."
+  - "production model quality를 주장하지 않는다."
+  - "campaign 간 diagnostic score를 직접 비교하지 않는다."
+  - "triage positive rate를 최종 성능 지표로 사용하지 않는다."
+  - "150개 전체 라벨링을 요구하지 않는다."

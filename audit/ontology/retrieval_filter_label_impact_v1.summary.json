@@ -1,0 +1,134 @@
+{
+  "db": "data/db/cap_reranker_ontology.db",
+  "decision_label_counts": {
+    "effective": {
+      "accept": 37,
+      "acceptable": 31,
+      "reject": 103
+    },
+    "excluded": {
+      "None": 5,
+      "reject": 9
+    },
+    "original": {
+      "accept": 37,
+      "acceptable": 31,
+      "reject": 112
+    }
+  },
+  "event": "done",
+  "excluded_by_campaign_decision": [
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "decision_label": "reject",
+      "n": 1
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "None",
+      "n": 3
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "decision_label": "reject",
+      "n": 4
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "None",
+      "n": 2
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "decision_label": "reject",
+      "n": 3
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "decision_label": "reject",
+      "n": 1
+    }
+  ],
+  "excluded_by_campaign_subject": [
+    {
+      "campaign_id": "phase1a_summer_garden_walk",
+      "n": 1,
+      "subject_name": "진달래"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "n": 1,
+      "subject_name": "산딸기"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "n": 1,
+      "subject_name": "산수국"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "n": 2,
+      "subject_name": "수련"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "n": 1,
+      "subject_name": "진달래"
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "n": 2,
+      "subject_name": "참나리"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "n": 1,
+      "subject_name": "맥문동"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "n": 2,
+      "subject_name": "산수국"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "n": 1,
+      "subject_name": "수련"
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "n": 1,
+      "subject_name": "참나리"
+    },
+    {
+      "campaign_id": "phase1b_summer_garden_walk",
+      "n": 1,
+      "subject_name": "진달래"
+    }
+  ],
+  "filter_run_id": "flower_season_exclusion_filter_v1",
+  "interpretation": "This report checks whether flower-season exclusions removed reviewed reject candidates without removing accept/acceptable candidates. It evaluates retrieval filter precision, not classifier model quality.",
+  "labeled_candidate_counts": {
+    "effective_labeled": 171,
+    "excluded_labeled": 14,
+    "original_labeled": 180
+  },
+  "review_outputs": {
+    "excluded_labeled_csv": "data/review/ontology/retrieval_filter_label_impact_v1/excluded_labeled.csv",
+    "harmful_exclusions_csv": "data/review/ontology/retrieval_filter_label_impact_v1/harmful_exclusions_accept_or_acceptable.csv",
+    "review_dir": "data/review/ontology/retrieval_filter_label_impact_v1"
+  },
+  "safety_check": {
+    "excluded_accept_or_acceptable": 0,
+    "excluded_reject": 9,
+    "excluded_unlabeled": 5,
+    "pass": true
+  },
+  "score_status": "diagnostic_only",
+  "source_candidate_counts": {
+    "effective_retrieval_candidates": 286,
+    "excluded_retrieval_candidates": 14,
+    "retrieval_candidates": 300
+  },
+  "threshold_status": "diagnostic_only_not_calibrated"
+}

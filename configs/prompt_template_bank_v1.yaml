@@ -1,0 +1,320 @@
+metadata:
+  spec_version: v2.2.1
+  freeze_date: 2026-05-10
+  decision_log: docs/design_history/v2_2_1_freeze.md
+  status: frozen
+  superseded_by: null
+
+name: prompt_template_bank_v1
+description: >
+  Metadata-driven English visual descriptor bank for CLIP retrieval.
+  Korean campaign text should not be sent directly to CLIP as the primary query.
+  Campaign metadata is mapped to positive and negative English visual prompts.
+
+prompt_bank_version: prompt_template_bank_v1
+language_for_clip_prompts: en
+source_language_expected_from_campaign: ko
+
+input_metadata_fields:
+  required:
+    - purpose_type
+    - space_type
+    - season
+  optional:
+    - mood_tags
+    - place_name
+    - target_channel
+    - brand_tone
+
+default_policy:
+  positive_prompt_strategy: combine_base_and_mood_prompts
+  negative_prompt_strategy: use_purpose_space_season_negatives
+  aggregation_for_clip_positive: max_and_mean
+  aggregation_for_clip_negative: max_and_mean
+  margin_feature: clip_positive_max_sim_minus_clip_negative_max_sim
+
+global_positive_modifiers:
+  sayuwon_brand:
+    - elegant nature poster background
+    - calm premium garden scenery
+    - refined peaceful landscape
+    - minimal promotional background
+
+global_negative_prompts:
+  - crowded commercial advertisement
+  - noisy event stage
+  - busy urban street
+  - low quality blurry photo
+  - cluttered background
+  - harsh neon lighting
+  - black and white documentary photo
+
+purpose_space_season_templates:
+  walking_program:
+    garden:
+      summer:
+        positive:
+          - calm summer garden walking path
+          - green trees and peaceful botanical garden
+          - elegant nature trail poster background
+          - lush summer garden scenery
+          - quiet forest garden path
+        negative:
+          - indoor gallery exhibition
+          - performance stage
+          - winter landscape
+          - dry autumn leaves only
+          - crowded indoor event
+
+      spring:
+        positive:
+          - calm spring garden walking path
+          - fresh green botanical garden
+          - spring flowers and peaceful garden trail
+          - elegant spring nature poster background
+        negative:
+          - winter snow landscape
+          - dark indoor gallery
+          - crowded performance stage
+          - dry autumn garden
+
+      autumn:
+        positive:
+          - calm autumn garden walking path
+          - warm autumn trees and garden trail
+          - peaceful fall botanical garden
+          - elegant autumn landscape poster background
+        negative:
+          - bright summer beach
+          - winter snow scene
+          - indoor exhibition hall
+          - crowded festival stage
+
+      winter:
+        positive:
+          - quiet winter garden path
+          - calm winter trees and architecture
+          - peaceful snowy garden landscape
+          - elegant winter nature poster background
+        negative:
+          - bright summer garden
+          - spring flower closeup
+          - crowded indoor performance
+          - noisy commercial poster background
+
+    forest:
+      summer:
+        positive:
+          - calm summer forest walking trail
+          - green forest path with peaceful atmosphere
+          - shaded woodland trail poster background
+          - quiet trees and nature walking path
+        negative:
+          - indoor gallery
+          - urban architecture only
+          - winter snow field
+          - performance stage
+
+    architecture:
+      summer:
+        positive:
+          - calm architectural garden in summer
+          - peaceful modern pavilion with greenery
+          - elegant architecture surrounded by trees
+        negative:
+          - crowded indoor exhibition
+          - performance stage
+          - dark winter landscape
+          - busy city street
+
+  exhibition:
+    gallery:
+      spring:
+        positive:
+          - calm gallery exhibition space
+          - elegant indoor art exhibition
+          - refined museum interior poster background
+        negative:
+          - forest hiking trail
+          - crowded performance stage
+          - winter landscape
+
+      summer:
+        positive:
+          - calm indoor gallery exhibition
+          - refined museum space with quiet atmosphere
+          - elegant art exhibition poster background
+        negative:
+          - dense forest trail
+          - crowded concert stage
+          - snowy winter landscape
+
+      autumn:
+        positive:
+          - calm autumn art exhibition space
+          - elegant gallery interior poster background
+          - refined museum exhibition atmosphere
+        negative:
+          - summer garden trail
+          - crowded performance stage
+          - winter snow landscape
+
+      winter:
+        positive:
+          - calm winter gallery exhibition
+          - quiet museum interior poster background
+          - elegant indoor art space
+        negative:
+          - bright summer garden
+          - crowded outdoor festival
+          - forest hiking trail
+
+  performance:
+    outdoor:
+      spring:
+        positive:
+          - calm outdoor cultural performance in spring
+          - elegant garden performance setting
+          - peaceful outdoor stage with nature
+        negative:
+          - indoor gallery wall
+          - empty forest trail
+          - winter snow landscape
+
+      summer:
+        positive:
+          - elegant outdoor summer performance
+          - peaceful garden stage with green trees
+          - refined cultural event in nature
+        negative:
+          - indoor museum exhibition
+          - winter landscape
+          - cluttered commercial event stage
+
+  education:
+    garden:
+      spring:
+        positive:
+          - educational garden program in spring
+          - calm nature learning experience
+          - peaceful botanical learning poster background
+        negative:
+          - crowded performance stage
+          - dark indoor gallery
+          - winter snow scene
+
+      summer:
+        positive:
+          - summer garden education program
+          - calm botanical learning in green garden
+          - peaceful nature workshop poster background
+        negative:
+          - crowded indoor event
+          - winter landscape
+          - performance stage
+
+mood_prompt_modifiers:
+  calm:
+    positive:
+      - calm peaceful atmosphere
+      - quiet contemplative mood
+    negative:
+      - loud energetic crowd
+      - chaotic busy scene
+
+  calm_elegant:
+    positive:
+      - calm elegant atmosphere
+      - refined peaceful visual tone
+      - understated premium mood
+    negative:
+      - loud commercial design
+      - flashy event scene
+      - cluttered promotional background
+
+  refreshing:
+    positive:
+      - fresh green atmosphere
+      - bright natural freshness
+      - clean refreshing nature scene
+    negative:
+      - dark heavy atmosphere
+      - dry brown landscape
+      - gloomy indoor space
+
+  premium:
+    positive:
+      - premium refined atmosphere
+      - elegant minimal composition
+      - quiet luxury nature scene
+    negative:
+      - cheap commercial stock photo
+      - cluttered tourist advertisement
+
+fallback_templates:
+  by_space_type:
+    garden:
+      positive:
+        - peaceful botanical garden
+        - calm garden scenery
+        - elegant garden poster background
+      negative:
+        - crowded indoor stage
+        - busy urban street
+    forest:
+      positive:
+        - peaceful forest trail
+        - calm woodland scenery
+        - green nature path
+      negative:
+        - indoor gallery exhibition
+        - urban street scene
+    gallery:
+      positive:
+        - calm gallery exhibition
+        - elegant museum interior
+        - refined indoor art space
+      negative:
+        - crowded outdoor festival
+        - dense forest trail
+    architecture:
+      positive:
+        - elegant architecture in nature
+        - calm pavilion with landscape
+        - refined architectural scenery
+      negative:
+        - crowded commercial event
+        - messy indoor room
+
+  generic:
+    positive:
+      - calm elegant Sayuwon promotional background
+      - peaceful nature and architecture scenery
+      - refined cultural poster background
+    negative:
+      - cluttered commercial advertisement
+      - crowded performance stage
+      - low quality blurry photo
+
+output_contract:
+  positive_prompts_field: clip_positive_prompts
+  negative_prompts_field: clip_negative_prompts
+  required_downstream_features:
+    - clip_positive_max_sim
+    - clip_positive_mean_sim
+    - clip_negative_max_sim
+    - clip_negative_mean_sim
+    - clip_margin
+    - clip_rank_percentile
+
+notes:
+  - >
+    This bank is not a general Korean-English translator.
+    It maps structured campaign metadata to visual descriptors useful for CLIP retrieval.
+  - >
+    Sayuwon-specific proper nouns such as Pungseolgicheonnyeon or Orangorang should be
+    handled by image_anchor_query in prompt_template_bank_governance_v1 when text prompts
+    are insufficient.
+  - >
+    Prompt changes must be versioned. Existing retrieval results must preserve the prompt
+    bank version that generated them.

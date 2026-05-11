@@ -1,0 +1,307 @@
+{
+  "dataset": {
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 32,
+      "phase1b_autumn_garden_walk": 32,
+      "phase1b_botanical_spring_program": 30,
+      "phase1b_summer_garden_walk": 32
+    },
+    "configured_feature_count": 45,
+    "decision_label_counts": {
+      "accept": 29,
+      "acceptable": 25,
+      "best": 3,
+      "reject": 69
+    },
+    "excluded_reason_counts": {
+      "use_for_training_false": 5
+    },
+    "label_counts": {
+      "0": 69,
+      "1": 57
+    },
+    "rows_all": 131,
+    "rows_excluded": 5,
+    "rows_used_for_training": 126,
+    "source_snapshot_counts": {
+      "v2_2_2_base": 106,
+      "v2_2_2_triage_25": 20
+    },
+    "used_feature_columns": [
+      "clip_positive_max_sim",
+      "clip_positive_mean_sim",
+      "clip_negative_max_sim",
+      "clip_negative_mean_sim",
+      "clip_margin",
+      "clip_rank_percentile",
+      "dinov2_campaign_pos_nn_sim",
+      "dinov2_campaign_neg_nn_sim",
+      "dinov2_campaign_margin",
+      "dinov2_campaign_pos_count",
+      "dinov2_campaign_neg_count",
+      "dinov2_family_pos_nn_sim",
+      "dinov2_family_neg_nn_sim",
+      "dinov2_family_margin",
+      "dinov2_family_support_count",
+      "dinov2_cluster_positive_rate_coarse",
+      "dinov2_cluster_positive_rate_mid",
+      "dinov2_cluster_positive_rate_fine",
+      "dinov2_cluster_review_count_coarse",
+      "dinov2_cluster_review_count_mid",
+      "dinov2_cluster_review_count_fine",
+      "dinov2_duplicate_group_seen",
+      "required_region_safe_mean",
+      "required_region_safe_min",
+      "title_region_safe_score",
+      "info_region_safe_score",
+      "edge_density",
+      "contrast",
+      "brightness",
+      "saturation",
+      "image_category_gallery",
+      "image_category_tree",
+      "image_category_flower",
+      "path_has_architecture",
+      "path_has_garden",
+      "campaign_is_summer",
+      "campaign_is_walking_program",
+      "campaign_is_garden",
+      "duplicate_group_size",
+      "duplicate_is_member",
+      "duplicate_is_canonical",
+      "duplicate_metadata_conflict",
+      "duplicate_source_group_count",
+      "duplicate_has_architecture_source",
+      "duplicate_has_garden_source"
+    ],
+    "used_feature_count": 45
+  },
+  "excluded_rows_sample": [
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "pair_id": "phase1b_indoor_gallery_winter_art__raw_0c55ceb0d6__layout_top_left_bottom_left",
+      "reason": "use_for_training_false"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "pair_id": "phase1b_indoor_gallery_winter_art__raw_0f37eb334a__layout_top_left_bottom_left",
+      "reason": "use_for_training_false"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "pair_id": "phase1b_indoor_gallery_winter_art__raw_39a0295efc__layout_top_left_bottom_left",
+      "reason": "use_for_training_false"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "pair_id": "phase1b_indoor_gallery_winter_art__raw_a2c7f6c5ab__layout_top_left_bottom_left",
+      "reason": "use_for_training_false"
+    },
+    {
+      "campaign_id": "phase1b_indoor_gallery_winter_art",
+      "pair_id": "phase1b_indoor_gallery_winter_art__raw_e72560847a__layout_top_left_bottom_left",
+      "reason": "use_for_training_false"
+    }
+  ],
+  "folds": [
+    {
+      "balanced_accuracy": 0.5,
+      "fold": 1,
+      "held_out_campaigns": [
+        "phase1b_architecture_exhibition_visit"
+      ],
+      "roc_auc": 0.9047619047619047,
+      "skipped": false,
+      "test_label_counts": {
+        "0": 11,
+        "1": 21
+      },
+      "test_n": 32,
+      "train_label_counts": {
+        "0": 58,
+        "1": 36
+      }
+    },
+    {
+      "balanced_accuracy": 0.6833333333333333,
+      "fold": 2,
+      "held_out_campaigns": [
+        "phase1b_autumn_garden_walk"
+      ],
+      "roc_auc": 0.6708333333333333,
+      "skipped": false,
+      "test_label_counts": {
+        "0": 20,
+        "1": 12
+      },
+      "test_n": 32,
+      "train_label_counts": {
+        "0": 49,
+        "1": 45
+      }
+    },
+    {
+      "balanced_accuracy": 0.5287081339712918,
+      "fold": 3,
+      "held_out_campaigns": [
+        "phase1b_botanical_spring_program"
+      ],
+      "roc_auc": 0.6363636363636364,
+      "skipped": false,
+      "test_label_counts": {
+        "0": 19,
+        "1": 11
+      },
+      "test_n": 30,
+      "train_label_counts": {
+        "0": 50,
+        "1": 46
+      }
+    },
+    {
+      "balanced_accuracy": 0.7651821862348178,
+      "fold": 4,
+      "held_out_campaigns": [
+        "phase1b_summer_garden_walk"
+      ],
+      "roc_auc": 0.8380566801619433,
+      "skipped": false,
+      "test_label_counts": {
+        "0": 19,
+        "1": 13
+      },
+      "test_n": 32,
+      "train_label_counts": {
+        "0": 50,
+        "1": 44
+      }
+    }
+  ],
+  "model_out": "models/phase1b_smoke/classifier_smoke_model_v2_2_5.joblib",
+  "non_claims": [
+    "calibrated accept/reject threshold가 아니다.",
+    "production model quality 주장이 아니다.",
+    "campaign 간 score 직접 비교에 사용하지 않는다.",
+    "coverage_gap campaign은 일반 quality claim에서 분리한다."
+  ],
+  "oof": {
+    "accuracy": 0.5714285714285714,
+    "average_precision": 0.5481169013633469,
+    "balanced_accuracy": 0.5614035087719298,
+    "confusion_matrix": [
+      [
+        46,
+        23
+      ],
+      [
+        31,
+        26
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "0",
+      "1"
+    ],
+    "diagnostic_threshold": 0.5,
+    "label_counts": {
+      "0": 69,
+      "1": 57
+    },
+    "n": 126,
+    "per_class": {
+      "0": {
+        "f1-score": 0.6301369863013698,
+        "precision": 0.5974025974025974,
+        "recall": 0.6666666666666666,
+        "support": 69.0
+      },
+      "1": {
+        "f1-score": 0.49056603773584906,
+        "precision": 0.5306122448979592,
+        "recall": 0.45614035087719296,
+        "support": 57.0
+      },
+      "accuracy": 0.5714285714285714,
+      "macro avg": {
+        "f1-score": 0.5603515120186094,
+        "precision": 0.5640074211502784,
+        "recall": 0.5614035087719298,
+        "support": 126.0
+      },
+      "weighted avg": {
+        "f1-score": 0.5669977476645867,
+        "precision": 0.5671879141266897,
+        "recall": 0.5714285714285714,
+        "support": 126.0
+      }
+    },
+    "roc_auc": 0.5339435545385202,
+    "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+  },
+  "report_out": "audit/phase_1b/phase_1b_classifier_smoke_v2_2_5_jsonl.json",
+  "report_status": "classifier_smoke_training_diagnostic_v2_2_5_jsonl",
+  "score_status": "diagnostic_only",
+  "threshold_status": "no_calibrated_threshold",
+  "top_coefficients": [
+    {
+      "coefficient": 0.9057753739489653,
+      "feature": "dinov2_campaign_margin"
+    },
+    {
+      "coefficient": 0.7983752982396056,
+      "feature": "dinov2_family_support_count"
+    },
+    {
+      "coefficient": 0.7333899332344485,
+      "feature": "clip_negative_max_sim"
+    },
+    {
+      "coefficient": -0.7151944763055883,
+      "feature": "dinov2_campaign_neg_nn_sim"
+    },
+    {
+      "coefficient": 0.6659474142528787,
+      "feature": "clip_positive_mean_sim"
+    },
+    {
+      "coefficient": -0.6334900107550193,
+      "feature": "campaign_is_walking_program"
+    },
+    {
+      "coefficient": -0.6334900107550193,
+      "feature": "campaign_is_garden"
+    },
+    {
+      "coefficient": -0.6129167717853774,
+      "feature": "clip_negative_mean_sim"
+    },
+    {
+      "coefficient": 0.5852349449920645,
+      "feature": "clip_positive_max_sim"
+    },
+    {
+      "coefficient": 0.5370912629693191,
+      "feature": "dinov2_campaign_pos_nn_sim"
+    },
+    {
+      "coefficient": 0.5284148257479827,
+      "feature": "title_region_safe_score"
+    },
+    {
+      "coefficient": -0.5272405420562725,
+      "feature": "image_category_flower"
+    },
+    {
+      "coefficient": -0.49464784699500797,
+      "feature": "dinov2_duplicate_group_seen"
+    },
+    {
+      "coefficient": -0.4839265813671912,
+      "feature": "dinov2_campaign_pos_count"
+    },
+    {
+      "coefficient": 0.43493933366014426,
+      "feature": "edge_density"
+    }
+  ]
+}

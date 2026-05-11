@@ -1,0 +1,993 @@
+{
+  "canonical_map": "data/ontology/duplicate_canonical_map_v2_2_5.jsonl",
+  "canonicalized_path_features": [
+    "path_has_architecture",
+    "path_has_garden"
+  ],
+  "created_at": "2026-05-11T10:03:01.651401Z",
+  "event": "feature_snapshot_canonicalization_v2_2_5_done",
+  "input_glob": "data/feature_snapshots/v2_2_2/phase1b_dinov2_anchor/*.jsonl",
+  "input_rows": 250,
+  "new_features_added": [
+    "duplicate_group_size",
+    "duplicate_is_member",
+    "duplicate_is_canonical",
+    "duplicate_metadata_conflict",
+    "duplicate_source_group_count",
+    "duplicate_has_architecture_source",
+    "duplicate_has_garden_source"
+  ],
+  "non_claims": [
+    "canonicalization은 품질 threshold가 아니다.",
+    "canonicalization은 accept/reject 자동 판정이 아니다.",
+    "production model quality를 주장하지 않는다."
+  ],
+  "out_dir": "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized",
+  "out_files": [
+    "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/pair_feature_snapshots_v2_2_5__phase1b_architecture_exhibition_visit.jsonl",
+    "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/pair_feature_snapshots_v2_2_5__phase1b_autumn_garden_walk.jsonl",
+    "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/pair_feature_snapshots_v2_2_5__phase1b_botanical_spring_program.jsonl",
+    "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/pair_feature_snapshots_v2_2_5__phase1b_indoor_gallery_winter_art.jsonl",
+    "data/feature_snapshots/v2_2_5/phase1b_duplicate_canonicalized/pair_feature_snapshots_v2_2_5__phase1b_summer_garden_walk.jsonl"
+  ],
+  "output_rows": 250,
+  "path_change_examples": [
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_0f37eb334a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "image_id": "raw_0f37eb334a",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_0f37eb334a__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_0f37eb334a__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "image_id": "raw_19c9aa3ffa",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_19c9aa3ffa__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_19c9aa3ffa__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_22d63fd86a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "image_id": "raw_22d63fd86a",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_22d63fd86a__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_22d63fd86a__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_34da4bc897",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "image_id": "raw_34da4bc897",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_34da4bc897__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_34da4bc897__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_22d63fd86a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "image_id": "raw_41179036b8",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_41179036b8__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_41179036b8__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_4e6c171e96",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "image_id": "raw_4e6c171e96",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_4e6c171e96__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_4e6c171e96__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_572e8cc431",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "image_id": "raw_572e8cc431",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_572e8cc431__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_572e8cc431__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_9d0d132603",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "image_id": "raw_5ed5b2d6c4",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_5ed5b2d6c4__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_5ed5b2d6c4__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_61fc86118e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "image_id": "raw_61fc86118e",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_61fc86118e__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_61fc86118e__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_681edda32e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "image_id": "raw_681edda32e",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_681edda32e__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_681edda32e__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_9d0d132603",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "image_id": "raw_9d0d132603",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_9d0d132603__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_9d0d132603__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_572e8cc431",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "image_id": "raw_a820c309c8",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_a820c309c8__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_a820c309c8__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "image_id": "raw_b37dfe627b",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_b37dfe627b__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_b37dfe627b__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_61fc86118e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "image_id": "raw_b9b0d9734b",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_b9b0d9734b__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_b9b0d9734b__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_681edda32e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "image_id": "raw_c2c0208981",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_c2c0208981__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_c2c0208981__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_0f37eb334a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_25369eb1b632",
+      "image_id": "raw_c3f434c77f",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_c3f434c77f__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_c3f434c77f__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_4e6c171e96",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "image_id": "raw_d3b6daf541",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_d3b6daf541__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_d3b6daf541__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_architecture_exhibition_visit",
+      "canonical_image_id": "raw_34da4bc897",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "image_id": "raw_ea42a7592c",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_architecture_exhibition_visit__raw_ea42a7592c__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_architecture_exhibition_visit__raw_ea42a7592c__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "image_id": "raw_19c9aa3ffa",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_19c9aa3ffa__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_19c9aa3ffa__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_22d63fd86a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "image_id": "raw_22d63fd86a",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_22d63fd86a__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_22d63fd86a__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_34da4bc897",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "image_id": "raw_34da4bc897",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_34da4bc897__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_34da4bc897__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_22d63fd86a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "image_id": "raw_41179036b8",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_41179036b8__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_41179036b8__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_4e6c171e96",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "image_id": "raw_4e6c171e96",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_4e6c171e96__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_4e6c171e96__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_9d0d132603",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "image_id": "raw_5ed5b2d6c4",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_5ed5b2d6c4__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_5ed5b2d6c4__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_681edda32e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "image_id": "raw_681edda32e",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_681edda32e__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_681edda32e__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_9d0d132603",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "image_id": "raw_9d0d132603",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_9d0d132603__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_9d0d132603__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "image_id": "raw_b37dfe627b",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_b37dfe627b__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_b37dfe627b__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_681edda32e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_e607ac9acfc1",
+      "image_id": "raw_c2c0208981",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_c2c0208981__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_c2c0208981__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_4e6c171e96",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "image_id": "raw_d3b6daf541",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_d3b6daf541__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_d3b6daf541__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_34da4bc897",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "image_id": "raw_ea42a7592c",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_ea42a7592c__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_ea42a7592c__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_autumn_garden_walk",
+      "canonical_image_id": "raw_f60ec3a3b4",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6d5800f28fea",
+      "image_id": "raw_f60ec3a3b4",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_autumn_garden_walk__raw_f60ec3a3b4__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_autumn_garden_walk__raw_f60ec3a3b4__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "image_id": "raw_19c9aa3ffa",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_19c9aa3ffa__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_19c9aa3ffa__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_22d63fd86a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "image_id": "raw_22d63fd86a",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_22d63fd86a__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_22d63fd86a__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_34da4bc897",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "image_id": "raw_34da4bc897",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_34da4bc897__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_34da4bc897__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_a80ee2ac82",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_80ace11a46ca",
+      "image_id": "raw_355f229fb9",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_355f229fb9__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_355f229fb9__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_22d63fd86a",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c90c21a044aa",
+      "image_id": "raw_41179036b8",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_41179036b8__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_41179036b8__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_4e6c171e96",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "image_id": "raw_4e6c171e96",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_4e6c171e96__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_4e6c171e96__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_553035c3d0",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c340834fafd6",
+      "image_id": "raw_553035c3d0",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_553035c3d0__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_553035c3d0__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_572e8cc431",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "image_id": "raw_572e8cc431",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_572e8cc431__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_572e8cc431__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_9d0d132603",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "image_id": "raw_5ed5b2d6c4",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_5ed5b2d6c4__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_5ed5b2d6c4__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_61fc86118e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "image_id": "raw_61fc86118e",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_61fc86118e__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_61fc86118e__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_553035c3d0",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_c340834fafd6",
+      "image_id": "raw_6e478a1722",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_6e478a1722__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_6e478a1722__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_9d0d132603",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6e9a8dfc5211",
+      "image_id": "raw_9d0d132603",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_9d0d132603__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_9d0d132603__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_a80ee2ac82",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_80ace11a46ca",
+      "image_id": "raw_a80ee2ac82",
+      "is_canonical_duplicate_member": true,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_a80ee2ac82__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_a80ee2ac82__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 0.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_572e8cc431",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_b72fd4e92342",
+      "image_id": "raw_a820c309c8",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_a820c309c8__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_a820c309c8__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_f60ec3a3b4",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_6d5800f28fea",
+      "image_id": "raw_ab1479ebb7",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_ab1479ebb7__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_ab1479ebb7__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_19c9aa3ffa",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_39d154f18e8e",
+      "image_id": "raw_b37dfe627b",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_b37dfe627b__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_b37dfe627b__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_61fc86118e",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_dd008cd5d594",
+      "image_id": "raw_b9b0d9734b",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_b9b0d9734b__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_b9b0d9734b__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_4e6c171e96",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_d52b72f2194c",
+      "image_id": "raw_d3b6daf541",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_d3b6daf541__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_d3b6daf541__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    },
+    {
+      "campaign_id": "phase1b_botanical_spring_program",
+      "canonical_image_id": "raw_34da4bc897",
+      "duplicate_canonicalization_status": "exact_duplicate_canonicalized",
+      "duplicate_group_id": "dup_exact_38106b9781dd",
+      "image_id": "raw_ea42a7592c",
+      "is_canonical_duplicate_member": false,
+      "new_feature_snapshot_id": "feat_v2_2_5__phase1b_botanical_spring_program__raw_ea42a7592c__layout_top_left_bottom_left",
+      "old_feature_snapshot_id": "feat_v2_2_2__phase1b_botanical_spring_program__raw_ea42a7592c__layout_top_left_bottom_left",
+      "path_derived_after": {
+        "path_has_architecture": 1.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_before": {
+        "path_has_architecture": 0.0,
+        "path_has_garden": 1.0
+      },
+      "path_derived_changed": true
+    }
+  ],
+  "path_derived_changed_rows": 91,
+  "score_status": "diagnostic_only",
+  "status_counts": {
+    "exact_duplicate_canonicalized": 91,
+    "not_in_exact_duplicate_canonical_map": 159
+  },
+  "threshold_status": "diagnostic_warning_not_quality_threshold"
+}

@@ -1,0 +1,381 @@
+{
+  "claim_evaluations": {
+    "exclude_indoor_winter_from_smoke_training": {
+      "caveats": [],
+      "claim": "phase1b_indoor_gallery_winter_art는 classifier/ranker smoke training 및 evaluation claim에서 제외하고, coverage_gap_diagnostic으로 보존한다.\n",
+      "claim_id": "exclude_indoor_winter_from_smoke_training",
+      "claim_type": "training_filter_decision",
+      "evaluation_status": "diagnostic_supported",
+      "forbidden_interpretation": [
+        "phase1b_indoor_gallery_winter_art를 모델 품질 실패로 단정하지 않는다.",
+        "이 campaign을 삭제하지 않는다.",
+        "이 제외 정책을 automatic exclusion rule로 사용하지 않는다."
+      ],
+      "interpretation": "실내/겨울 campaign 제외 판단은 DB evidence에 의해 지지된다. 단, 이 판단은 model-quality failure가 아니라 raw pool coverage gap diagnostic으로만 해석한다.",
+      "missing_or_weak_observations": [
+        "expanded raw pool에서 같은 campaign을 재실험하지 않았다.",
+        "indoor/winter/gallery campaign family가 1개뿐이다.",
+        "prompt variant 비교를 아직 하지 않았다.",
+        "critic/layout signal이 없다."
+      ],
+      "status_from_policy": "diagnostic_support_only",
+      "supporting_evidence_observed": {
+        "bucket_counts": {
+          "clip_high_model_low": 12,
+          "cluster_diversity": 8,
+          "layout_safe_coverage": 6,
+          "random_coverage": 1,
+          "uncertainty": 3
+        },
+        "campaign_id": "phase1b_indoor_gallery_winter_art",
+        "decision_label_counts": {
+          "accept": 1,
+          "reject": 29
+        },
+        "excluded_from_phase1b_filtered_classifier_v1": true,
+        "issue_tag_counts": {
+          "season_mismatch": 25,
+          "semantic_mismatch": 21
+        },
+        "reject_count": 29,
+        "review_rows": 30,
+        "usable_count_accept_or_acceptable": 1
+      }
+    },
+    "interpret_architecture_fold_as_campaign_shift": {
+      "caveats": [],
+      "claim": "architecture held-out fold의 낮은 diagnostic score는 production failure가 아니라 campaign shift diagnostic으로 해석한다.\n",
+      "claim_id": "interpret_architecture_fold_as_campaign_shift",
+      "claim_type": "campaign_shift_interpretation",
+      "evaluation_status": "diagnostic_supported",
+      "forbidden_interpretation": [
+        "architecture campaign이 실패했다고 단정하지 않는다.",
+        "모델이 architecture를 싫어한다고 해석하지 않는다.",
+        "roc_auc 0.26을 production metric으로 해석하지 않는다."
+      ],
+      "interpretation": "architecture fold 약화는 campaign-shift diagnostic으로 해석할 수 있다. 단, architecture family가 1개뿐이므로 production failure나 일반화 실패로 단정하지 않는다.",
+      "missing_or_weak_observations": [
+        "architecture family campaign이 1개뿐이다.",
+        "architecture-specific prompt ablation을 하지 않았다.",
+        "CLIP-only / no-metadata ablation을 하지 않았다.",
+        "architecture image pool coverage가 충분한지 아직 불명확하다."
+      ],
+      "status_from_policy": "diagnostic_support_only",
+      "supporting_evidence_observed": {
+        "balanced_accuracy": 0.35,
+        "heldout_campaign": "phase1b_architecture_exhibition_visit",
+        "roc_auc": 0.25999999999999995,
+        "test_label_counts": {
+          "0": 10,
+          "1": 20
+        },
+        "train_label_counts": {
+          "0": 60,
+          "1": 30
+        }
+      }
+    },
+    "monitor_ranker_label_boundary_stability": {
+      "caveats": [],
+      "claim": "Phase 1b ranker label의 acceptable/accept 경계 안정성은 아직 검증되지 않았으므로 ranker metric을 성능 주장으로 사용하지 않는다.",
+      "claim_id": "monitor_ranker_label_boundary_stability",
+      "claim_type": "metric_non_claim_decision",
+      "evaluation_status": "diagnostic_supported",
+      "forbidden_interpretation": [
+        "ranker label이 안정적이라고 단정하지 않는다.",
+        "ranker metric을 production performance로 해석하지 않는다.",
+        "acceptable과 accept의 현재 비율만으로 ranker grade policy를 확정하지 않는다."
+      ],
+      "interpretation": "ranker label 1/2 경계 안정성은 아직 검증되지 않았다. acceptable과 accept가 24/26으로 거의 같으므로, ranker metric을 성능 주장으로 쓰지 않고 multi-annotator overlap 또는 campaign별 label audit에서 경계 안정성을 확인해야 한다.",
+      "missing_or_weak_observations": [
+        "multi-annotator overlap에서 acceptable/accept 불일치를 측정하지 않았다.",
+        "campaign별 acceptable/accept 비율을 비교하지 않았다.",
+        "ranker label 1/2 경계를 별도 annotation guide로 고정하지 않았다."
+      ],
+      "status_from_policy": "diagnostic_support_only",
+      "supporting_evidence_observed": {
+        "accept_count": 26,
+        "acceptable_accept_difference": 2,
+        "acceptable_count": 24,
+        "multi_annotator_overlap_available": false,
+        "ranker_label_counts": {
+          "0": 70,
+          "1": 24,
+          "2": 26
+        },
+        "reject_count": 70,
+        "row_count": 120,
+        "training_set_id": "phase1b_filtered_ranker_v1"
+      }
+    },
+    "prioritize_preview_renderer_v1": {
+      "caveats": [],
+      "claim": "raw pool expansion이 현재 blocked인 상태에서, 다음 unblocked task는 preview renderer v1이다.\n",
+      "claim_id": "prioritize_preview_renderer_v1",
+      "claim_type": "preview_renderer_decision",
+      "evaluation_status": "diagnostic_supported",
+      "forbidden_interpretation": [
+        "layout issue가 없다고 단정하지 않는다.",
+        "preview renderer v1을 final poster renderer로 해석하지 않는다.",
+        "critic 성능을 주장하지 않는다."
+      ],
+      "interpretation": "layout 관련 issue tag가 매우 적으므로 preview/renderer 관찰 장치 필요성이 DB evidence로 지지된다. 이는 layout 문제가 없다는 뜻이 아니라 layout observability가 낮다는 뜻이다.",
+      "missing_or_weak_observations": [
+        "preview renderer를 사용한 review 결과가 아직 없다.",
+        "layout issue가 실제로 적은지, 관찰 장치가 부족한지 분리되지 않았다.",
+        "final typography, Korean text rendering, gradient는 아직 포함하지 않는다."
+      ],
+      "status_from_policy": "diagnostic_support_only",
+      "supporting_evidence_observed": {
+        "layout_related_issue_tags": {
+          "low_contrast": 0,
+          "text_region_conflict": 1,
+          "too_busy_background": 0,
+          "visual_hierarchy_weak": 0
+        },
+        "layout_related_issue_total": 1,
+        "review_condition": "phase1b_first_round_without_layout_renderer"
+      }
+    },
+    "reject_classifier_smoke_as_quality_claim": {
+      "caveats": [],
+      "claim": "Phase 1b classifier smoke training 결과는 feature plumbing 검증으로만 사용하고, model quality 또는 calibrated threshold claim으로 사용하지 않는다.\n",
+      "claim_id": "reject_classifier_smoke_as_quality_claim",
+      "claim_type": "metric_non_claim_decision",
+      "evaluation_status": "diagnostic_supported",
+      "forbidden_interpretation": [
+        "production quality를 주장하지 않는다.",
+        "automatic accept/reject에 사용하지 않는다.",
+        "threshold 0.5를 calibrated threshold로 해석하지 않는다."
+      ],
+      "interpretation": "classifier smoke result를 quality claim으로 사용하지 않는 판단은 DB evidence에 의해 지지된다. 이 결과는 DB-first feature plumbing과 campaign-held-out loop가 동작함을 확인하는 진단이다.",
+      "missing_or_weak_observations": [
+        "데이터가 작다.",
+        "campaign family가 적다.",
+        "calibration set이 없다.",
+        "expanded raw pool 결과가 없다.",
+        "preview renderer 기반 layout label이 없다."
+      ],
+      "status_from_policy": "diagnostic_support_only",
+      "supporting_evidence_observed": {
+        "campaign_counts": {
+          "phase1b_architecture_exhibition_visit": 30,
+          "phase1b_autumn_garden_walk": 30,
+          "phase1b_botanical_spring_program": 30,
+          "phase1b_summer_garden_walk": 30
+        },
+        "db_role": "operational_source_of_truth",
+        "db_training_set_labels": {
+          "0": 70,
+          "1": 50
+        },
+        "db_training_set_rows": 120,
+        "label_counts": {
+          "0": 70,
+          "1": 50
+        },
+        "out_of_fold_metrics": {
+          "average_precision": 0.4792324459486294,
+          "balanced_accuracy": 0.5785714285714285,
+          "roc_auc": 0.5977142857142856
+        },
+        "rows": 120,
+        "score_status": "diagnostic_only",
+        "smoke_report_status": "classifier_smoke_training_diagnostic_db_first",
+        "threshold_status": "no_calibrated_threshold"
+      }
+    }
+  },
+  "evaluation_counts": {
+    "diagnostic_supported": 5
+  },
+  "future_observation_queue": [
+    {
+      "claim_id": "exclude_indoor_winter_from_smoke_training",
+      "claim_type": "training_filter_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 0,
+      "measurement": "usable_candidate_count_after_pool_expansion",
+      "next_action": "indoor/winter campaign을 coverage_gap_diagnostic으로 계속 유지한다. prompt revision 외에 raw pool 자체의 확장을 우선순위로 올린다. indoor/winter-specific feature나 별도 ontology가 필요한지 검토한다.\n",
+      "observation": "indoor/winter/gallery 이미지를 확장한 뒤에도 해당 campaign에서 usable candidate가 낮게 유지된다.\n",
+      "threshold_status": "diagnostic_trigger_only_not_final_threshold"
+    },
+    {
+      "claim_id": "exclude_indoor_winter_from_smoke_training",
+      "claim_type": "training_filter_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 1,
+      "measurement": "top_k_source_group_distribution_after_pool_expansion",
+      "next_action": "record_and_compare_in_next_audit",
+      "observation": "indoor/winter/gallery 후보가 추가되었는데도 retrieval top candidates가 outdoor/garden 계열에 계속 치우친다.\n",
+      "threshold_status": "diagnostic_distribution_audit_only"
+    },
+    {
+      "claim_id": "exclude_indoor_winter_from_smoke_training",
+      "claim_type": "training_filter_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 0,
+      "measurement": "usable_candidate_count_after_prompt_revision",
+      "next_action": "indoor/winter 제외 판단을 재검토한다. raw pool coverage gap보다 prompt design 문제가 주요 원인인지 확인하기 위해 revised prompt set으로 retrieval과 review queue를 다시 생성한다.\n",
+      "observation": "prompt 수정만으로 usable candidate가 크게 증가한다.\n",
+      "threshold_status": "diagnostic_trigger_only_not_final_threshold"
+    },
+    {
+      "claim_id": "exclude_indoor_winter_from_smoke_training",
+      "claim_type": "training_filter_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 1,
+      "measurement": "reject_rate_by_campaign_family",
+      "next_action": "record_and_compare_in_next_audit",
+      "observation": "garden/botanical/architecture campaign에서도 reject rate가 매우 높게 반복된다.\n",
+      "threshold_status": "diagnostic_distribution_audit_only"
+    },
+    {
+      "claim_id": "prioritize_preview_renderer_v1",
+      "claim_type": "preview_renderer_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 0,
+      "measurement": "layout_related_issue_tag_count_after_preview_renderer",
+      "next_action": "preview renderer v1을 Phase 1b review workflow에 유지한다. layout-related issue_tags를 ReviewEvent와 TrainingSnapshot audit에 별도 집계한다. critic training 후보 label source로 사용할 수 있는지 Phase 2에서 검토한다.\n",
+      "observation": "preview renderer v1 도입 후 layout-related issue_tags가 증가한다.\n",
+      "threshold_status": "diagnostic_trigger_only_not_final_threshold"
+    },
+    {
+      "claim_id": "prioritize_preview_renderer_v1",
+      "claim_type": "preview_renderer_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 0,
+      "measurement": "layout_related_issue_tag_count_after_preview_renderer",
+      "next_action": "record_and_compare_in_next_audit",
+      "observation": "preview renderer v1 도입 후에도 layout-related issue_tags가 거의 증가하지 않는다.\n",
+      "threshold_status": "diagnostic_distribution_audit_only"
+    },
+    {
+      "claim_id": "interpret_architecture_fold_as_campaign_shift",
+      "claim_type": "campaign_shift_interpretation",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 0,
+      "measurement": "architecture_family_heldout_diagnostic_metrics",
+      "next_action": "architecture family를 별도 classifier 또는 별도 feature set으로 분리하는 방안을 검토한다. architecture-specific prompt, ontology, image pool coverage를 함께 점검한다.\n",
+      "observation": "architecture campaign을 추가했을 때도 architecture-family held-out fold가 반복적으로 약하게 나온다.\n",
+      "threshold_status": "diagnostic_trend_audit_only"
+    },
+    {
+      "claim_id": "interpret_architecture_fold_as_campaign_shift",
+      "claim_type": "campaign_shift_interpretation",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 1,
+      "measurement": "ablation_by_feature_group",
+      "next_action": "campaign-family conditional feature 또는 별도 architecture classifier를 Phase 2 설계 안에 포함시킨다.\n",
+      "observation": "no-metadata 또는 CLIP-only ablation에서 architecture fold가 회복되지 않는다.\n",
+      "threshold_status": "diagnostic_ablation_audit_only"
+    },
+    {
+      "claim_id": "interpret_architecture_fold_as_campaign_shift",
+      "claim_type": "campaign_shift_interpretation",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 0,
+      "measurement": "clip_only_vs_all_features_architecture_fold",
+      "next_action": "metadata/path feature를 smoke classifier 기본 feature set에서 분리한다. CLIP-only, no-metadata, metadata-only ablation report를 생성하고 architecture fold error rows를 별도 inspect한다.\n",
+      "observation": "CLIP-only ablation에서 architecture fold가 크게 회복된다.\n",
+      "threshold_status": "diagnostic_ablation_audit_only"
+    },
+    {
+      "claim_id": "interpret_architecture_fold_as_campaign_shift",
+      "claim_type": "campaign_shift_interpretation",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 1,
+      "measurement": "architecture_prompt_revision_result",
+      "next_action": "prompt_template_bank_v1의 architecture 관련 prompt를 revision한다. revised prompt로 retrieval 및 smoke training을 재실행하고 fold 변화를 비교한다.\n",
+      "observation": "architecture prompt 수정만으로 held-out score 또는 usable candidate가 크게 개선된다.\n",
+      "threshold_status": "diagnostic_trigger_only_not_final_threshold"
+    },
+    {
+      "claim_id": "reject_classifier_smoke_as_quality_claim",
+      "claim_type": "metric_non_claim_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 0,
+      "measurement": "repeated_diagnostic_training_runs",
+      "next_action": "smoke training pipeline을 Phase 2 multi-campaign 환경에서 재실행한다. campaign 수와 label 수가 늘어난 뒤 fold별 diagnostic metric 변화를 추적한다.\n",
+      "observation": "더 많은 campaign과 expanded raw pool에서도 smoke training이 안정적으로 재현된다.\n",
+      "threshold_status": "diagnostic_trend_audit_only"
+    },
+    {
+      "claim_id": "reject_classifier_smoke_as_quality_claim",
+      "claim_type": "metric_non_claim_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 0,
+      "measurement": "pipeline_integrity_audit",
+      "next_action": "smoke training 결과를 무효화한다. join key, duplicate_group leakage, campaign split logic을 수정한 뒤 filtered TrainingSnapshot과 smoke report를 재생성한다.\n",
+      "observation": "feature join 또는 campaign-held-out split에서 leakage나 schema 문제가 발견된다.\n",
+      "threshold_status": "diagnostic_integrity_check_only"
+    },
+    {
+      "claim_id": "monitor_ranker_label_boundary_stability",
+      "claim_type": "metric_non_claim_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 0,
+      "measurement": "acceptable_accept_disagreement_rate_in_overlap_set",
+      "next_action": "ranker relevance grade 1/2 경계를 재정의한다. 필요하면 acceptable을 ranker positive로 둘지, weak-positive로 둘지, 또는 accept만 strong-positive로 두는 simplified ranker mapping을 검토한다.",
+      "observation": "multi-annotator overlap에서 acceptable/accept 불일치율이 높게 나온다.",
+      "threshold_status": "diagnostic_trigger_only_not_final_threshold"
+    },
+    {
+      "claim_id": "monitor_ranker_label_boundary_stability",
+      "claim_type": "metric_non_claim_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_strengthen",
+      "entry_index": 1,
+      "measurement": "acceptable_accept_ratio_by_campaign",
+      "next_action": "campaign별 label guide 차이를 기록하고, 다음 audit에서 campaign-family별 acceptable/accept 비율을 비교한다.",
+      "observation": "campaign별 acceptable/accept 비율이 크게 다르게 나타난다.",
+      "threshold_status": "diagnostic_distribution_audit_only"
+    },
+    {
+      "claim_id": "monitor_ranker_label_boundary_stability",
+      "claim_type": "metric_non_claim_decision",
+      "current_status": "pending_future_observation",
+      "direction": "would_weaken",
+      "entry_index": 0,
+      "measurement": "acceptable_accept_disagreement_rate_in_overlap_set",
+      "next_action": "ranker label 1/2 경계가 현재 annotation policy에서 충분히 안정적인지 다음 audit에서 유지 관찰한다.",
+      "observation": "multi-annotator overlap에서 acceptable/accept 불일치율이 낮다.",
+      "threshold_status": "diagnostic_distribution_audit_only"
+    }
+  ],
+  "inputs": {
+    "db": "data/db/cap_reranker_ontology.db",
+    "policy": "configs/diagnostic_claim_support_v1.yaml",
+    "smoke_report": "audit/phase_1b/phase_1b_classifier_smoke_report_db.json"
+  },
+  "metadata": {
+    "candidate_support_explanation_status": "deferred_from_phase_1b",
+    "created_at": "2026-05-10T22:28:16.007049Z",
+    "db_role": "operational_source_of_truth",
+    "phase": "phase_1b",
+    "report_status": "diagnostic_claim_support_execution_db_first",
+    "score_status": "diagnostic_only",
+    "spec_version": "v2.2.1",
+    "support_level": "claim_level",
+    "threshold_status": "diagnostic_trigger_only_not_final_threshold"
+  },
+  "non_claims": [
+    "candidate-level support explanation을 생성하지 않는다.",
+    "calibrated accept/reject threshold를 만들지 않는다.",
+    "automatic accept/reject rule로 사용하지 않는다.",
+    "production model quality를 주장하지 않는다."
+  ]
+}

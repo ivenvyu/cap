@@ -1,0 +1,248 @@
+{
+  "dataset": {
+    "campaign_counts": {
+      "phase1b_architecture_exhibition_visit": 30,
+      "phase1b_autumn_garden_walk": 26,
+      "phase1b_botanical_spring_program": 27,
+      "phase1b_summer_garden_walk": 29
+    },
+    "decision_label_counts": {
+      "accept": 26,
+      "acceptable": 24,
+      "reject": 62
+    },
+    "feature_columns": [
+      "brightness",
+      "campaign_is_garden",
+      "campaign_is_summer",
+      "campaign_is_walking_program",
+      "clip_margin",
+      "clip_negative_max_sim",
+      "clip_negative_mean_sim",
+      "clip_positive_max_sim",
+      "clip_positive_mean_sim",
+      "clip_rank_percentile",
+      "contrast",
+      "dinov2_campaign_anchor_missing",
+      "dinov2_campaign_neg_count",
+      "dinov2_campaign_pos_count",
+      "dinov2_cluster_review_count_coarse",
+      "dinov2_cluster_review_count_fine",
+      "dinov2_cluster_review_count_mid",
+      "dinov2_duplicate_group_seen",
+      "dinov2_family_anchor_missing",
+      "dinov2_family_support_count",
+      "edge_density",
+      "image_category_course",
+      "image_category_flower",
+      "image_category_gallery",
+      "image_category_tree",
+      "image_season_unknown",
+      "info_region_safe_score",
+      "path_has_architecture",
+      "path_has_garden",
+      "required_region_safe_mean",
+      "required_region_safe_min",
+      "saturation",
+      "title_region_safe_score"
+    ],
+    "feature_count": 33,
+    "label_counts": {
+      "0": 62,
+      "1": 50
+    },
+    "rows": 112
+  },
+  "db_role": "operational_source_of_truth",
+  "effective_input_policy": {
+    "filter": "flower_season_exclusion_filter_v1",
+    "interpretation": "known flower images whose bloom season conflicts with the campaign season are removed before diagnostic smoke training",
+    "pair_features_view": "v_effective_pair_features_v1",
+    "training_items_view": "v_effective_training_set_items_v1"
+  },
+  "folds": [
+    {
+      "balanced_accuracy": 0.35,
+      "fold": 1,
+      "held_out_campaign": "phase1b_architecture_exhibition_visit",
+      "labels": {
+        "0": 10,
+        "1": 20
+      },
+      "roc_auc": 0.26999999999999996,
+      "test_n": 30
+    },
+    {
+      "balanced_accuracy": 0.36616161616161613,
+      "fold": 2,
+      "held_out_campaign": "phase1b_summer_garden_walk",
+      "labels": {
+        "0": 18,
+        "1": 11
+      },
+      "roc_auc": 0.2777777777777778,
+      "test_n": 29
+    },
+    {
+      "balanced_accuracy": 0.5235294117647059,
+      "fold": 3,
+      "held_out_campaign": "phase1b_botanical_spring_program",
+      "labels": {
+        "0": 17,
+        "1": 10
+      },
+      "roc_auc": 0.5823529411764706,
+      "test_n": 27
+    },
+    {
+      "balanced_accuracy": 0.5457516339869282,
+      "fold": 4,
+      "held_out_campaign": "phase1b_autumn_garden_walk",
+      "labels": {
+        "0": 17,
+        "1": 9
+      },
+      "roc_auc": 0.5620915032679739,
+      "test_n": 26
+    }
+  ],
+  "out_of_fold_metrics": {
+    "accuracy": 0.4642857142857143,
+    "average_precision": 0.41712922663857555,
+    "balanced_accuracy": 0.4638709677419355,
+    "confusion_matrix": [
+      [
+        29,
+        33
+      ],
+      [
+        27,
+        23
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "0",
+      "1"
+    ],
+    "diagnostic_threshold": 0.5,
+    "label_counts": {
+      "0": 62,
+      "1": 50
+    },
+    "n": 112,
+    "per_class": {
+      "0": {
+        "f1-score": 0.4915254237288136,
+        "precision": 0.5178571428571429,
+        "recall": 0.46774193548387094,
+        "support": 62.0
+      },
+      "1": {
+        "f1-score": 0.4339622641509434,
+        "precision": 0.4107142857142857,
+        "recall": 0.46,
+        "support": 50.0
+      },
+      "accuracy": 0.4642857142857143,
+      "macro avg": {
+        "f1-score": 0.4627438439398785,
+        "precision": 0.4642857142857143,
+        "recall": 0.4638709677419355,
+        "support": 112.0
+      },
+      "weighted avg": {
+        "f1-score": 0.46582758463155016,
+        "precision": 0.4700255102040817,
+        "recall": 0.4642857142857143,
+        "support": 112.0
+      }
+    },
+    "roc_auc": 0.45129032258064516,
+    "threshold_status": "sklearn_default_diagnostic_only_not_calibrated"
+  },
+  "report_status": "classifier_smoke_training_diagnostic_effective_db_first",
+  "score_status": "diagnostic_only",
+  "threshold_status": "no_calibrated_threshold",
+  "top_coefficients": [
+    {
+      "coefficient": 0.9467701022191745,
+      "feature": "clip_positive_mean_sim"
+    },
+    {
+      "coefficient": 0.6369633330881633,
+      "feature": "clip_negative_max_sim"
+    },
+    {
+      "coefficient": -0.5290977542502074,
+      "feature": "clip_negative_mean_sim"
+    },
+    {
+      "coefficient": 0.4820748191918768,
+      "feature": "clip_positive_max_sim"
+    },
+    {
+      "coefficient": 0.47622560981725437,
+      "feature": "edge_density"
+    },
+    {
+      "coefficient": -0.3756118408374886,
+      "feature": "saturation"
+    },
+    {
+      "coefficient": -0.30286352006343004,
+      "feature": "image_category_flower"
+    },
+    {
+      "coefficient": 0.26458071519244386,
+      "feature": "image_category_tree"
+    },
+    {
+      "coefficient": 0.2482003531750945,
+      "feature": "path_has_architecture"
+    },
+    {
+      "coefficient": 0.17520626183397997,
+      "feature": "required_region_safe_min"
+    },
+    {
+      "coefficient": -0.16821474966311536,
+      "feature": "path_has_garden"
+    },
+    {
+      "coefficient": -0.1529186209831341,
+      "feature": "campaign_is_garden"
+    },
+    {
+      "coefficient": -0.1529186209831341,
+      "feature": "campaign_is_walking_program"
+    },
+    {
+      "coefficient": 0.1512737011267045,
+      "feature": "title_region_safe_score"
+    },
+    {
+      "coefficient": 0.1404762467865435,
+      "feature": "campaign_is_summer"
+    },
+    {
+      "coefficient": 0.13625824000514197,
+      "feature": "image_category_gallery"
+    },
+    {
+      "coefficient": 0.1273570786242526,
+      "feature": "brightness"
+    },
+    {
+      "coefficient": 0.09550406394525063,
+      "feature": "required_region_safe_mean"
+    },
+    {
+      "coefficient": -0.09273219239137852,
+      "feature": "contrast"
+    },
+    {
+      "coefficient": 0.05203119091339807,
+      "feature": "clip_margin"
+    }
+  ]
+}

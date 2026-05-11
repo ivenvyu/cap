@@ -1,0 +1,32 @@
+{
+  "db": "data/db/cap_reranker_ontology.db",
+  "effective_campaign_counts": {
+    "phase1a_summer_garden_walk": 49,
+    "phase1b_architecture_exhibition_visit": 50,
+    "phase1b_autumn_garden_walk": 43,
+    "phase1b_botanical_spring_program": 45,
+    "phase1b_indoor_gallery_winter_art": 50,
+    "phase1b_summer_garden_walk": 49
+  },
+  "event": "done",
+  "excluded_campaign_counts": {
+    "phase1a_summer_garden_walk": 1,
+    "phase1b_autumn_garden_walk": 7,
+    "phase1b_botanical_spring_program": 5,
+    "phase1b_summer_garden_walk": 1
+  },
+  "images_exported": 206,
+  "images_with_effective_campaigns": 112,
+  "images_with_excluded_campaigns": 9,
+  "images_with_ontology_tags": 202,
+  "images_with_plant_bloom_prior": 28,
+  "index_version": "ontology_effective_search_index_v1",
+  "interpretation": "DB source of truth에서 ontology tag, plant bloom prior, effective retrieval eligibility를 합쳐 검색/RAG용 JSONL index를 export했다.",
+  "out": "data/search/ontology_effective_search_index_v1.jsonl",
+  "score_status": "diagnostic_only",
+  "tag_axis_image_counts": {
+    "mood_axis": 196,
+    "space_axis": 202,
+    "subject_axis": 197
+  }
+}

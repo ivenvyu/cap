@@ -1,0 +1,1034 @@
+{
+  "features": [
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.226016998291,
+        0.232106536627,
+        0.233396545053,
+        0.236919894814,
+        0.237045660615
+      ],
+      "feature": "clip_positive_max_sim",
+      "group": "clip_semantic",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 169
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.189882650971,
+        0.190797805786,
+        0.192453280091,
+        0.194008290768,
+        0.194174870849
+      ],
+      "feature": "clip_positive_mean_sim",
+      "group": "clip_semantic",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 248
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.177738830447,
+        0.182220906019,
+        0.188681319356,
+        0.19108594954,
+        0.191462635994
+      ],
+      "feature": "clip_negative_max_sim",
+      "group": "clip_semantic",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 223
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.16257956624,
+        0.162753492594,
+        0.16332782805,
+        0.165549680591,
+        0.165657088161
+      ],
+      "feature": "clip_negative_mean_sim",
+      "group": "clip_semantic",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 248
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.026536017656,
+        0.027467548847,
+        0.028769910336,
+        0.029004529119,
+        0.030701205134
+      ],
+      "feature": "clip_margin",
+      "group": "clip_semantic",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 236
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.12195122242,
+        0.126829266548,
+        0.209756091237,
+        0.23902438581,
+        0.326829254627
+      ],
+      "feature": "clip_rank_percentile",
+      "group": "clip_semantic",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 110
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_campaign_pos_nn_sim",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_campaign_neg_nn_sim",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_campaign_margin",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0
+      ],
+      "feature": "dinov2_campaign_pos_count",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0
+      ],
+      "feature": "dinov2_campaign_neg_count",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        1.0
+      ],
+      "feature": "dinov2_campaign_anchor_missing",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_family_pos_nn_sim",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_family_neg_nn_sim",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_family_margin",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0
+      ],
+      "feature": "dinov2_family_support_count",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        1.0
+      ],
+      "feature": "dinov2_family_anchor_missing",
+      "group": "dinov2_anchor",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        "coarse_20_0001",
+        "coarse_20_0002",
+        "coarse_20_0003",
+        "coarse_20_0004",
+        "coarse_20_0005"
+      ],
+      "feature": "dinov2_cluster_id_coarse",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 18
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        "mid_100_0000",
+        "mid_100_0001",
+        "mid_100_0002",
+        "mid_100_0004",
+        "mid_100_0005"
+      ],
+      "feature": "dinov2_cluster_id_mid",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 64
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        "fine_182_0002",
+        "fine_182_0004",
+        "fine_182_0006",
+        "fine_182_0008",
+        "fine_182_0009"
+      ],
+      "feature": "dinov2_cluster_id_fine",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 100
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_cluster_positive_rate_coarse",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_cluster_positive_rate_mid",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "dinov2_cluster_positive_rate_fine",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0
+      ],
+      "feature": "dinov2_cluster_review_count_coarse",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0
+      ],
+      "feature": "dinov2_cluster_review_count_mid",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0
+      ],
+      "feature": "dinov2_cluster_review_count_fine",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0
+      ],
+      "feature": "dinov2_duplicate_group_seen",
+      "group": "dinov2_cluster_duplicate",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_when_non_null",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.00243902439,
+        0.007317073171,
+        0.024390243902,
+        0.034146341463,
+        0.039024390244
+      ],
+      "feature": "required_region_safe_mean",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 94
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        0.00487804878,
+        0.009756097561,
+        0.014634146341,
+        0.019512195122
+      ],
+      "feature": "required_region_safe_min",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 74
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        0.00487804878,
+        0.009756097561,
+        0.014634146341,
+        0.019512195122
+      ],
+      "feature": "title_region_safe_score",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 94
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        0.00487804878,
+        0.009756097561,
+        0.014634146341,
+        0.029268292683
+      ],
+      "feature": "info_region_safe_score",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 92
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.002422675956,
+        0.00592023693,
+        0.007201101631,
+        0.007906040177,
+        0.007923549041
+      ],
+      "feature": "edge_density",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 100
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.06959502399,
+        0.107769027352,
+        0.117494426668,
+        0.118139609694,
+        0.118499562144
+      ],
+      "feature": "contrast",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 100
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.180754706264,
+        0.233518704772,
+        0.234424009919,
+        0.245441660285,
+        0.24713614583
+      ],
+      "feature": "brightness",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 100
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.019588757306,
+        0.030810596421,
+        0.030827920884,
+        0.034554101527,
+        0.044815137982
+      ],
+      "feature": "saturation",
+      "group": "layout_safety",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic",
+      "unique_non_null_count": 100
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "critic_text_region_conflict_score",
+      "group": "critic",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "exclude_until_critic_available",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "critic_low_contrast_score",
+      "group": "critic",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "exclude_until_critic_available",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "critic_too_busy_background_score",
+      "group": "critic",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "exclude_until_critic_available",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "critic_visual_hierarchy_risk_score",
+      "group": "critic",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "exclude_until_critic_available",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [],
+      "feature": "critic_layout_fit_score",
+      "group": "critic",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 0,
+      "null_count": 300,
+      "null_rate": 1.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "exclude_until_critic_available",
+      "unique_non_null_count": 0
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        1.0
+      ],
+      "feature": "image_season_unknown",
+      "group": "weak_metadata",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "image_category_gallery",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "image_category_tree",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "image_category_flower",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0
+      ],
+      "feature": "image_category_course",
+      "group": "weak_metadata",
+      "is_constant_non_null": true,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 1
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "path_has_architecture",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "path_has_garden",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "campaign_is_summer",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "campaign_is_walking_program",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    },
+    {
+      "diagnostic_only": true,
+      "example_non_null_values": [
+        0.0,
+        1.0
+      ],
+      "feature": "campaign_is_garden",
+      "group": "weak_metadata",
+      "is_constant_non_null": false,
+      "missing_key_count": 0,
+      "non_null_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "present_key_count": 300,
+      "row_count": 300,
+      "training_action": "active_diagnostic_low_priority",
+      "unique_non_null_count": 2
+    }
+  ],
+  "hard_errors": [],
+  "metadata": {
+    "created_at": "2026-05-11T03:52:31.921274Z",
+    "db": "data/db/cap_reranker_ontology.db",
+    "diagnostic_only": true,
+    "feature_profile": "configs/feature_profile_v2_2_2.yaml",
+    "row_count": 300,
+    "source": "pair_features",
+    "threshold_status": "diagnostic_only"
+  },
+  "summary_by_group": {
+    "clip_semantic": {
+      "all_keys_present": true,
+      "all_null_features": [],
+      "constant_non_null_features": [],
+      "feature_count": 6,
+      "non_null_features": [
+        "clip_positive_max_sim",
+        "clip_positive_mean_sim",
+        "clip_negative_max_sim",
+        "clip_negative_mean_sim",
+        "clip_margin",
+        "clip_rank_percentile"
+      ],
+      "training_action": "active_diagnostic"
+    },
+    "critic": {
+      "all_keys_present": true,
+      "all_null_features": [
+        "critic_text_region_conflict_score",
+        "critic_low_contrast_score",
+        "critic_too_busy_background_score",
+        "critic_visual_hierarchy_risk_score",
+        "critic_layout_fit_score"
+      ],
+      "constant_non_null_features": [],
+      "feature_count": 5,
+      "non_null_features": [],
+      "training_action": "exclude_until_critic_available"
+    },
+    "dinov2_anchor": {
+      "all_keys_present": true,
+      "all_null_features": [
+        "dinov2_campaign_pos_nn_sim",
+        "dinov2_campaign_neg_nn_sim",
+        "dinov2_campaign_margin",
+        "dinov2_family_pos_nn_sim",
+        "dinov2_family_neg_nn_sim",
+        "dinov2_family_margin"
+      ],
+      "constant_non_null_features": [
+        "dinov2_campaign_pos_count",
+        "dinov2_campaign_neg_count",
+        "dinov2_campaign_anchor_missing",
+        "dinov2_family_support_count",
+        "dinov2_family_anchor_missing"
+      ],
+      "feature_count": 11,
+      "non_null_features": [
+        "dinov2_campaign_pos_count",
+        "dinov2_campaign_neg_count",
+        "dinov2_campaign_anchor_missing",
+        "dinov2_family_support_count",
+        "dinov2_family_anchor_missing"
+      ],
+      "training_action": "active_when_non_null"
+    },
+    "dinov2_cluster_duplicate": {
+      "all_keys_present": true,
+      "all_null_features": [
+        "dinov2_cluster_positive_rate_coarse",
+        "dinov2_cluster_positive_rate_mid",
+        "dinov2_cluster_positive_rate_fine"
+      ],
+      "constant_non_null_features": [
+        "dinov2_cluster_review_count_coarse",
+        "dinov2_cluster_review_count_mid",
+        "dinov2_cluster_review_count_fine",
+        "dinov2_duplicate_group_seen"
+      ],
+      "feature_count": 10,
+      "non_null_features": [
+        "dinov2_cluster_id_coarse",
+        "dinov2_cluster_id_mid",
+        "dinov2_cluster_id_fine",
+        "dinov2_cluster_review_count_coarse",
+        "dinov2_cluster_review_count_mid",
+        "dinov2_cluster_review_count_fine",
+        "dinov2_duplicate_group_seen"
+      ],
+      "training_action": "active_when_non_null"
+    },
+    "layout_safety": {
+      "all_keys_present": true,
+      "all_null_features": [],
+      "constant_non_null_features": [],
+      "feature_count": 8,
+      "non_null_features": [
+        "required_region_safe_mean",
+        "required_region_safe_min",
+        "title_region_safe_score",
+        "info_region_safe_score",
+        "edge_density",
+        "contrast",
+        "brightness",
+        "saturation"
+      ],
+      "training_action": "active_diagnostic"
+    },
+    "weak_metadata": {
+      "all_keys_present": true,
+      "all_null_features": [],
+      "constant_non_null_features": [
+        "image_season_unknown",
+        "image_category_course"
+      ],
+      "feature_count": 10,
+      "non_null_features": [
+        "image_season_unknown",
+        "image_category_gallery",
+        "image_category_tree",
+        "image_category_flower",
+        "image_category_course",
+        "path_has_architecture",
+        "path_has_garden",
+        "campaign_is_summer",
+        "campaign_is_walking_program",
+        "campaign_is_garden"
+      ],
+      "training_action": "active_diagnostic_low_priority"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+﻿campaign_id,n,positive,reject,positive_rate_diagnostic,reject_rate_diagnostic,decision_counts,issue_tag_counts
+phase1b_architecture_exhibition_visit,5,4,1,0.8,0.2,"{""accept"": 3, ""reject"": 1, ""acceptable"": 1}","{""semantic_mismatch"": 1}"
+phase1b_autumn_garden_walk,5,4,1,0.8,0.2,"{""accept"": 2, ""reject"": 1, ""acceptable"": 1, ""best"": 1}","{""season_mismatch"": 1, ""too_busy_background"": 1}"
+phase1b_botanical_spring_program,5,4,1,0.8,0.2,"{""accept"": 1, ""reject"": 1, ""acceptable"": 2, ""best"": 1}","{""semantic_mismatch"": 1}"
+phase1b_indoor_gallery_winter_art,5,1,4,0.2,0.8,"{""reject"": 4, ""acceptable"": 1}","{""semantic_mismatch"": 4, ""season_mismatch"": 1, ""low_resolution"": 1}"
+phase1b_summer_garden_walk,5,3,2,0.6,0.4,"{""reject"": 2, ""best"": 1, ""accept"": 1, ""acceptable"": 1}","{""semantic_mismatch"": 1, ""season_mismatch"": 1, ""brand_tone_mismatch"": 1}"

@@ -1,0 +1,12 @@
+section,metric,value
+metadata,report_status,dataset_eda_db_first
+metadata,db_role,operational_source_of_truth
+reviews,phase1b_review_events,150
+reviews,decision_label_counts,"{""accept"": 27, ""acceptable"": 24, ""reject"": 99}"
+reviews,issue_tag_counts,"{""poor_composition"": 3, ""season_mismatch"": 56, ""semantic_mismatch"": 58, ""text_region_conflict"": 1}"
+features,phase1b_pair_features,250
+classifier,rows,120
+classifier,label_counts,"{""0"": 70, ""1"": 50}"
+ranker,rows,120
+ranker,label_counts,"{""0"": 70, ""1"": 24, ""2"": 26}"
+eda,layout_related_issue_total,1
