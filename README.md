@@ -78,9 +78,9 @@ python scripts/train_phase1b_classifier_smoke_v2_2_5_from_jsonl.py
 ```bash
 
 # raw 폴더를 data/raw로 넣어주세요!!!
+```
 
 ### 추천 shortlist 생성
-
 ```bash
 # candidate score snapshot 필요 (data/retrieval/phase1b/v2_2_5/)
 python scripts/score_phase1b_candidates_v2_2_5_from_jsonl.py
