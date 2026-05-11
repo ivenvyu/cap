@@ -77,7 +77,7 @@ python scripts/train_phase1b_classifier_smoke_v2_2_5_from_jsonl.py
 ### 이미지 데이테 폴더 추가
 ```bash
 
-# raw 폴더를 data/raw로 넣어주세요!!!
+raw 폴더를 data/raw로 넣어주세요!!!
 ```
 
 ### 추천 shortlist 생성
@@ -90,7 +90,7 @@ python scripts/build_phase1b_recommendation_shortlist_v2_2_5_global_dedupe.py
 ### 추천 결과 생성 확인
 ```bash
 
-# open data/review/phase1b/v2_2_5/shortlist_global_dedupe/index.html (사파리에서 안 열리면 크롬에서 열어주세요)
+open data/review/phase1b/v2_2_5/shortlist_global_dedupe/index.html (사파리에서 안 열리면 크롬에서 열어주세요)
 ```
 
 
