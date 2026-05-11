@@ -91,6 +91,7 @@ python scripts/build_phase1b_recommendation_shortlist_v2_2_5_global_dedupe.py
 ```bash
 
 # open data/review/phase1b/v2_2_5/shortlist_global_dedupe/index.html (사파리에서 안 열리면 크롬에서 열어주세요)
+```
 
 
 ### 전체 파이프라인 (이미지 pool 확장 시)
